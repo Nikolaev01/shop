@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="G:\OpenServer\domains\nd-shop.local\ndshop.clpprj">
+	<settings><PM_URL><![CDATA[G:/nd-shop.local/]]></PM_URL><PM_HOME_URL><![CDATA[G:/nd-shop.local/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";"/><added value=""/><lastopfiles>
+		<file name="G:\OpenServer\domains\nd-shop.local\index.html"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\css\main.css"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\css\media.css"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\category.html"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\cart.html"/>
+	</lastopfiles>
+	<todoblock>
+	</todoblock>
+	<filescache>
+		<file name="G:\OpenServer\domains\nd-shop.local\js\slider.js" crc="1504472632"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\js\script.js" crc="1504473074"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\js\jquery.min.js" crc="1504469474"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\css\media.css" crc="1504821068"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\css\main.css" crc="1504880980"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\.idea\workspace.xml" crc="1504821495"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\.idea\modules.xml" crc="1504371194"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\index.html" crc="1504821031"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\category.html" crc="1504821046"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\cart.html" crc="1504880916"/>
+	</filescache>
+</project>

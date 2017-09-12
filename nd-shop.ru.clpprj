@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="C:\OpenServer\domains\nd-shop.local\nd-shop.ru.clpprj">
+	<settings><PM_URL><![CDATA[C:/OpenServer/domains/yii.local/]]></PM_URL><PM_HOME_URL><![CDATA[C:/OpenServer/domains/yii.local/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";"/><added value=""/><lastopfiles>
+	</lastopfiles>
+	<todoblock>
+	</todoblock>
+	<dbgurls>
+	</dbgurls>
+	<filescache>
+		<file name="C:\OpenServer\domains\nd-shop.local\js\slider.js" crc="1504472632"/>
+		<file name="C:\OpenServer\domains\nd-shop.local\js\script.js" crc="1504473074"/>
+		<file name="C:\OpenServer\domains\nd-shop.local\js\jquery.min.js" crc="1504469474"/>
+		<file name="C:\OpenServer\domains\nd-shop.local\css\main.css" crc="1504473677"/>
+		<file name="C:\OpenServer\domains\nd-shop.local\.idea\workspace.xml" crc="1504377985"/>
+		<file name="C:\OpenServer\domains\nd-shop.local\.idea\modules.xml" crc="1504371194"/>
+		<file name="C:\OpenServer\domains\nd-shop.local\index.html" crc="1504471067"/>
+	</filescache>
+</project>

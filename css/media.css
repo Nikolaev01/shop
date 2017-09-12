@@ -1,0 +1,8 @@
+@media screen and (max-width: 1024px) {
+    #search input[type="text"] {
+        width: 200px;
+    }
+    .product_cart {
+        width: 20.2%;
+    }
+}
