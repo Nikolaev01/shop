@@ -922,9 +922,7 @@ margin-left: 5px;
     background: none;
     color: #5f96d8;
 }
-.order input:first-child{
-    text-align: left !important;
-}
+
 .order input[type="text"]{
     border: none;
     text-align: center;
@@ -1457,20 +1455,22 @@ text-align: right;
 
 /*Радиопереключатель-->*/
 
-.pay_checkbox__label input, .samov_checkbox__input{
+.pay_checkbox__label input[type="radio"], .samoviv input[type="radio"], .order input[type="radio"], .cur_item input[type="radio"]{
     display: none;
 }
 
-.pay_checkbox__label label, .samov_checkbox__label label{
+.pay_checkbox__label input[type="radio"]+label, .samoviv input[type="radio"]+label, .order input[type="radio"]+label, .cur_item input[type="radio"]+label{
    background: url("/images/checkbox_empty.png") no-repeat left center;;
     padding-left: 30px;
     cursor: pointer;
 }
-.pay_checkbox input[type="radio"]:checked + label{
-    background: url(/images/checkbox.png) no-repeat left center;
+.pay_checkbox__label input[checked="checked"]+label, .samoviv input[checked="checked"]+label, .order input[checked="checked"]+label, .cur_item input[checked="checked"]+label{
+    background: url(/images/checkbox.png) no-repeat left center !important;
 }
 
-
+.cur_item input[type="radio"]+label{
+    padding-left: 25px;
+}
 /*<--Радиопереключатель*/
 .samov_checkbox__label label{
     padding-left: 20px;
