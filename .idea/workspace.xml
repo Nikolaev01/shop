@@ -2,140 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8d93a12-3584-4304-ac79-3d31cfaaff46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Deseing/Главная.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Deseing/Главная.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Deseing/Карточка товара.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Deseing/Корзина.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Deseing/Корзина.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Deseing/категории.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Deseing/категории.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Deseing/оформление заказа.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/001.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/002.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/003.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/004.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/BrowserPreview_tmp_05.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/action_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/arr_l.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/arr_pag.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/arr_r.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/arr_rr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/arr_up.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/arrowBg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/blue_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/cart_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/cart_white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/category/category_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/checkbox.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/checkbox_empty.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/checkbox_kvad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/checkbox_kvad_empty.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/clock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/coast.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/coast_black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/coast_red_big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/coast_silver.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/curier.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/facebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/green_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image_action.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/logo_buttom.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/logo_buttom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/man.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Главная_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Главная_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Главная_04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Главная_05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_06.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_07.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_08.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_09.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Карточка-товара_13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Корзина_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Корзина_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Корзина_03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Корзина_04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/Корзина_05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/категории_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/категории_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/категории_04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/1/images/категории_05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/images/категории_05.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/spacer.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_06.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_07.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_08.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_09.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_24.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/Корзина_25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/images/категории_07.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/Корзина_03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/place.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/price_lable.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/product.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/product/product_big_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/product/product_small_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/radioBg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/red_s.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/samo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/slider_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/slider_point.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/small_slider_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/strelk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/strelk_big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/twiter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/vk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/nd-shop.local.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/category.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/media.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/photoshop/Корзина.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/slider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nd-shop.clpprj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nd-shop.ru.clpprj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nd-shop.ru_clcs.csprj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ndshop.clpprj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ndshop_clcs.csprj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/product.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -169,8 +36,8 @@
       <file leaf-file-name="category.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/category.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="365" column="34" lean-forward="false" selection-start-line="365" selection-start-column="34" selection-end-line="365" selection-end-column="34" />
+            <state relative-caret-position="205">
+              <caret line="345" column="0" lean-forward="true" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -470,12 +337,12 @@
       <workItem from="1504995742562" duration="593000" />
       <workItem from="1505038726511" duration="14517000" />
       <workItem from="1505156758231" duration="9458000" />
-      <workItem from="1505240872771" duration="1046000" />
+      <workItem from="1505240872771" duration="1530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59744000" />
+    <option name="totallyTimeSpent" value="60228000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -488,8 +355,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="115" width="1078" height="853" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16572505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16572505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1169,8 +1037,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/category.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="365" column="34" lean-forward="false" selection-start-line="365" selection-start-column="34" selection-end-line="365" selection-end-column="34" />
+        <state relative-caret-position="205">
+          <caret line="345" column="0" lean-forward="true" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
