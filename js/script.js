@@ -42,5 +42,18 @@ $(document).ready(function () {
 
 
 
-
+	//увеличение и уменьшение количества товара в корзине
+	$('.add_item:first-child').click(function(){
+		var num = $(this).next();
+		if(num.text() <= 1) return false;
+		else {
+			var end_text = Number(num.text())-1;
+			$(this).next().text(end_text);
+		}
+	});
+	$('.add_item:last-child').click(function(){
+		var num = $(this).prev();
+		var end_text = Number(num.html())+1;
+		$(this).prev().text(end_text);
+	});
 });

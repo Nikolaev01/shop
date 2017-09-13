@@ -6,19 +6,25 @@
 		<file name="G:\OpenServer\domains\nd-shop.local\css\media.css"/>
 		<file name="G:\OpenServer\domains\nd-shop.local\category.html"/>
 		<file name="G:\OpenServer\domains\nd-shop.local\cart.html"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\js\script.js"/>
 	</lastopfiles>
 	<todoblock>
 	</todoblock>
 	<filescache>
-		<file name="G:\OpenServer\domains\nd-shop.local\js\slider.js" crc="1504472632"/>
-		<file name="G:\OpenServer\domains\nd-shop.local\js\script.js" crc="1504473074"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\js\slider.js" crc="1505246098"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\js\script.js" crc="1505305024"/>
 		<file name="G:\OpenServer\domains\nd-shop.local\js\jquery.min.js" crc="1504469474"/>
-		<file name="G:\OpenServer\domains\nd-shop.local\css\media.css" crc="1504821068"/>
-		<file name="G:\OpenServer\domains\nd-shop.local\css\main.css" crc="1504880980"/>
-		<file name="G:\OpenServer\domains\nd-shop.local\.idea\workspace.xml" crc="1504821495"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\images\photoshop\Корзина.html" crc="1504878267"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\css\media.css" crc="1505309773"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\css\main.css" crc="1505305938"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\.idea\workspace.xml" crc="1505251414"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\.idea\vcs.xml" crc="1505242505"/>
 		<file name="G:\OpenServer\domains\nd-shop.local\.idea\modules.xml" crc="1504371194"/>
-		<file name="G:\OpenServer\domains\nd-shop.local\index.html" crc="1504821031"/>
-		<file name="G:\OpenServer\domains\nd-shop.local\category.html" crc="1504821046"/>
-		<file name="G:\OpenServer\domains\nd-shop.local\cart.html" crc="1504880916"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\product.html" crc="1505244566"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\order.html" crc="1505249078"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\index.html" crc="1505165417"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\index - копия.html" crc="1504821031"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\category.html" crc="1505250614"/>
+		<file name="G:\OpenServer\domains\nd-shop.local\cart.html" crc="1505306786"/>
 	</filescache>
 </project>
