@@ -54,7 +54,7 @@ $(document).ready(function () {
 		$(this).prev().text(end_text);
 	});
 
-
+    //прокрутка вперед горизонтального скрола Хиты и Распродажа
 	$('.s_right').click(function() {
         var scrollblock = $(this).parent().next();
         var scrollblock_margin1 = scrollblock.children().css('margin-left');
@@ -70,7 +70,7 @@ $(document).ready(function () {
         //console.log(position);
         $(scrollblock).animate({scrollLeft: position+bk_height+scrollblock_margin1+scrollblock_margin2+10},500);
     });
-
+    //прокрутка назад горизонтального скрола Хиты и Распродажа
     $('.s_left').click(function() {
         var scrollblock = $(this).parent().next();
         var scrollblock_margin1 = scrollblock.children().css('margin-left');
