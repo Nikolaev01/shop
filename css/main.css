@@ -537,25 +537,25 @@ nav ul{
     margin-top: 80px;
 }
 .product_cart{
-	width: 20.8%;
+	width: 20.6%;
     display: inline-block;
     border: 1px solid #dfdfdf;
     border-radius: 10px;
     text-align: center;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding: 0 10px 0 10px;
+    margin-left: 14px;
+    margin-right: 14px;
+    padding: 0 9px 0 9px;
+    flex-shrink: 0;
 }
 .product_cart:hover{
     border-color: #5f97d8;
     box-shadow: 0 2px 26px rgba(0, 0, 0, 0.3);
     transition: 0.4s all;
+
 }
 
 
-.product_cart:first-child{
-	margin-left: 0px;
-}
+
 .product_cart:last-child{
 	margin-right: 0px;
 }
@@ -563,7 +563,17 @@ nav ul{
 .line_prod{
 	text-align: center;
 	margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+
 }
+
+.line_prod::-webkit-scrollbar {
+    display: none;
+}
+
 .name_prod span:first-child{
 	font-size: 180%;
 	margin-right: 15px;
@@ -585,43 +595,25 @@ nav ul{
     position: relative;
     cursor: pointer;
 }
-.img_hits:before{
-    content: "Хит";
-    font-size: 120%;
-    color: white;
-    position: absolute;
-    padding: 20px 50px;
-    z-index: 1;
-    margin-top: 4px;
-    margin-left: -46px;
-    /* right: 0; */
-    display: inline-block;
-    /* bottom: -619px; */
-    /* width: 45%; */
+.hits_item{
+    display: block;
+    background-size: 50px auto;
     background: url(/images/green_s.png) center center no-repeat;
-}
-.img_new:before{
-    content: "Sale";
-    font-size: 120%;
+    height: 25px;
+    top: 15px;
+    left: -64px;
+    position: relative;
     color: white;
-    position: absolute;
-    padding: 20px 50px;
-    z-index: 1;
-    margin-top: 4px;
-    margin-left: -49px;
-    /* right: 0; */
-    display: inline-block;
-    /* bottom: -619px; */
-    /* width: 45%; */
-    background: url(/images/red_s.png) center center no-repeat;
+    font-size: 120%;
 }
+
+
+
 .hits:last-child{
     margin-bottom: 60px;
 }
 
-.product_cart img:first-child{
-	margin-top: 10px;
-}
+
 
 
 
@@ -697,11 +689,15 @@ nav ul{
 .inner_pro_inf div:last-child{
     text-align: right;
     float: right;
+    margin-top: 8px;
 }
 .inner_pro_inf{
     margin-top: 30px;
 }
-
+.inner_pro_inf div:last-child a{
+    top: 18px;
+    position: relative;
+}
 .inner_pro_inf div a:hover{
     color:#c84d3f;
     text-decoration: underline;
@@ -1377,7 +1373,6 @@ text-align: right;
     font-size: 100%;
     color: #444444;
 }
-
 .samoviv{
     width: 100%;
 }
@@ -1392,7 +1387,6 @@ text-align: right;
     font-weight: normal;
     color: #333333;
 }
-
 .samoviv_item p{
     line-height: 25px;
     margin: 0;
@@ -1409,13 +1403,9 @@ text-align: right;
 .activity, .samoviv_item:hover{
     border: 2px solid #3498db;
 }
-
-
-
 .blue {
   color: #3498db !important;
 }
-
 .pay_checkbox{
     margin: 20px 0;
     color: #444444;
@@ -1434,7 +1424,6 @@ text-align: right;
     text-decoration: none;
     border-bottom: 2px dotted #3498db;
 }
-
 .ship a:hover{
     color: #cd594c;;
     border-bottom: 2px dotted #cd594c;;
@@ -1448,14 +1437,10 @@ text-align: right;
     font-size: 120%;
     color: #fff;
 }
-
-
 .order_fields input[type="submit"]:hover{
    text-decoration: underline;
     cursor: pointer;
 }
-
-
 /*Радиопереключатель-->*/
 
 .pay_checkbox__label input[type="radio"], .samoviv input[type="radio"], .order input[type="radio"], .cur_item input[type="radio"]{
