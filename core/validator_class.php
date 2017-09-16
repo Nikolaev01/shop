@@ -12,17 +12,17 @@ abstract class Validator {
         $this->data = $data;
         $this->validate();
     }
-
+    //Реализуем проверку для каждого доернего класса
     abstract protected function validate();
 
     public function getErrors(){
         return $this->errors;
     }
-
+    //Количество значений с нулем
     public function isValid(){
         return count($this->errors) == 0;
     }
-
+    //Добавление кода ошибки в массив ERRORS
     protected function setError($code){
         $this->errors[] = $code;
     }

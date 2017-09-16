@@ -3,17 +3,16 @@
 
 class FormProcessor {
 
-    private $request;
-    private $message;
+    private $request;//Запрос
+    private $message;//Сообщение
 
     public function __construct($request, $message)
     {
         $this->request = $request;
         $this->message = $message;
     }
-
+    //Метод проверки объекта формы
     public function process ($message_name, $obj, $fields, $checks = array(), $success_message = false){
-
         try {
             if (is_null($this->checks($message_name, $checks))) return null;
             foreach ($fields as $field) {

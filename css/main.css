@@ -458,11 +458,11 @@ nav ul{
 
 
 #timer{
-    position: relative;
-    top: -462px;
+    position: absolute;
+    top: 796px;
     margin: 0 40px 0 0;
     text-align: center;
-    right: 113px;
+    right: 423px;
 }
 
 .timer_clock{
@@ -601,13 +601,23 @@ nav ul{
     background: url(/images/green_s.png) center center no-repeat;
     height: 25px;
     top: 15px;
-    left: -64px;
+    left: -80px;
     position: relative;
     color: white;
     font-size: 120%;
 }
 
-
+.sale_item{
+    display: block;
+    background-size: 50px auto;
+    background: url(/images/red_s.png) center center no-repeat;
+    height: 25px;
+    top: 15px;
+    left: -80px;
+    position: relative;
+    color: white;
+    font-size: 120%;
+}
 
 .hits:last-child{
     margin-bottom: 60px;

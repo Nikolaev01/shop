@@ -2,11 +2,11 @@
 
 abstract class AbstractMail {
 
-    private $view;
-    private $from;
-    private $from_name = "";
-    private $type = "text/html";
-    private $encoding = "utf-8";
+    private $view;//Шаблон письма
+    private $from;//Кому
+    private $from_name = "";//Имя отправителю
+    private $type = "text/html";//Тип письма
+    private $encoding = "utf-8";//Кодировка
 
     public function __construct($view, $from)
     {
@@ -31,6 +31,7 @@ abstract class AbstractMail {
     public function setEncoding ($encoding){
         $this->encoding = $encoding;
     }
+    //Метод отправки письма
     public function send($to, $data, $template) {
         $from = "=?utf-8?B?".base64_encode($this->from_name)."?="." <".$this->from.">";
         $headers = "From: ".$from."\r\nReply-To: ".$from."\r\nContent-type: ".$this->type."; charset=\"".$this->encoding."\"\r\n";

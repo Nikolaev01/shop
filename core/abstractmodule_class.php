@@ -1,22 +1,19 @@
 <?php
 //Класс для работы с модулями
-
 abstract class AbstractModule {
-
-    private $properties = array();
-    private $view;
-
+    private $properties = array();//свойства
+    private $view;//представление объект шаблонизатора
     public function __construct($view)
     {
         $this->view = $view;
     }
-
+    //Метод по добавлению нового свойства для модуля
     final protected function add($name, $default = null, $is_array = false){
         $this->properties[$name]["is_array"] = $is_array;
         if ($is_array && $default == null) $this->properties[$name]["value"] = array();
         else $this->properties[$name]["value"] = $default;
     }
-
+    //Метод
     final public function __get($name)
     {
         if (array_key_exists($name, $this->properties)){
@@ -24,7 +21,7 @@ abstract class AbstractModule {
         }
         return null;
     }
-
+    //Метод настройки свойств
     final public function __set($name, $value)
     {
         if (array_key_exists($name, $this->properties)){
@@ -33,7 +30,7 @@ abstract class AbstractModule {
         }
         else return false;
     }
-
+    //Метод получения свойств
     final protected function getProperties() {
         $ret = array();
         foreach ($this->properties as $name => $value) {
@@ -41,7 +38,7 @@ abstract class AbstractModule {
         }
         return $ret;
     }
-
+    //Метод по работе с комплексными данными
     final protected function getComplexValue($obj, $field) {
         if (strpos($field, "->") !== false) $field = explode("->", $field);
         if (is_array($field)) {
@@ -54,7 +51,7 @@ abstract class AbstractModule {
             return $value;
 
     }
-
+    //
     final public function __toString()
     {
        $this->preRender();
@@ -63,7 +60,7 @@ abstract class AbstractModule {
 
     protected function preRender(){};
 
-
+    //Метод склонения слов
     final protected function numberOf($number, $suffix) {
         $keys = array(2, 0, 1, 1, 1, 2);
         $mod = $number % 100;

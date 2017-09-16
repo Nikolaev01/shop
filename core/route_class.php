@@ -1,7 +1,7 @@
 <?php
 //Класс маршрутизатора
-
 class Route {
+    //Метод получения контролеров и Экшина
     public  static function start(){
         $ca_names = URL::getControllerAndAction();
         $controller_name = $ca_names[0]."Controller";

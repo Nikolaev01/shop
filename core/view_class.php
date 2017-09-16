@@ -7,6 +7,7 @@ class View {
     {
         $this->dir_tmpl = $dir_tmpl;
     }
+    //Метод подстановки в файл параметров и возращаем строку
     public function render ($file, $params, $return = false){
         $template = $this->dir_tmpl.$file.".tpl";
         extract($params);

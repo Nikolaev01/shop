@@ -89,13 +89,18 @@ $(document).ready(function () {
 
 	//Таймер акции
     var time = new Date();//Создаем время
-    time.setDate(time.getDate() + 0.1);//Добавляем 24 минуты
+    time.setDate(time.getDate() + 0.01);//Добавляем 24 минуты
     initializeClock('timer', time);//Запускаем счетчик
 });
+
 //Функция возврата оставшегося времени
 function getTimeRemaining(endtime){
     var t = Date.parse(endtime) - Date.parse(new Date());
     var seconds = Math.floor( (t/1000) % 60 );
+    if (seconds < 10) {
+        seconds = "0"+seconds;
+        //alert(seconds);
+    }
     var minutes = Math.floor( (t/1000/60) % 60 );
     var hours = Math.floor( (t/(1000*60*60)) % 24 );
     var days = Math.floor( t/(1000*60*60*24) );
@@ -113,24 +118,46 @@ function initializeClock(id_, endtime){
     var minutesSpan2 = $('.minute .second');
     var secondsSpan1 = $('.secound .first');
     var secondsSpan2 = $('.secound .second');
-
-    var timeinterval = setInterval(function(){
+    function updateClock(){
         var t = getTimeRemaining(endtime);
         minutesSpan1.html(triades(t.minutes)[0]);
         minutesSpan2.html(triades(t.minutes)[1]);
         secondsSpan1.html(triades(t.seconds)[0]);
         secondsSpan2.html(triades(t.seconds)[1]);
+        array_min = ["минута","минуты","минут"];
+        array_sec = ["секунда","секунды","секунд"];
+        $(".timer_clock.minute p").html(getWord(t.minutes, array_min));
+        $(".timer_clock.secound p").html(getWord(t.seconds, array_sec));
         if(t.total<=0){
             clearInterval(timeinterval);
         }
-    },1000);
+    }
+    updateClock();
+    var timeinterval = setInterval(updateClock,1000);
+    //Функция склонения слов
+    function getWord(number, suffix) {
+        var keys = new Array(2, 0, 1, 1, 1, 2);
+        var mod = number % 100;
+        var suffix_key = mod > 4 && mod < 20 ? 2 : keys[Math.min(mod%10, 5)];
+        return suffix[suffix_key];
+    }
 }
-//Функция парсенга значения
-function triades(n){
-    var x=parseInt(n,10).toString();
-    var r=/(\d+)(\d{1})/;
-    while(r.test(x)){
-        x=x.replace(r,'$1,$2');
-    };
-    return x.split(',');
+//Функция парсенга значения в массив по 1-му значению
+function triades(dig){
+    var array = [],
+        mask = dig.toString(),
+        key = (mask.length)%1,
+        first_sp = (key==0) ? 1:key,
+        i = 0;
+    while(mask.length>1)
+    {
+        var sub_str, k;
+        k = (i==0) ? first_sp:1;
+        sub_str = mask.substr(0,k);
+        array.push(sub_str);
+        mask = mask.substr(k,mask.length-k);
+        if(mask.length == 1) {array.push(mask); break;}
+        i++;
+    }
+    return array;
 }

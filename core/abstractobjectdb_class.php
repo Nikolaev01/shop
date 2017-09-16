@@ -135,7 +135,7 @@ abstract class AbstractObjectDB{
         return self::getAllWithOrder($class::$table, $class, "id", true, $count, $offset);
 
     }
-
+    //Метод получения значения количества
     public static function getCount(){
         $class = get_called_class();
         return self::getCountOnWhere($class::$table, false, false);
@@ -177,7 +177,7 @@ abstract class AbstractObjectDB{
         $data = self::$db->select($select);
         return AbstractObjectDB::buildMultiple($class, $data);
     }
-
+    //
     protected static function addSubObject($data, $class, $field_out, $field_in) {
         $ids = array();
 
@@ -193,7 +193,7 @@ abstract class AbstractObjectDB{
         }
         return $data;
     }
-
+    //
     protected static function getComplexValue($obj, $field) {
         if (strpos($field, "->") !== false) $field = explode("->", $field);
         if (is_array($field)) {
@@ -203,11 +203,11 @@ abstract class AbstractObjectDB{
         else $value = $obj->$field;
         return $value;
     }
-
+    //Метод получения объекта по полю ID
     public static function getAllOnIDs($ids) {
         return self::getAllOnIDsField($ids, "id");
     }
-
+    //Метод получения массива объектов по значениям
     public static function getAllOnIDsField($ids, $field) {
         $class = get_called_class();
         $select = new Select();
@@ -216,7 +216,7 @@ abstract class AbstractObjectDB{
         $data = self::$db->select($select);
         return AbstractObjectDB::buildMultiple($class, $data);
     }
-
+    //Метод загрузки объекта по полю
     protected function loadOnField($field, $value) {
         $select = new Select();
         $select->from($this->table_name, "*")
@@ -227,7 +227,7 @@ abstract class AbstractObjectDB{
         }
         return false;
     }
-
+    //Метод добавления значения
     protected function add($field, $validator, $type = null, $default = null) {
         $this->properties[$field] = array("value" => $default, "validator" => $validator, "type" => in_array($type, self::$types)? $type : null);
     }
@@ -271,17 +271,17 @@ abstract class AbstractObjectDB{
     protected function postLoad() {
         return true;
     }
-
+    //метод получения даты
     public function getDate($date = false) {
         if (!$date) $date = time();
         return strftime($this->format_date, $date);
     }
-
+    //метод получения дня
     protected static function getDay($date = false) {
         $date = strtotime($date);
         return date("d", $date);
     }
-
+    //Метод поиска объекта
     protected static function searchObjects($select, $class, $fields, $words, $min_len) {
         $words = mb_strtolower($words);
         $words = preg_replace("/ {2,}/", " ", $words);
@@ -328,7 +328,7 @@ abstract class AbstractObjectDB{
     private static function compareRelevant($value_1, $value_2) {
         return $value_1->relevant < $value_2->relevant;
     }
-
+    //метод получения IP адреса
     protected function getIP() {
         return $_SERVER["REMOTE_ADDR"];
     }
@@ -342,17 +342,12 @@ abstract class AbstractObjectDB{
     }
 
 
-
-    protected function getKey() {
-        return uniqid();
-    }
-
     private function getSelectFields() {
         $fields = array_keys($this->properties);
         array_push($fields, "id");
         return $fields;
     }
-
+    //метод валидации
     private function validate() {
         if (!$this->preValidate()) throw new Exception();
         $v = array();

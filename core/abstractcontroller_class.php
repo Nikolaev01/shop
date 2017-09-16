@@ -34,16 +34,16 @@ abstract class AbstractController {
 
     abstract protected function accessDenies();
     abstract protected function access404();
-
+    //Редирект на страницу 404
     final protected function notFound(){
         $this->action404();
     }
-
+    //Редирект на определенный URL адресс
     final protected function redirect ($url) {
         header("Location: $url");
         exit;
     }
-
+    //Метод возвращения страницы
     final protected function renderData ($modules, $layout, $params = array()){
         if (!is_array($modules)) return false;
         foreach ($modules as $key => $value){
