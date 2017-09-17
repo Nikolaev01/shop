@@ -74,7 +74,7 @@ abstract class AbstractObjectDB{
                    if (!is_null($value["value"])) $value["value"] = ip2long($value["value"]);
                    break;
            }
-           $row[$key] $value["value"];
+           $row[$key] = $value["value"];
         }
         if (count($row) > 0){
             if ($update) {
