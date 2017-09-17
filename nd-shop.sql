@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 16 2017 г., 21:37
+-- Время создания: Сен 18 2017 г., 00:29
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.6.29
 
@@ -37,18 +37,20 @@ CREATE TABLE `xcv_categories` (
   `meta_key` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
 --
--- Структура таблицы `xcv_img`
+-- Дамп данных таблицы `xcv_categories`
 --
 
-CREATE TABLE `xcv_img` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `product_id` int(10) UNSIGNED NOT NULL,
-  `img` varchar(50) NOT NULL,
-  `alt` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+INSERT INTO `xcv_categories` (`id`, `title`, `img`, `section_id`, `parent_id`, `description`, `meta_desk`, `meta_key`) VALUES
+(1, 'Полотенцесушители', 'polotencesych.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова'),
+(2, 'Смесители', 'smesiteli.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова'),
+(3, 'Сифоны', 'sifon.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова'),
+(4, 'Фильтры для воды', 'filter.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова'),
+(5, 'Сопутствующие товары', 'soput.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова'),
+(6, 'Системы контроля протечки', 'control.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова'),
+(7, 'Раковины', 'rakovin.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова'),
+(8, 'Кухонные мойки', 'moiki.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова'),
+(9, 'Унитазы', 'unitaz.jpg', 0, 0, 'Здесь описание категории', 'Здесь ключевое описание', 'Здесь ключевые слова');
 
 -- --------------------------------------------------------
 
@@ -58,12 +60,24 @@ CREATE TABLE `xcv_img` (
 
 CREATE TABLE `xcv_menu` (
   `id` int(10) UNSIGNED NOT NULL,
-  `type` int(10) NOT NULL,
+  `type` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   `parent_id` int(10) DEFAULT NULL,
   `external` int(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `xcv_menu`
+--
+
+INSERT INTO `xcv_menu` (`id`, `type`, `title`, `link`, `parent_id`, `external`) VALUES
+(1, 1, 'Главная', '/', NULL, 0),
+(2, 1, 'Контакты', '/contact.html', NULL, 0),
+(3, 1, 'Оплата', '/pay.html', NULL, 0),
+(4, 1, 'Доставка', '/delivery.html', NULL, 0),
+(5, 1, 'Услуги', '/services.html', NULL, 0),
+(6, 1, 'О компании', '/company.html', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -110,6 +124,19 @@ CREATE TABLE `xcv_product` (
   `description` varchar(255) NOT NULL,
   `composition` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `xcv_product_img`
+--
+
+CREATE TABLE `xcv_product_img` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `product_id` int(10) UNSIGNED NOT NULL,
+  `img` varchar(50) NOT NULL,
+  `alt` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -175,12 +202,6 @@ ALTER TABLE `xcv_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `xcv_img`
---
-ALTER TABLE `xcv_img`
-  ADD PRIMARY KEY (`id`,`product_id`);
-
---
 -- Индексы таблицы `xcv_menu`
 --
 ALTER TABLE `xcv_menu`
@@ -203,6 +224,12 @@ ALTER TABLE `xcv_option_value`
 --
 ALTER TABLE `xcv_product`
   ADD PRIMARY KEY (`category_id`,`id`);
+
+--
+-- Индексы таблицы `xcv_product_img`
+--
+ALTER TABLE `xcv_product_img`
+  ADD PRIMARY KEY (`id`,`product_id`);
 
 --
 -- Индексы таблицы `xcv_product_option`
@@ -237,17 +264,12 @@ ALTER TABLE `xcv_user`
 -- AUTO_INCREMENT для таблицы `xcv_categories`
 --
 ALTER TABLE `xcv_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT для таблицы `xcv_img`
---
-ALTER TABLE `xcv_img`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `xcv_menu`
 --
 ALTER TABLE `xcv_menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `xcv_option`
 --
@@ -262,6 +284,11 @@ ALTER TABLE `xcv_option_value`
 -- AUTO_INCREMENT для таблицы `xcv_product`
 --
 ALTER TABLE `xcv_product`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT для таблицы `xcv_product_img`
+--
+ALTER TABLE `xcv_product_img`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `xcv_product_option`

@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8d93a12-3584-4304-ac79-3d31cfaaff46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/maincontroller_class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/menu_class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tmpl/index.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tmpl/menu.tpl" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Верстка/cart.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Верстка/category.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Верстка/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Верстка/order.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Верстка/product.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/controller_class.php" afterPath="$PROJECT_DIR$/controllers/controller_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstractcontroller_class.php" afterPath="$PROJECT_DIR$/core/abstractcontroller_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstractdatabase_class.php" afterPath="$PROJECT_DIR$/core/abstractdatabase_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstractmail_class.php" afterPath="$PROJECT_DIR$/core/abstractmail_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstractmodule_class.php" afterPath="$PROJECT_DIR$/core/abstractmodule_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstractobjectdb_class.php" afterPath="$PROJECT_DIR$/core/abstractobjectdb_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstractselect_class.php" afterPath="$PROJECT_DIR$/core/abstractselect_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/file_class.php" afterPath="$PROJECT_DIR$/core/file_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/formprocessor_class.php" afterPath="$PROJECT_DIR$/core/formprocessor_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/message_class.php" afterPath="$PROJECT_DIR$/core/message_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/request_class.php" afterPath="$PROJECT_DIR$/core/request_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/route_class.php" afterPath="$PROJECT_DIR$/core/route_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/url_class.php" afterPath="$PROJECT_DIR$/core/url_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/validator_class.php" afterPath="$PROJECT_DIR$/core/validator_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/validatorexception_class.php" afterPath="$PROJECT_DIR$/core/validatorexception_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/view_class.php" afterPath="$PROJECT_DIR$/core/view_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config_class.php" afterPath="$PROJECT_DIR$/lib/config_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/objectdb_class.php" afterPath="$PROJECT_DIR$/lib/objectdb_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/header_class.php" afterPath="$PROJECT_DIR$/modules/header_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/menuDB_class.php" afterPath="$PROJECT_DIR$/objects/menuDB_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start.php" afterPath="$PROJECT_DIR$/start.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmpl/header.tpl" afterPath="$PROJECT_DIR$/tmpl/header.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmpl/main.tpl" afterPath="$PROJECT_DIR$/tmpl/main.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -531,12 +498,12 @@
       <workItem from="1505412077238" duration="3243000" />
       <workItem from="1505497025301" duration="33000" />
       <workItem from="1505497135331" duration="6838000" />
-      <workItem from="1505643117916" duration="24204000" />
+      <workItem from="1505643117916" duration="24367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130949000" />
+    <option name="totallyTimeSpent" value="131112000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,7 +515,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="691" y="0" width="1210" height="1035" extended-state="0" />
+    <frame x="691" y="0" width="1210" height="1035" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1826087" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
