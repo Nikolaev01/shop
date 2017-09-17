@@ -21,8 +21,6 @@ class Header extends Module {
     {
         return "header";
     }
-
-
 }
 
 

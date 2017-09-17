@@ -7,7 +7,7 @@
     spl_autoload_extensions("_class.php");
     spl_autoload_register();
 
-    define("MAINMENU", 1);
+    define("TOPMENU", 1);
     define("BOTTOMMENU", 2);
     define("KB_B", 1024);
 

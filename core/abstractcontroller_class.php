@@ -1,13 +1,10 @@
 <?php
-//
 abstract class AbstractController {
-
     protected $view;
     protected $request;
     protected $fp = null;
     protected $auth_user = null;
     protected $jsv = null;
-
     public function __construct($view, $message)
     {
         if (!session_id()) session_start();
@@ -21,18 +18,14 @@ abstract class AbstractController {
             throw new Exception("ACCESS_DENIED");
         }
     }
-
     abstract protected function render ($str);
-
     protected function authUser(){
         return null;
     }
-
     protected function access(){
         return false;
     }
-
-    abstract protected function accessDenies();
+    abstract protected function accessDenied();
     abstract protected function access404();
     //Редирект на страницу 404
     final protected function notFound(){
@@ -50,12 +43,6 @@ abstract class AbstractController {
             $params[$key] = $value;
         }
         return $this->view->render($layout, $params, true);
-
     }
-
-
 }
-
-
-
 ?>

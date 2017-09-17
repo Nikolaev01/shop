@@ -47,40 +47,7 @@
     </header>
     <div id="top_menu">
         <div id="top_menu_inner">
-            <nav class="left">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <span>Главная</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Контакты</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Оплата</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Доставка</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Услуги</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>О компании</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <?=$top?>
             <div id="search" class="right">
                 <form action="#" method="post">
                     <input type="text" placeholder="Что-то ищете?">
@@ -97,7 +64,7 @@
             <div class="slide" style="position: absolute; top: 0px; left: 0px; display: block;"><img src="images/slider_img.png" alt="Акция"></div>
             <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none;"><img src="images/slider_img.png" alt="Акция"></div>
         </div>
-        <div class="sli-links"><span class="control-slide">0</span><span class="control-slide">1</span><span class="control-slide active">2</span><span class="control-slide">3</span></div></div>
+        <!--<div class="sli-links"><span class="control-slide">0</span><span class="control-slide">1</span><span class="control-slide active">2</span><span class="control-slide">3</span></div>--></div>
     <div id="banner_action">
         <div id="inner_banner_action">
             <img src="images/action_img.png" alt="Акция">

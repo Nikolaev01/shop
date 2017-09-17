@@ -18,12 +18,12 @@ abstract class Config {
     const DIR_IMG = "/images/";
     const DIR_IMG_ARTICLE = "/images/article/";//Директория с изображениями
     const DIR_IMG_AVATAR = "/images/avatar/";//Директория с аватарками
-    const DIR_TMPL = "/nd-shop.local/tmpl/";//директория с файлами шаблна
-    const DIR_EMAILS = "/nd-shop.local/tmpl/emails/";//Файлы с e-mail сообщениями
+    const DIR_TMPL = "/tmpl/";//директория с файлами шаблна
+    const DIR_EMAILS = "/tmpl/emails/";//Файлы с e-mail сообщениями
 
     const LAYOUT = "main";//название общего шаблона
 
-    const FILE_MESSAGES = "/nd-shop.local/text/messages.ini";//путь к файлу с системными сообщениями
+    const FILE_MESSAGES = "/text/messages.ini";//путь к файлу с системными сообщениями
 
     const FORMAT_DATE = "%d.%m.%Y %H:%M:%S";//Формат даты
 

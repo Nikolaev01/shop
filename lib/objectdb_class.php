@@ -5,8 +5,5 @@ abstract class ObjectDB extends AbstractObjectDB{
     {
         parent::__construct($table_name,Config::FORMAT_DATE);
     }
-
-
-
 }
 ?>
