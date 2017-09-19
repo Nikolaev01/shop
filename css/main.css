@@ -458,11 +458,12 @@ nav ul{
 
 
 #timer{
-    position: absolute;
-    top: 796px;
+    position: relative;
+    top: -466px;
     margin: 0 40px 0 0;
     text-align: center;
-    right: 122px;
+    right: 51px;
+    height: 1px;
 }
 
 .timer_clock{

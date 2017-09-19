@@ -37,20 +37,19 @@ abstract class AbstractObjectDB {
 	
 	public function init($row) {
 		foreach ($this->properties as $key => $value) {
-            $val = $row[$key];
-            switch ($value["type"]) {
+			$val = $row[$key];
+			switch ($value["type"]) {
 				case self::TYPE_TIMESTAMP:
-                    if (!is_null($val)) $val = strftime($this->format_date, $val);
-                    break;
-                case self::TYPE_IP:
-                    if (!is_null($val)) $val = long2ip($val);
-                    brieak;
-            }
-            $this->properties[$key]["value"] = $val;
-        }
-        $this->id = $row["id"];
-       // print_r($this->postInit());
-        return $this->postInit();
+					if (!is_null($val)) $val = strftime($this->format_date, $val);
+					break;
+				case self::TYPE_IP:
+					if (!is_null($val)) $val = long2ip($val);
+					break;
+			}
+			$this->properties[$key]["value"] = $val;
+		}
+		$this->id = $row["id"];
+		return $this->postInit();
 	}
 	
 	public function isSaved() {
@@ -116,7 +115,9 @@ abstract class AbstractObjectDB {
 	
 	public static function buildMultiple($class, $data) {
 		$ret = array();
+		
 		if (!class_exists($class)) throw new Exception();
+		
 		$test_obj = new $class();
 		if (!$test_obj instanceof AbstractObjectDB) throw new Exception();
 		foreach ($data as $row) {
@@ -164,7 +165,6 @@ abstract class AbstractObjectDB {
 		else $select->order("id");
 		if ($count) $select->limit($count, $offset);
 		$data = self::$db->select($select);
-		//print_r($select);
 		return AbstractObjectDB::buildMultiple($class, $data);
 	}
 	

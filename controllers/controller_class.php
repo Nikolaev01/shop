@@ -13,9 +13,8 @@ abstract class Controller extends AbstractController{
         $this->url_active = URL::deleteGET(URL::current(Config::ADDRESS), "page");
     }
 
-    protected function access404()
+    protected function action404()
     {
-        //$host = "http://".$_SERVER["HTTP_HOST"]."/";
         header("HTTP/1.1 404 Not Found");
         header("Status: 404 Not Found");
         $this->title = "Запрашиваемой страницы не существует - 404";
@@ -41,8 +40,10 @@ abstract class Controller extends AbstractController{
     {
         $params = array();
         //перечисление всех параметров
-        $params["header"] = $this->getHeader();
-        $params["top"] = $this->getTop();
+        $params["header"] = $this->getHeader();//блок head
+        $params["top"] = $this->getTop();//Верхнее меню
+        $params["bottom"] = $this->getBottom();//Нижнее меню
+        $params["center"] = $str;
 
         $this->view->render(Config::LAYOUT, $params);
     }
@@ -60,23 +61,23 @@ abstract class Controller extends AbstractController{
         return $header;
     }
 
+    /**
+     * @return TopMenu
+     */
     protected function getTop()
     {
         $items = MenuDB::getTopMenu();
-        $topmenu = new Menu();
+        $topmenu = new TopMenu();
         $topmenu->uri = $this->url_active;
         $topmenu->items = $items;
         return $topmenu;
-        //print_r($topmenu);
-        /* $header->title = $this->title;
-         $header->meta("Content-Type", "text/html; charset=utf-8", true);
-         $header->meta("description", $this->meta_desc, false);
-         $header->meta("keywords", $this->meta_key, false);
-         $header->meta("viewport", "width=device-width", false);
-         $header->favicon = "/favicon.ico";
-         $header->css = array("/css/main.css", "/css/media.css");
-         $header->js = array("/js/jquery.min.js", "/js/script.js", "/js/slider.js");*/
-
+    }
+    protected function getBottom(){
+        $items = MenuDB::getTopMenu();
+        $bottommenu = new BottomMenu();
+        $bottommenu->uri = $this->url_active;
+        $bottommenu->items = $items;
+        return $bottommenu;
     }
     protected function getOffset($count_on_page){
         return $count_on_page * ($this->getPage() - 1);

@@ -58,12 +58,7 @@
         </div>
     </div>
     <div id="slider-wrap">
-        <div id="slider"><a id="prewbutton" href="#">&lt;</a><a id="nextbutton" href="#">&gt;</a>
-            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none;"><img src="images/slider_img.png" alt="Акция"></div>
-            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none;"><img src="images/001.jpg" alt="Акция"></div>
-            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: block;"><img src="images/slider_img.png" alt="Акция"></div>
-            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none;"><img src="images/slider_img.png" alt="Акция"></div>
-        </div>
+        <?=$center?>
         <!--<div class="sli-links"><span class="control-slide">0</span><span class="control-slide">1</span><span class="control-slide active">2</span><span class="control-slide">3</span></div>--></div>
     <div id="banner_action">
         <div id="inner_banner_action">
@@ -411,39 +406,8 @@
                 </div>
                 <div id="ul_mag" class="left">
                     <h4>Интернет-магазин</h4>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Главная
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Контакты
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Оплата
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Доставка
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Услуги
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                О компании
-                            </a>
+                    <?=$bottom?>
 
-                        </li>
-                    </ul>
                 </div>
                 <div id="ul_inf" class="right">
                     <h4>Информация</h4>
