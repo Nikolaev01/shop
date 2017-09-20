@@ -6,6 +6,7 @@ class ProductDB extends ObjectDB{
     public function __construct()
     {
         parent::__construct(self::$table);
+        $this->add("id", "ValidateID");
         $this->add("category_id", "ValidateID");
         $this->add("title", "ValidateTitle");
         $this->add("meta_desc", "ValidateMD");
@@ -20,14 +21,30 @@ class ProductDB extends ObjectDB{
         $this->add("composition", "ValidateName");
     }
 
-    protected function postInit()
-    {
+    protected function postInit() {
+        $this->img = Config::DIR_IMG.$this->img;
+        $product_img = new ProductImgDB();
+        $product_img->load($this->id);
+        $this->product_img = $product_img;
+        return true;
+    }
+    public static function getAllTable() {
+        return ObjectDB::getAll();
+    }
+    public static function getAllWithImg(){
 
     }
 
+
+    /*public static function getImgOnProductID($productID){
+        $img = ProductImgDB::getAllOnField(ProductImgDB::$table, __CLASS_, "product_id", $productID);
+        return $img;
+    }*/
+
+
     public function getAllShow($count = false, $offset = false, $post_handling = false){
-        $select
-}
+
+    }
 
     private static function getBaseSelect(){
         $select = new Select(self::$db);
