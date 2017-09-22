@@ -31,30 +31,37 @@ class ProductDB extends ObjectDB{
     public static function getAllTable() {
         return ObjectDB::getAll();
     }
-    public static function getAllWithImg(){
-
+    public static function getAllWithImgforHits($product_img_table){
+        $query = "SELECT `".Config::DB_PREFIX.self::$table."`.`id`,
+		`".Config::DB_PREFIX.self::$table."`.`category_id`,
+		`".Config::DB_PREFIX.self::$table."`.`title`,
+		`".Config::DB_PREFIX.self::$table."`.`title`,
+		`".Config::DB_PREFIX.self::$table."`.`meta_desc`,
+		`".Config::DB_PREFIX.self::$table."`.`meta_key`,
+		`".Config::DB_PREFIX.self::$table."`.`price`,
+		`".Config::DB_PREFIX.self::$table."`.`code`,
+		`".Config::DB_PREFIX.self::$table."`.`customer`,
+		`".Config::DB_PREFIX.self::$table."`.`serial`,
+		`".Config::DB_PREFIX.self::$table."`.`model`,
+		`".Config::DB_PREFIX.self::$table."`.`contry`,
+		`".Config::DB_PREFIX.self::$table."`.`description`,
+		`".Config::DB_PREFIX.self::$table."`.`composition`,
+		`".Config::DB_PREFIX."$product_img_table`.`img` as `image`
+		FROM `".Config::DB_PREFIX.self::$table."`
+		LEFT JOIN `".Config::DB_PREFIX."$product_img_table` ON `".Config::DB_PREFIX."$product_img_table`.`product_id` = `".Config::DB_PREFIX.self::$table."`.`id`
+		ORDER BY `sold` DESC";
+        $result = self::$db->select($query);
+        for($i=0; $i < count($result); $i++){
+            $result[$i]['image'] = Config::DIR_IMG_PRODUCT.$result[$i]['image'];
+        }
+        return $result;
     }
-
-
-    /*public static function getImgOnProductID($productID){
-        $img = ProductImgDB::getAllOnField(ProductImgDB::$table, __CLASS_, "product_id", $productID);
-        return $img;
-    }*/
-
-
-    public function getAllShow($count = false, $offset = false, $post_handling = false){
-
-    }
-
     private static function getBaseSelect(){
         $select = new Select(self::$db);
         $select->from(self::$table, "*");
         return $select;
     }
 
-    public static function getAllOnHits(){
-
-    }
 }
 
 

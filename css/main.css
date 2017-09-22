@@ -464,6 +464,7 @@ nav ul{
     text-align: center;
     right: 51px;
     height: 1px;
+
 }
 
 .timer_clock{
@@ -490,6 +491,11 @@ nav ul{
     font-size: 80%;
     text-transform: uppercase;
     color: white;
+}
+
+.img_new img{
+    max-height: 150px;
+    max-width: 100%;
 }
 
 /*#inner_banner_action:before{

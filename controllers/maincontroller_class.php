@@ -10,18 +10,12 @@ class MainController extends Controller{
         $slide = SliderDB::getSlider();
         $slider = new Slider();
         $slider->slide = $slide;
+        //блок с хитами
         $hits = new Hits();
-        $hit = ProductDB::getAll();
-        //print_r($hits);
+        $hit = ProductDB::getAllWithImgforHits("product_img");
         $hits->hit = $hit;
         $hits->part_images = Config::DIR_IMG;
-        print_r($hits->hit);
-        // $product_img = ProductDB::getImgOnProductID("1");
-        //$hits->product_img = $product_img;
-        //$hits->
-        //Хитты продаж
-        //print_r($slider->uri);
-       //$hits ="";
+        //Блок с распродажей
 
         $this->render($this->renderData(array("slider" => $slider, "hits" => $hits), "index"));
     }

@@ -16,6 +16,7 @@ abstract class Config {
     const DB_SYM_QUERY = "?";
 
     const DIR_IMG = "/images/";
+    const DIR_IMG_PRODUCT = "/images/product/";
     const DIR_IMG_ARTICLE = "/images/article/";//Директория с изображениями
     const DIR_IMG_AVATAR = "/images/avatar/";//Директория с аватарками
     const DIR_TMPL = "/tmpl/";//директория с файлами шаблна
@@ -35,5 +36,6 @@ abstract class Config {
 
     const DEFAULT_AVATAR = "default.png";//файл стандартной аватарки
     const MAX_SIZE_AVATAR = 51200;//максимальный размер аватарки
+    const SEF_SUFFIX = ".html";
 }
 ?>

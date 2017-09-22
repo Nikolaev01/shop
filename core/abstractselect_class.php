@@ -94,6 +94,9 @@ class AbstractSelect {
 		else $ret = "";
 		return $ret;
 	}
+
+
+
 	
 	private function addWhere($where, $and) {
 		if ($this->where) {

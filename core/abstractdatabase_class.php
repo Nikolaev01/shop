@@ -34,7 +34,7 @@ abstract class AbstractDataBase {
 		return $query;
 	}
 	
-	public function select(AbstractSelect $select) {
+	public function select($select) {
 		$result_set = $this->getResultSet($select, true, true);
 		if (!$result_set) return false;
 		$array = array();
@@ -43,13 +43,13 @@ abstract class AbstractDataBase {
 		return $array;
 	}
 	
-	public function selectRow(AbstractSelect $select) {
+	public function selectRow($select) {
 		$result_set = $this->getResultSet($select, false, true);
 		if (!$result_set) return false;
 		return $result_set->fetch_assoc();
 	}
 	
-	public function selectCol(AbstractSelect $select) {
+	public function selectCol($select) {
 		$result_set = $this->getResultSet($select, true, true);
 		if (!$result_set) return false;
 		$array = array();
@@ -62,7 +62,7 @@ abstract class AbstractDataBase {
 		return $array;
 	}
 	
-	public function selectCell(AbstractSelect $select) {
+	public function selectCell($select) {
 		$result_set = $this->getResultSet($select, false, true);
 		if (!$result_set) return false;
 		$arr = array_values($result_set->fetch_assoc());
@@ -123,7 +123,7 @@ abstract class AbstractDataBase {
 		return $this->mysqli->insert_id;
 	}
 	
-	private function getResultSet(AbstractSelect $select, $zero, $one) {
+	private function getResultSet($select, $zero, $one) {
 		$result_set = $this->mysqli->query($select);
 		if (!$result_set) return false;
 		if ((!$zero) && ($result_set->num_rows == 0)) return false;
