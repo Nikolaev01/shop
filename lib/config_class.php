@@ -18,6 +18,8 @@ abstract class Config {
     const DIR_IMG = "/images/";
     const DIR_IMG_PRODUCT = "/images/product/";
     const DIR_IMG_ARTICLE = "/images/article/";//Директория с изображениями
+    const DIR_IMG_CATEGORY = "/images/category/";//Директория с изображениями категорий
+
     const DIR_IMG_AVATAR = "/images/avatar/";//Директория с аватарками
     const DIR_TMPL = "/tmpl/";//директория с файлами шаблна
     const DIR_EMAILS = "/tmpl/emails/";//Файлы с e-mail сообщениями

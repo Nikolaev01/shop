@@ -115,11 +115,11 @@ abstract class AbstractObjectDB {
 	
 	public static function buildMultiple($class, $data) {
 		$ret = array();
-        //print_r($data);
 
         if (!class_exists($class)) throw new Exception();
 
         $test_obj = new $class();
+        //print_r($test_obj);
         if (!$test_obj instanceof AbstractObjectDB) throw new Exception();
         foreach ($data as $row) {
             $obj = new $class();

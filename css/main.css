@@ -3,41 +3,29 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
 }
-
 .centrum{
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
-
 }
-
 #container{
-
-
 }
 header{
-    
 }
 #top{
     border-bottom: 1px solid #e3e3e3;
     background-color: #fbfbfb;
     font-size: 80%;
 }
-
-
-
-
 #inner_top{
     margin: 0 auto;
     max-width: 1140px;
     height: 35px;
 }
-
 #inner_top a{
     color: #4f5458;
     text-decoration: none;
 }
-
 #inner_top a:hover{
    text-decoration: underline;
 }
@@ -46,7 +34,6 @@ header{
     margin-top: 0px;
     display: inline-block;
 }
-
 .clear {
     clear: both;
 }
@@ -88,25 +75,19 @@ header{
 #logo p, #logo h2{
     margin: 0;
 }
-
 #logo h2{
     margin: 5px 0 5px 0;
 }
-
 #logotip:hover{
     cursor: pointer;
 }
-
 #logotip p{
     font-size: 69%;
     color:#cd594c;
 }
-
-
 #phone{
     margin-left: 135px;
 }
-
 #phone img {
     float: left;
     margin-top: 2px;
@@ -115,7 +96,6 @@ header{
     margin-left: 15px;
     font-size: 86%;
 }
-
 #phone a {
     color: #cd594c;
     text-decoration: none;
@@ -124,7 +104,6 @@ header{
     text-decoration: underline;
 
 }
-
 #inner_logo .right span{
     background-color: #cd594c;
     padding: 4px 7px;
@@ -136,7 +115,6 @@ header{
     position: relative;
     display: inline;
 }
-
 #inner_logo .right .right{
     margin-top: -9px;
     text-align: right;
@@ -152,22 +130,17 @@ header{
     color: #cd594c;
     text-decoration: underline;
 }
-
-
 #inner_logo .right .right p{
     margin-top: 6px;
     font-size: 91%;
     color: #979797;
-
 }
 #inner_logo .right {
-margin-top: 10px;
+    margin-top: 10px;
 }
-
 #top_menu{
     background-color: #5f97d8;
 }
-
 #search input[type="submit"]{
     background: url("/images/search.png") no-repeat center center;
     margin: 0;
@@ -179,41 +152,29 @@ margin-top: 10px;
     margin-left: -4px;
     border-radius: 0 15px 15px 0;
 }
-
 nav ul li{
    float: left;
    list-style: none;  
 }
-
 nav ul li a{
     padding: 12px 17px 12px 17px;
     position: relative;
     display: block;
 }
-
-
 nav ul li:hover{
     background-color: #7face0;
     transition: 0.3s all;
 }
-
-
-
 nav ul li a{
     text-transform: uppercase;
     text-decoration: none;
     color:#dbe6f5;
     font-weight: bold;
 }
-
-
-
-
 nav ul{
     margin: 0;
     padding: 0;
 }
-
 #search input[type="text"]{
     margin: 0;
     padding: 0;
@@ -224,14 +185,10 @@ nav ul{
     width: 250px;
     padding-left: 20px;
 }
-
-
-
 #top_menu_inner{
     max-width: 1140px;
     margin: 0 auto;
 }
-
 /*Слайдер изображений-->*/
 
 /*#inner_slider{
@@ -268,13 +225,11 @@ nav ul{
     -ms-transform: rotate(1deg) skew(0deg);
     -o-transform: rotate(1deg) skew(0deg);
     transform: rotate(1deg) skew(0deg);
-    
 }*/
-
 #slider-wrap{ /* Оболочка слайдера и кнопок */
     height: 500px;
 	width:100%; 
-	}
+}
 #slider{ /* Оболочка слайдера */
 	max-width:1140px;
 	height:500px;
@@ -286,13 +241,13 @@ nav ul{
 .slide{ /* Слайд */
 	width:100%;
 	height:100%;
-	}
+}
 .sli-links{ /* Кнопки смены слайдов */
 	
 	text-align:center;
 	 margin-top: -50px;
     position: relative;
-	}
+}
 .sli-links .control-slide{
     background:#fff center bottom no-repeat;
 	margin:2px;
@@ -302,12 +257,10 @@ nav ul{
 	overflow:hidden;
 	text-indent:-9999px;
     
-	}
-
+}
 .sli-links .control-slide active{
     background-color: #ffffff;
 }
-
 .sli-links .control-slide{
     height: 1.1em;
     background-color: #5f97d8;
@@ -315,19 +268,16 @@ nav ul{
     border-radius: 20px;
     margin: 0 6px 0 7px;
 }
-
-
-
 .sli-links .control-slide.active{
      background-color: blue;
 }
-
-
 .sli-links .control-slide:hover{
 	cursor:pointer;
-	background-position:center center;}
+	background-position:center center;
+}
 .sli-links .control-slide.active{
-	background-position:center top;}
+	background-position:center top;
+}
 #prewbutton, #nextbutton{ /* Ссылка "Следующий" и "Педыдущий" */
 	display:block;
 	width:15px;
@@ -339,11 +289,14 @@ nav ul{
 	background:url(/images/arrowBg.png) left center no-repeat;
 	opacity:0.8;
 	z-index:3;
-	outline:none !important;}
-#prewbutton{left:10px;}
+	outline:none !important;
+}
+#prewbutton{left:10px;
+}
 #nextbutton{
 	right:10px;
-	background:url("/images/arrowBg.png") right center no-repeat;}
+	background:url("/images/arrowBg.png") right center no-repeat;
+}
 #prewbutton:hover, #nextbutton:hover{
 	opacity:1;}
 
@@ -361,9 +314,7 @@ nav ul{
 #inner_banner_action img{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     max-width: 100%;
-
 }
-
 #action{
     background: rgba(255,255,255,0.8);
     position: absolute;
@@ -373,7 +324,6 @@ nav ul{
     padding-right: 25px;
     top: 870px;
 }
-
 #action_top h1 {
     margin-bottom: 0;
     text-transform: uppercase;
@@ -386,7 +336,6 @@ nav ul{
     font-size: 110%;
     line-height: 21pt;
 }
-
 #action_bottom .left{
     font-size: 86%;
     float: left;
@@ -407,7 +356,6 @@ nav ul{
     margin-right: 2em;
     z-index: 999;
 }
-
 #action_bottom .right:after{
     content: " ";
     position: absolute;
@@ -425,26 +373,17 @@ nav ul{
     position: absolute;
     background: url(/images/plus.png)center center no-repeat;
     padding: 20px;
-    
 }
-
-
-
-
 #action_bottom .right h4{
     margin: 10px 0 10px 0;
     color: white;
     font-weight: bold;
-    
 }
-
 #action_bottom .right h4:first-child{
     text-transform: uppercase;
     color: #c84d3f;
     font-size: 120%;
 }
-
-
 #action_bottom .right a{
     text-decoration: none;
     text-transform: uppercase;
@@ -455,8 +394,6 @@ nav ul{
     top: 8px;
     color: #f2dbd9;
 }
-
-
 #timer{
     position: relative;
     top: -466px;
@@ -466,12 +403,10 @@ nav ul{
     height: 1px;
 
 }
-
 .timer_clock{
     float: left;
     margin: 0 8px 0 13px;
 }
-
 #timer span{
     padding: 9px 13px 9px 13px;
     background-color: #272727;
@@ -479,7 +414,6 @@ nav ul{
     border-radius: 8px;
     color: #a1a1a1;
 }
-
 #timer h4{
     margin-bottom: 16px;
     font-size: 110%;
@@ -492,12 +426,10 @@ nav ul{
     text-transform: uppercase;
     color: white;
 }
-
 .img_new img{
     max-height: 150px;
     max-width: 100%;
 }
-
 /*#inner_banner_action:before{
     content: '';
     position: absolute;
@@ -534,7 +466,6 @@ nav ul{
 /*-->Хиты продаж*/
 .hits{
     width: 100%;
-  
 }
 .inner_hits{
     width: 100%;
@@ -545,7 +476,7 @@ nav ul{
 }
 .product_cart{
 	width: 20.6%;
-    display: inline-block;
+    display: inline-grid;
     border: 1px solid #dfdfdf;
     border-radius: 10px;
     text-align: center;
@@ -558,15 +489,10 @@ nav ul{
     border-color: #5f97d8;
     box-shadow: 0 2px 26px rgba(0, 0, 0, 0.3);
     transition: 0.4s all;
-
 }
-
-
-
 .product_cart:last-child{
 	margin-right: 0px;
 }
-
 .line_prod{
 	text-align: center;
 	margin-top: 40px;
@@ -574,18 +500,14 @@ nav ul{
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
-
 }
-
 .line_prod::-webkit-scrollbar {
     display: none;
 }
-
 .name_prod span:first-child{
 	font-size: 180%;
 	margin-right: 15px;
 }
-
 .s_left{
 	background: url("../images/arr_l.png")center center no-repeat;
 	padding: 6px;
@@ -613,7 +535,6 @@ nav ul{
     color: white;
     font-size: 120%;
 }
-
 .sale_item{
     display: block;
     background-size: 50px auto;
@@ -625,42 +546,31 @@ nav ul{
     color: white;
     font-size: 120%;
 }
-
 .hits:last-child{
     margin-bottom: 60px;
 }
-
-
-
-
-
-
-.product_name, .product_name p{	
+.product_name, .product_name p{
 	color: #464646;
 	text-decoration: none;
-	
-
 }
 .product_name p{
 	text-align: left;
 	margin-left: 8px;
     text-align: left;
     font-size: 12pt;
-	
+    height: 3em;
+    margin: 0;
 }
 .product_name p:hover{
     color:#c84d3f;
     text-decoration: underline;
     transition: 0.4s all;
 }
-
-
 .inner_pro_inf span:first-child{
    margin-left: 0px;
     font-size: 10pt;
     text-align: left;
     color: #c94d3f;
-  
 }
 .inner_pro_inf div:last-child span:first-child{
     font-weight: bold;
@@ -669,11 +579,7 @@ nav ul{
 .inner_pro_inf div:first-child span:first-child{
     color: #666666;
 }
-
-
-
 .inner_pro_inf div:last-child{
-
     text-align: right;
     top: -7px;
     position: relative;
@@ -698,18 +604,16 @@ nav ul{
     color: #5f96d8;
     font-size: 11pt;
 }
-
 .inner_pro_inf div a img{
     margin-right: 5px;
 }
-
 .inner_pro_inf div:last-child{
     text-align: right;
     float: right;
     margin-top: 8px;
 }
-.inner_pro_inf{
-    margin-top: 30px;
+.item_title{
+    height: 50px;
 }
 .inner_pro_inf div:last-child a{
     top: 18px;
@@ -732,23 +636,17 @@ nav ul{
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
-    
 }
 #inner_footer ul{
     padding: 0;
 }
-
-
 #logo_footer>a>img{
     margin-right: 5px;
 }
-
-
 #inner_footer ul li{
     list-style: none;
     margin-top: 10px;
 }
-
 #inner_footer ul li a{
     text-decoration: none;
     color: #666666;
@@ -832,7 +730,6 @@ text-transform: uppercase;
     color: #5f96d7;
     transition: 0.4s all;
 }
-
 /* <--Блок катерогий */
 /* Блок хлебных крошек -->*/
 .bread{
@@ -843,11 +740,8 @@ text-transform: uppercase;
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
-
 }
-
 .bread_link{
-
     margin-top: 35px;
 }
 .bread_link a,.bread_link span{
@@ -861,8 +755,6 @@ text-transform: uppercase;
 .bread_link a:hover{
     color: #5f96d8;
 }
-
-
 .bread_link a:before{
     content: " ";
     position: absolute;
@@ -870,12 +762,10 @@ text-transform: uppercase;
     background: url("/images/arr_pag.png") center center no-repeat;
     margin-left: 50px;
 }
-
 .bread_link span{
     color:#5f96d8 ;
 }
 /* <--Блок хлебных крошек */
-
 /* Блок фильтрации -->*/
 .order_coast input{
     width: 60px;
@@ -883,7 +773,6 @@ text-transform: uppercase;
 .order{
     width: 25%;
 }
-
 .order label {
 font-size: 90%;
     margin-left: 10px;
@@ -895,12 +784,10 @@ font-size: 90%;
     margin-left: 10px;
     margin-top: 15px;
 }
-
 .order_price {
 margin-left: 5px;
     color: #979797;
 }
-
 .order h4{
     color: #666666;
     width: 75%;
@@ -926,7 +813,6 @@ margin-left: 5px;
     width: 45%;
     margin-right: 10px;
 }
-
 .order_button input{
     padding: 10px 30px;
     background-color: #5f97d8;
@@ -938,23 +824,18 @@ margin-left: 5px;
     background: none;
     color: #5f96d8;
 }
-
 .order input[type="text"]{
     border: none;
     text-align: center;
     font-size: 100%;
 }
-
 .order input[type="button"]:hover, .order input[type="submit"]:hover {
     box-shadow: 0 2px 2px rgba(0,0,0,0.25), 0 1px 10px rgba(0,0,0,0.22);
     transition: 0.3 all;
 }
-
-
 .order_coast.value{
     font-size: 95%;
 }
-
 .center{
      width: 75%;
  }
@@ -962,8 +843,6 @@ margin-left: 5px;
     width: 26.9%;
     margin: 20px 15px 20px 15px !important;
 }
-
-
 /*<-- Блок фильтрации*/
 /* Блок пагинации -->*/
 .inner_pagination{
@@ -981,19 +860,13 @@ margin-left: 5px;
     background-color: #f1f1f1;
     transition: 0.3s all;
 }
-
-
-
 .pag_span{
     text-decoration: none;
     color: #666666;
     padding: 7px 13px 7px 13px;
     margin: 0 6px;
     background-color: #f1f1f1;
-
 }
-
-
 /*<-- Блок пагинации*/
 /*Блок сортировки-->*/
 
@@ -1001,7 +874,6 @@ margin-left: 5px;
     margin: 15px 0 15px 0;
     font-size: 85%;
 }
-
 .sort_link{
     margin-top: 30px;
     margin-bottom: 0;
@@ -1024,28 +896,22 @@ margin-left: 5px;
     color: #fbfbfb;
     transition: 0.3s all;
 }
-
 .sort_link a:nth-child(5), .sort_link a:last-child{
     padding: 6px 10px;
-
 }
 /*<--Блок сортировки*/
 /*Блок товаров в корзине-->*/
-
 .center_66{
     width: 67%;
 }
 .cart_field .left, .cart_field .right{
     width: 50%;
 }
-
 .cart_field.item .right{
     margin-top: 6%;
 }
-
 .cart_field{
     overflow: hidden;
-
 }
 .cart_field.name {
     background-color: #d6eaf8;
@@ -1053,10 +919,7 @@ margin-left: 5px;
     color: #999999;
     font-size: 90%;
 }
-
-
 .cart_img{
-
     float: left;
     max-width: 100px;
     margin: 15px 25px;
@@ -1066,8 +929,6 @@ margin-left: 5px;
     width: 25%;
     text-align: center;
 }
-
-
 .cart_field.item{
     background-color: #eaf4fb;
     border-top: 1px solid #cfe6f6;
@@ -1076,7 +937,6 @@ margin-left: 5px;
 
     border: none;
 }
-
 .cart_field.item p{
     font-size: 90%;
     color: #444444;
@@ -1086,11 +946,9 @@ margin-left: 5px;
     font-size: 10pt;
     color: #666666;
 }
-
 .cart_item:first-child{
     color: #c85216;
 }
-
 .add_item{
     padding: 8px 10px;
     background-color: #3498db;
@@ -1109,17 +967,13 @@ margin-left: 5px;
     background-color: #fff;
     color: #000;
 }
-
 .cart_field.item .cart_item:nth-child(3){
     margin-top: -10px;
 }
-
 /*--Блок товаров в корзине*/
-
 /*Блок оформление заказа--*/
 .center_33 {
     width: 29%;
-
 }
 .shipping_cur h4{
     margin-top: 0;
@@ -1134,24 +988,20 @@ margin-left: 5px;
     height: 4em;
     margin-bottom: 22px;
 }
-
 .cur_item .left{
     margin: 10px 0 0 11px;
 }
 .cur_item .right{
     margin: 13px;
 }
-
 .cur_item h4{
     margin-left: 25px;
     margin-top: 5px;
-
 }
 .samov{
     left: -8px;
     position: relative;
 }
-
 .prormo input[type="text"]{
     color: #999999;
     border: 1px solid #cfe6f6;
@@ -1167,7 +1017,6 @@ margin-left: 5px;
     text-decoration: none;
     color: #fefefe;
 }
-
 .price{
     width: 76%;
 }
@@ -1188,12 +1037,9 @@ margin-left: 5px;
 .coast_span.right img{
    margin-left: 3px;
 }
-
 .inner_price {
     font-size: 92%;
-
 }
-
 .coast_span.right span:last-child{
     color: red !important;
 }
@@ -1202,10 +1048,8 @@ margin-left: 5px;
     font-size: 110%;
 }
 /*--Блок оформление заказа*/
-
 .submit{
     text-align: center;
-
 }
 .submit input{
     background-color: #e74c3c;
@@ -1217,17 +1061,14 @@ margin-left: 5px;
     cursor: pointer;
     margin-top: 5px;
 }
-
 .small{
     top: 917px !important;
 }
-
 /*Страница товара-->*/
 .product_info{
 margin: 10px     auto;
     max-width: 1140px;
 }
-
 .small_images_item{
     float: left;
     width: 22.3%;
@@ -1235,22 +1076,18 @@ margin: 10px     auto;
     border: 3px solid #d9ebf8;
     margin: 0 6px;
 }
-
 .small_images_item.focus, .small_images_item:hover{
     border: 3px solid #3498db;
 }
-
 .small_images_item img{
     max-width: 100%;
 }
-
 .small_images_item:first-child{
     margin-left: 0;
 }
 .small_images_item:last-child{
     margin-right: 0;
 }
-
 .product_price_info.left {
     width: 60%;
 }
@@ -1260,36 +1097,28 @@ margin: 10px     auto;
 .product_price_info.right{
 text-align: right;
 }
-
 .product_info_features.right .coast_span{
     width: 50%;
 }
-
 .product_price_info.left .coast_span.right span, .product_info_features.right .inner_price .coast_span.right span{
     color: #444444 !important;
 }
-
 .product_price_info.left .coast_span.right span{
     margin-left: 10px;
 }
 .big_img img{
     border: 1px solid #cfe6f6;
 }
-
 .product_info_features.right h2{
     color: #444444;
 }
-
-
 .product_info_features.right {
     font-size: 108%;
 }
-
 .product_info_features.right .coast{
     margin: 0px !important;
     padding: 9px 0;
 }
-
 .product_price_info.right h1{
     color:#e74c3c;
     font-size: 210%;
@@ -1300,7 +1129,6 @@ text-align: right;
     color: #ffffff;
     text-decoration: none;
 }
-
 .price_lable:hover, .comparison:hover{
     text-decoration: underline;
 }
@@ -1309,7 +1137,6 @@ text-align: right;
     position: relative;
     top: 5px;
 }
-
 .comparison{
     font-size: 80%;
     left: -2px;
@@ -1318,16 +1145,13 @@ text-align: right;
     text-decoration: none;
     color: #999999;
 }
-
 .comparison img{
     margin-right: 5px;
 }
-
 .product_feature_inner{
     margin-top: 25px;
     margin-bottom: 15px;
 }
-
 .product_feature_inner a{
     color: #a8a8a8;
     text-decoration: none;
@@ -1336,17 +1160,13 @@ text-align: right;
 .product_info_active, .product_feature_inner a:hover{
     color: #444444 !important;
     border-bottom: 2px solid #3498db;
-
 }
 .product_price > .inner_price .coast:nth-child(2n+1){
     background-color: #eaf4fb;
 }
-
 .product_price > .inner_price .coast_span.left span{
     margin-left: 15px;
 }
-
-
 /*<--Страница товара*/
 /*Страница оформления заказа-->*/
 .fifty{
@@ -1368,16 +1188,13 @@ text-align: right;
     display: inline-block;
     margin: 20px 0;
     color: #444444;
-
 }
 .field_input{
     width: 50%;
     display: inline-block;
     margin: 10px 0;
     color: #444444;
-
 }
-
 .field_span {
     font-size: 70%;
 }
@@ -1459,11 +1276,9 @@ text-align: right;
     cursor: pointer;
 }
 /*Радиопереключатель-->*/
-
 .pay_checkbox__label input[type="radio"], .samoviv input[type="radio"], .order input[type="radio"], .cur_item input[type="radio"]{
     display: none;
 }
-
 .pay_checkbox__label input[type="radio"]+label, .samoviv input[type="radio"]+label, .order input[type="radio"]+label, .cur_item input[type="radio"]+label{
    background: url("/images/checkbox_empty.png") no-repeat left center;
     padding-left: 30px;
@@ -1472,7 +1287,6 @@ text-align: right;
 .pay_checkbox__label input[checked="checked"]+label, .samoviv input[checked="checked"]+label, .order input[checked="checked"]+label, .cur_item input[checked="checked"]+label{
     background: url(/images/checkbox.png) no-repeat left center !important;
 }
-
 .cur_item input[type="radio"]+label{
     padding-left: 25px;
 }
@@ -1481,7 +1295,4 @@ text-align: right;
     padding-left: 20px;
     margin-left: -20px;
 }
-
-
-
 /*<--Страница оформления заказа*/

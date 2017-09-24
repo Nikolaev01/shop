@@ -13,7 +13,7 @@ abstract class Controller extends AbstractController{
         $this->url_active = URL::deleteGET(URL::current(Config::ADDRESS), "page");
     }
 
-    protected function action404()
+    public function action404()
     {
         header("HTTP/1.1 404 Not Found");
         header("Status: 404 Not Found");

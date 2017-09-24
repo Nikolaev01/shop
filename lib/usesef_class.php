@@ -14,6 +14,7 @@ class UseSEF {
 			$alias = SefDB::getAliasOnLink($data["path"]);
 			if ($alias) $link = $address."/".$alias.Config::SEF_SUFFIX."?".$data["query"];
 		}
+		print_r($link);
 		return $link;
 	}
 	

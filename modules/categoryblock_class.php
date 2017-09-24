@@ -1,9 +1,9 @@
 <?php
-class Sale extends Module{
+class CategoryBlock extends Module{
     public function __construct()
     {
         parent::__construct();
-        $this->add("sal", null, true);
+        $this->add("category", null, true);
         $this->add("link_product");
         $this->add("link_compare");
         $this->add("part_images");
@@ -11,10 +11,8 @@ class Sale extends Module{
     }
     public function getTmplFile()
     {
-        return "sale";
+        return "category_block";
     }
-
 }
-
 
 ?>

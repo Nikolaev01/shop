@@ -14,7 +14,6 @@ class URL {
 			}
 			$uri = substr($uri, 0, -strlen($amp));
 		}
-		if ($handler) return self::postHandler($uri, $address);
 		return self::getAbsolute($address, $uri);
 	}
 	
@@ -27,11 +26,9 @@ class URL {
 		if ($amp) $url = str_replace("&", "&amp;", $url);
 		return $url;
 	}
-	
+
 	public static function getControllerAndAction() {
         $uri = $_SERVER["REQUEST_URI"];
-        $uri = UseSEF::getRequest($uri);
-		if (!$uri) return array("Main", "404");
 		list($url_part, $qs_part) = array_pad(explode("?", $uri), 2, "");
 		parse_str($qs_part, $qs_vars);
 		Request::addSEFData($qs_vars);
@@ -62,7 +59,7 @@ class URL {
 			else $amp = "&";
 			$url = $url.$amp.$name."=".$value;
 		}
-		return self::postHandler($url);
+		return $url;
 	}
 	
 	public static function deleteGET($url, $name, $amp = true) {
@@ -75,7 +72,7 @@ class URL {
 			if ($amp) $url = str_replace("&", "&amp;", $url);
 		}
 		else $url = $url_part;
-		return self::postHandler($url);
+		return $url;
 	}
 	
 	public static function addID($url, $id) {

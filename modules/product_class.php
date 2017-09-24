@@ -1,20 +1,22 @@
 <?php
-class Sale extends Module{
+class Product extends Module{
     public function __construct()
     {
         parent::__construct();
-        $this->add("sal", null, true);
-        $this->add("link_product");
+        $this->add("product", null, true);
         $this->add("link_compare");
         $this->add("part_images");
         $this->add("link_addcart");
     }
     public function getTmplFile()
     {
-        return "sale";
+        return "product";
     }
 
 }
+
+
+
 
 
 ?>

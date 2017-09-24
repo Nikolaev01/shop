@@ -6,11 +6,12 @@
             <span class="s_right"></span>
         </div>
         <div class="line_prod">
-            <?php foreach ($sale as $item) { ?>
+
+            <?php foreach ($sal as $item) { ?>
                 <div class="product_cart">
                     <span class="hits_item">Sale</span>
-                    <a href="<?=$link_product?>" class="img_new"><img src="<?=$item['image']?>" alt="<?=$item['title']?>"></a>
-                    <a href="<?=$link_product?>" class="product_name"><p><?=$item['title']?></p></a>
+                    <a href="<?=$item["link"]?>" class="img_new"><img src="<?=$item['image']?>" alt="<?=$item['title']?>"></a>
+                    <a href="<?=$item["link"]?>" class="product_name"><p><?=$item['title']?></p></a>
                     <div class="inner_pro_inf">
                         <div>
                             <span>Артикул: <?=$item['code']?></span>
