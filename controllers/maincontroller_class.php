@@ -29,6 +29,7 @@ class MainController extends Controller{
         $this->title = "Интернет магазин сант";
         $this->meta_desc = "Интернет магазин сантехники";
         $this->mata_key = "Интернет магазин, сантехники";
+
         $category = CategoryDB::getAll();
         $category_block = new CategoryBlock();
         $category_block->category = $category;
@@ -36,6 +37,20 @@ class MainController extends Controller{
         $product = new Product() ;
         $product->product = $item;
         $this->render($this->renderData(array("category_block" => $category_block, "product" => $product), "category"));
+    }
+
+public function actionProduct(){
+        $product_db = new ProductDB();
+        $product_db->load($this->request->id);
+        $this->title = $product_db->title;
+        $this->meta_desc = $product_db->meta_desc;
+        $this->mata_key = $product_db->meta_key;
+        
+
+
+        $product = new ProductPage();
+        $product->products = $product_db;
+        $this->render($product);
     }
 
 

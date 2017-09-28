@@ -28,7 +28,6 @@ class ProductDB extends ObjectDB{
         $this->link = URL::get("product", "", array("id" => $this->id));
         //$img = ProductImgDB::getAllonProductID($this->id);
         //$this->img = $img;
-
         return true;
     }
     public static function getAllTable() {
@@ -88,16 +87,19 @@ class ProductDB extends ObjectDB{
         }
         return $result;
     }
-
-
-
-
-
-
     private static function getBaseSelect(){
         $select = new Select(self::$db);
         $select->from(self::$table, "*");
         return $select;
+    }
+    public function getRowOnID($id){
+        $select = new Select();
+        $select->from(self::$table, "*")->whereIn('id', $id);
+        $data = self::$db->select($select);
+        //print_r($data);
+        //$result = ObjectDB::getAllOnIDs($id);
+
+        //return ObjectDB::buildMultiple(__CLASS__, $result);
     }
 
     public static function getRandom($count){
@@ -107,7 +109,6 @@ class ProductDB extends ObjectDB{
         $item = ObjectDB::buildMultiple(__CLASS__, $data);
         return $item;
     }
-
 
 }
 

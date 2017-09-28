@@ -1113,6 +1113,7 @@ text-align: right;
     color: #444444;
 }
 .product_info_features.right {
+    width: 45%;
     font-size: 108%;
 }
 .product_info_features.right .coast{
