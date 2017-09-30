@@ -301,6 +301,15 @@ nav ul{
 	opacity:1;}
 
 /*<--Слайдер изображений*/
+.main{
+    max-width: 100%;
+}
+.main-inner{
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
 /*Баннер с акцией и таймером-->*/
 #banner_action{
     width: 100%;
@@ -484,6 +493,10 @@ nav ul{
     margin-right: 14px;
     padding: 0 9px 0 9px;
     flex-shrink: 0;
+}
+
+.product_info_img{
+    max-width: 45%;
 }
 .product_cart:hover{
     border-color: #5f97d8;
@@ -750,17 +763,17 @@ text-transform: uppercase;
 .bread_link a{
     text-decoration: none;
     color:#989898 ;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 .bread_link a:hover{
     color: #5f96d8;
 }
-.bread_link a:before{
+.bread_link a:after{
     content: " ";
-    position: absolute;
-    padding: 10px;
+    position: relative;
+    padding: 3px;
     background: url("/images/arr_pag.png") center center no-repeat;
-    margin-left: 50px;
+    margin-left: 10px;
 }
 .bread_link span{
     color:#5f96d8 ;
@@ -1071,7 +1084,7 @@ margin: 10px     auto;
 }
 .small_images_item{
     float: left;
-    width: 22.3%;
+    width: 24.3%;
     text-align: center;
     border: 3px solid #d9ebf8;
     margin: 0 6px;

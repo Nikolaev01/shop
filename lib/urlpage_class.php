@@ -11,6 +11,12 @@ class URLPage extends URL {
         $url = str_replace("&", "&amp;", $url);
         return $url;
     }
+
+    public static function getLinkAddCart($product_id){
+        return URL::get(Config::FILE_FUNC, "", array("func" => "add_card","id" => $product_id));
+    }public static function getLinkAddCompare($product_id){
+        return URL::get(Config::FILE_FUNC, "", array("func" => "add_compare","id" => $product_id));
+    }
 }
 
 

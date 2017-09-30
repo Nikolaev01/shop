@@ -1,32 +1,18 @@
 <div class="content">
     <div class="inner_content centrum">
-    <div class="bread">
-        <div class="bread_pagination">
-            <div class="bread_link">
-                <a href="#">Главная</a>
-                <a href="#">Каталог</a>
-                <span>Унитазы</span>
-            </div>
-        </div>
-    </div>
+        <?=$hornav?>
     <div class="product_info">
         <div class="product_info_img left">
             <div class="big_img">
                 <img src="/images/product/product_big_img.png" alt="Наименование товара">
             </div>
             <div class="small_images">
-                <div class="small_images_item">
-                    <img src="/images/product/product_small_img.png" alt="Наименование товара">
-                </div>
-                <div class="small_images_item focus">
-                    <img src="/images/product/product_small_img.png" alt="Наименование товара">
-                </div>
-                <div class="small_images_item">
-                    <img src="/images/product/product_small_img.png" alt="Наименование товара">
-                </div>
-                <div class="small_images_item">
-                    <img src="/images/product/product_small_img.png" alt="Наименование товара">
-                </div>
+                <?php foreach ($images as $item) { ?>
+                    <div class="small_images_item">
+                        <img src="<?=$item->img?>" alt="<?=$products->title?>">
+                    </div>
+                <?php } ?>
+
             </div>
         </div>
         <div class="product_info_features right">

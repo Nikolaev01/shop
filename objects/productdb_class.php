@@ -22,12 +22,8 @@ class ProductDB extends ObjectDB{
     }
 
     protected function postInit() {
-        //$this->img = Config::DIR_IMG.$this->img;
-        //$this->product_img = $product_img;
-        //print_r($this->link);
+
         $this->link = URL::get("product", "", array("id" => $this->id));
-        //$img = ProductImgDB::getAllonProductID($this->id);
-        //$this->img = $img;
         return true;
     }
     public static function getAllTable() {

@@ -79,6 +79,12 @@ abstract class Controller extends AbstractController{
         $bottommenu->items = $items;
         return $bottommenu;
     }
+    protected function getHornav() {
+        $hornav = new Hornav();
+        $hornav->addData("Главная", URL::get(""));
+        return $hornav;
+    }
+
     protected function getOffset($count_on_page){
         return $count_on_page * ($this->getPage() - 1);
     }

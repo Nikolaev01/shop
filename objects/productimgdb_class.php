@@ -10,7 +10,7 @@ class ProductImgDB extends ObjectDB{
     }
     protected function postInit()
     {
-        $this->img = Config::DIR_IMG.$this->img;
+        $this->img = Config::DIR_IMG_PRODUCT.$this->img;
         return true;
     }
 

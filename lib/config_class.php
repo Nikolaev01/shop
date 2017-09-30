@@ -26,6 +26,8 @@ abstract class Config {
 
     const LAYOUT = "main";//название общего шаблона
 
+    const FILE_FUNC = "function.php";//файл с обработкой функций на сайте
+
     const FILE_MESSAGES = "/text/messages.ini";//путь к файлу с системными сообщениями
 
     const FORMAT_DATE = "%d.%m.%Y %H:%M:%S";//Формат даты

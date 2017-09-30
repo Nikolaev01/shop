@@ -29,29 +29,43 @@ class MainController extends Controller{
         $this->title = "Интернет магазин сант";
         $this->meta_desc = "Интернет магазин сантехники";
         $this->mata_key = "Интернет магазин, сантехники";
-
         $category = CategoryDB::getAll();
         $category_block = new CategoryBlock();
         $category_block->category = $category;
         $item = ProductDB::getAllWithImgRand("product_img", 20);
         $product = new Product() ;
         $product->product = $item;
-        $this->render($this->renderData(array("category_block" => $category_block, "product" => $product), "category"));
+        $hornavs = $this->getHornav();
+        //if ($product_db->category_id) {
+           //$hornavs->addData($category_db->title, $category_db->link);
+        //}
+        //$hornavs->addData($product_db->title);
+        $this->render($this->renderData(array("category_block" => $category_block, "product" => $product, "hornav" => $hornavs), "category"));
     }
 
 public function actionProduct(){
         $product_db = new ProductDB();
         $product_db->load($this->request->id);
+        $category_db = new CategoryDB();
+        $category_db->load($product_db->category_id);
         $this->title = $product_db->title;
         $this->meta_desc = $product_db->meta_desc;
         $this->mata_key = $product_db->meta_key;
-        
-
-
+        //горизонтальная навигация
+        $hornavs = $this->getHornav();
+        if ($product_db->category_id) {
+            $hornavs->addData($category_db->title, $category_db->link);
+        }
+        $hornavs->addData($product_db->title);
+        $image = ProductImgDB::getAllonProductID($product_db->id);
         $product = new ProductPage();
         $product->products = $product_db;
+        $product->link_addcart = URLPage::getLinkAddCart($product->products->id);
+        $product->link_compare = URLPage::getLinkAddCompare($product->products->id);
+        $product->images = $image;
+        $product->hornav = $hornavs;
         $this->render($product);
-    }
+        }
 
 
 

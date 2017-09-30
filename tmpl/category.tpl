@@ -86,15 +86,7 @@
             </div>
         </form>
         <div class="center right">
-            <div class="bread">
-                <div class="bread_pagination">
-                    <div class="bread_link">
-                        <a href="#">Главная</a>
-                        <a href="#">Каталог</a>
-                        <span>Унитазы</span>
-                    </div>
-                </div>
-            </div>
+            <?=$hornav?>
             <div class="sort">
                 <div class="name_prod">
                     <span>Унитазы</span>
@@ -106,7 +98,6 @@
                     <a href="#">Цена</a>
                     <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по убыванию"></a>
                     <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по возврастанию"></a>
-
                 </div>
             </div>
             <div class="clear"></div>
