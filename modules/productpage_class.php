@@ -6,6 +6,7 @@ class ProductPage extends Module{
         $this->add("products");
         $this->add("hornav");
         $this->add("images", null, true);
+        $this->add("bues", null, true);
         $this->add("link_compare");
         $this->add("part_images");
         $this->add("link_addcart");

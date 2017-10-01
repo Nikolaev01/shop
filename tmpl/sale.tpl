@@ -1,7 +1,7 @@
 <div class="hits">
     <div class="inner_hits">
         <div class="name_prod">
-            <span>Распродажа</span>
+            <span><?=$name?></span>
             <span class="s_left"></span>
             <span class="s_right"></span>
         </div>

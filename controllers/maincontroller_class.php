@@ -19,6 +19,7 @@ class MainController extends Controller{
         $sale = new Sale();
         $sal = ProductDB::getAllWithImgforHits("product_img", 7);
         $sale->sal = $sal;
+        $sale->name = "Распродажа";
         $sale->part_images = Config::DIR_IMG;
         $this->render($this->renderData(array("slider" => $slider, "hits" => $hits, "sale" => $sale), "index"));
     }
@@ -32,20 +33,40 @@ class MainController extends Controller{
         $category = CategoryDB::getAll();
         $category_block = new CategoryBlock();
         $category_block->category = $category;
-        $item = ProductDB::getAllWithImgRand("product_img", 20);
         $product = new Product() ;
-        $product->product = $item;
+        $item = ProductDB::getAllonCategoryID("product_img", $this->request->id, Config::COUNT_ARTICLES_ON_PAGE, $this->request->page * Config::COUNT_ARTICLES_ON_PAGE, $this->request->sort);
         $hornavs = $this->getHornav();
-        //if ($product_db->category_id) {
-           //$hornavs->addData($category_db->title, $category_db->link);
-        //}
-        //$hornavs->addData($product_db->title);
-        $this->render($this->renderData(array("category_block" => $category_block, "product" => $product, "hornav" => $hornavs), "category"));
+        $pagination = $this->getPagination(count(ProductDB::getAllonCategoryID("product_img", $this->request->id)), Config::COUNT_ARTICLES_ON_PAGE, URL::current());
+        $sort = $this->getSort();
+        if($this->request->id){
+            if (!$category_db->isSaved()) {
+                $this->notFound();
+                exit;
+            }
+            $hornavs->addData("Каталог", URL::get("category", ""));
+            $hornavs->addData($category_db->title);
+            $this->title = "Интернет магазин сант. ".$category_db->title;
+            $this->meta_desc = "Интернет магазин сантехники ".$category_db->title;
+            $this->mata_key = "Интернет магазин, сантехники ".$category_db->title;
+            $sort->category_name = $category_db->title;
+            $product->pagination = $pagination;
+        }
+        else {
+            $this->title = "Интернет магазин сант";
+            $this->meta_desc = "Интернет магазин сантехники";
+            $this->mata_key = "Интернет магазин, сантехники";
+            $hornavs->addData("Каталог");
+            $category_name = "Каталог";
+            $product->pagination = $pagination;
+        }
+        $product->product = $item;
+        $this->render($this->renderData(array("category_block" => $category_block, "product" => $product, "hornav" => $hornavs, "sort" => $sort), "category"));
     }
 
 public function actionProduct(){
         $product_db = new ProductDB();
         $product_db->load($this->request->id);
+        if (!$product_db->isSaved()) $this->notFound();
         $category_db = new CategoryDB();
         $category_db->load($product_db->category_id);
         $this->title = $product_db->title;
@@ -64,9 +85,13 @@ public function actionProduct(){
         $product->link_compare = URLPage::getLinkAddCompare($product->products->id);
         $product->images = $image;
         $product->hornav = $hornavs;
-        $this->render($product);
+        $bue = new Bye();
+        $bue->name = "С этим товаром также заказывают";
+        $bue->part_images = Config::DIR_IMG;
+        $bues =ProductDB::getAllWithImgRand("product_img", 7);
+        $bue->sal = $bues;
+        $this->render($product.$bue);
         }
-
 
 
 

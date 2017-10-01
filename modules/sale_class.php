@@ -8,6 +8,7 @@ class Sale extends Module{
         $this->add("link_compare");
         $this->add("part_images");
         $this->add("link_addcart");
+        $this->add("name");
     }
     public function getTmplFile()
     {

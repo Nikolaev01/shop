@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //alert ($(document).width());
     $(".pay_checkbox__label label").click(function () {
         if ($(".pay_checkbox__label input").attr('checked', 'checked')){
         $(".pay_checkbox__label input").removeAttr('checked');}
@@ -59,7 +60,6 @@ $(document).ready(function () {
         var scrollblock = $(this).parent().next();
         var scrollblock_margin1 = scrollblock.children().css('margin-left');
         var scrollblock_margin2 = scrollblock.children().css('margin-right');
-        //console.log(scrollblock.css('border-width'));
         scrollblock_margin1 = scrollblock_margin1.replace(/px/g, "");
         scrollblock_margin1 = Number(scrollblock_margin1);
         scrollblock_margin2 = scrollblock_margin2.replace(/px/g, "");

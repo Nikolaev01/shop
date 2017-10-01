@@ -32,7 +32,7 @@ abstract class Config {
 
     const FORMAT_DATE = "%d.%m.%Y %H:%M:%S";//Формат даты
 
-    const COUNT_ARTICLES_ON_PAGE = 3;//количество ст на ст
+    const COUNT_ARTICLES_ON_PAGE = 9;//количество ст на ст
     const COUNT_SHOW_PAGES = 10;//количество выводимых страниц
 
     const MIN_SEARCH_LEN = 3;//Минимальная длина слова в поиске

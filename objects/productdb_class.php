@@ -75,7 +75,6 @@ class ProductDB extends ObjectDB{
 		FROM `".Config::DB_PREFIX.self::$table."`
 		RIGHT JOIN `".Config::DB_PREFIX."$product_img_table` ON `".Config::DB_PREFIX."$product_img_table`.`product_id` = `".Config::DB_PREFIX.self::$table."`.`id`
 		GROUP BY `".Config::DB_PREFIX.self::$table."`.`id` ORDER BY RAND() DESC LIMIT $count";
-        $url = new URLPage();
         $result = self::$db->select($query);
         for($i=0; $i < count($result); $i++){
             $result[$i]['image'] = Config::DIR_IMG_PRODUCT.$result[$i]['image'];
@@ -88,14 +87,47 @@ class ProductDB extends ObjectDB{
         $select->from(self::$table, "*");
         return $select;
     }
-    public function getRowOnID($id){
-        $select = new Select();
-        $select->from(self::$table, "*")->whereIn('id', $id);
+    /*public static function getAllonCategoryID($category_id = false, $count = false, $offset = false, $post_handling = false){
+        $select = self::getBaseSelect();
+        if ($category_id) $select->where("`category_id` = ".self::$db->getSQ(), array($category_id));
+        if ($count) $select->limit($count, $offset);
+        echo $select;
         $data = self::$db->select($select);
-        //print_r($data);
-        //$result = ObjectDB::getAllOnIDs($id);
-
-        //return ObjectDB::buildMultiple(__CLASS__, $result);
+        $products = ObjectDB::buildMultiple(__CLASS__, $data);
+        if ($post_handling) foreach ($products as $product) $product->postHandling();
+        return $products;
+    }*/
+    public static function getAllonCategoryID($product_img_table, $category_id = false, $count = false, $offset = false, $order = false, $post_handling = false){
+        $query = "SELECT `".Config::DB_PREFIX.self::$table."`.`id`,
+		`".Config::DB_PREFIX.self::$table."`.`category_id`,
+		`".Config::DB_PREFIX.self::$table."`.`title`,
+		`".Config::DB_PREFIX.self::$table."`.`title`,
+		`".Config::DB_PREFIX.self::$table."`.`meta_desc`,
+		`".Config::DB_PREFIX.self::$table."`.`meta_key`,
+		`".Config::DB_PREFIX.self::$table."`.`price`,
+		`".Config::DB_PREFIX.self::$table."`.`code`,
+		`".Config::DB_PREFIX.self::$table."`.`customer`,
+		`".Config::DB_PREFIX.self::$table."`.`serial`,
+		`".Config::DB_PREFIX.self::$table."`.`model`,
+		`".Config::DB_PREFIX.self::$table."`.`contry`,
+		`".Config::DB_PREFIX.self::$table."`.`description`,
+		`".Config::DB_PREFIX.self::$table."`.`composition`,
+		`".Config::DB_PREFIX."$product_img_table`.`img` as `image`
+		FROM `".Config::DB_PREFIX.self::$table."`
+		LEFT JOIN `".Config::DB_PREFIX."$product_img_table` ON `".Config::DB_PREFIX."$product_img_table`.`product_id` = `".Config::DB_PREFIX.self::$table."`.`id`";
+        if($category_id) $query .= " WHERE `".Config::DB_PREFIX.self::$table."`.`category_id` = ".$category_id;
+		$query .= " GROUP BY `".Config::DB_PREFIX.self::$table."`.`id`";
+        if ($order) $query .= " ORDER BY `".Config::DB_PREFIX.self::$table."`.`".$order."`";
+		else $query .= " ORDER BY `".Config::DB_PREFIX.self::$table."`.`id`";
+        if($count) $query .= " LIMIT $count";
+        if($offset) $query .= " OFFSET $offset";
+        //print_r($query);
+        $result = self::$db->select($query);
+        for($i=0; $i < count($result); $i++){
+            $result[$i]['image'] = Config::DIR_IMG_PRODUCT.$result[$i]['image'];
+            $result[$i]['link'] = URL::get("product", "", array("id" => $result[$i]['id']));
+        }
+        return $result;
     }
 
     public static function getRandom($count){

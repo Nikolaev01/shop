@@ -51,6 +51,9 @@ class URL {
 	public static function addTemplatePage($url, $amp = true) {
 		return self::addGET($url, "page", "", $amp);
 	}
+	public static function addTemplateSort($url, $amp = true) {
+		return self::addGET($url, "sort", "", $amp);
+	}
 	
 	public static function addGET($url, $name, $value, $amp = true) {
 		if (strpos($url, "?") === false) $url = $url."?".$name."=".$value;

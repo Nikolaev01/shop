@@ -87,51 +87,13 @@
         </form>
         <div class="center right">
             <?=$hornav?>
-            <div class="sort">
-                <div class="name_prod">
-                    <span>Унитазы</span>
-                </div>
-                <div class="sort_link">
-                    <span>Сортировка:</span>
-                    <a href="#" class="active">Скидка</a>
-                    <a href="#">Рейтинг</a>
-                    <a href="#">Цена</a>
-                    <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по убыванию"></a>
-                    <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по возврастанию"></a>
-                </div>
-            </div>
+            <?=$sort?>
             <div class="clear"></div>
             <div class="hits">
                 <div class="inner_product centrum">
 
                     <?=$product?>
-                    <div class="pagination">
-                        <div class="inner_pagination centrum">
-                            <div class="inner_pagination__links">
-                                <a href="#">
-                                    <span>Назад</span>
-                                </a>
-                                <span class="pag_span">1</span>
-                                <a href="#">
-                                    <span>2</span>
-                                </a>
-                                <a href="#">
-                                    <span>3</span>
-                                </a>
-                                <a href="#">
-                                    <span>4</span>
-                                </a>
-                                <a href="#">
-                                    <span>5</span>
-                                </a>
-                                <a href="#">
-                                    <span>Вперед</span>
-                                </a>
 
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>

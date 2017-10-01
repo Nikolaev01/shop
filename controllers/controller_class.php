@@ -1,11 +1,13 @@
 <?php
-abstract class Controller extends AbstractController{
+abstract class Controller extends AbstractController
+{
     protected $title;
     protected $meta_desc;
     protected $meta_key;
     protected $mail = null;
     protected $url_active;
     protected $category_id = 0;
+
     public function __construct()
     {
         parent::__construct(new View(Config::DIR_TMPL), new Message(Config::FILE_MESSAGES));
@@ -25,6 +27,7 @@ abstract class Controller extends AbstractController{
         $pm->text = "К сажелению запрошенной страницы не найдено";
         $this->render($pm);
     }
+
     protected function accessDenied()
     {
         $this->title = "Доступ закрыт!";
@@ -48,7 +51,8 @@ abstract class Controller extends AbstractController{
         $this->view->render(Config::LAYOUT, $params);
     }
 
-    protected function getHeader(){
+    protected function getHeader()
+    {
         $header = new Header();
         $header->title = $this->title;
         $header->meta("Content-Type", "text/html; charset=utf-8", true);
@@ -72,28 +76,63 @@ abstract class Controller extends AbstractController{
         $topmenu->items = $items;
         return $topmenu;
     }
-    protected function getBottom(){
+
+    protected function getBottom()
+    {
         $items = MenuDB::getTopMenu();
         $bottommenu = new BottomMenu();
         $bottommenu->uri = $this->url_active;
         $bottommenu->items = $items;
         return $bottommenu;
     }
-    protected function getHornav() {
+
+    protected function getHornav()
+    {
         $hornav = new Hornav();
         $hornav->addData("Главная", URL::get(""));
         return $hornav;
     }
 
-    protected function getOffset($count_on_page){
+    protected function getOffset($count_on_page)
+    {
         return $count_on_page * ($this->getPage() - 1);
     }
-    protected function getPage(){
-        $page = ($this->request->page)? $this->request->page: 1;
+
+    protected function getPage()
+    {
+        $page = ($this->request->page) ? $this->request->page : 1;
         if ($page < 1) $this->notFound();
         return $page;
     }
-    final protected function getPagination(){}
+
+    final protected function getPagination($count_elements, $count_on_page, $url = false)
+    {
+        $count_pages = ceil($count_elements / $count_on_page);
+        $active = $this->getPage();
+        if (($active > $count_pages) && ($active > 1)) $this->notFound();
+        $pagination = new Pagination();
+        if ($this->request->page) $url = URL::deletePage(URL::current());
+        $pagination->url = $url;
+        $pagination->url_page = URL::addTemplatePage($url);
+        $pagination->count_elements = $count_elements;
+        $pagination->count_on_page = $count_on_page;
+        $pagination->count_show_pages = Config::COUNT_SHOW_PAGES;
+        $pagination->active = $active;
+        return $pagination;
+    }
+    final protected function getSort($up = false)
+    {
+        $sort = new Sort();
+        $url = URL::current();
+        if ($this->request->sort)$url = URL::deleteGET($url, "sort");
+        $sort->link_sale = URL::addGET($url,"sort","discount");
+        $sort->link_price = URL::addGET($url,"sort", "price");
+        if ($this->request->up)$url = URL::deleteGET($url, "up");
+        $sort->link_up = URL::addGET($url,"up", "up");
+        $sort->link_down = URL::addGET($url,"up", "down");
+        return $sort;
     }
 
+
+}
 ?>
