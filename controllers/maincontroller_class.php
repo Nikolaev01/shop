@@ -34,7 +34,12 @@ class MainController extends Controller{
         $category_block = new CategoryBlock();
         $category_block->category = $category;
         $product = new Product() ;
-        $item = ProductDB::getAllonCategoryID("product_img", $this->request->id, Config::COUNT_ARTICLES_ON_PAGE, $this->request->page * Config::COUNT_ARTICLES_ON_PAGE, $this->request->sort);
+        if ($this->request->page){
+            $item = ProductDB::getAllonCategoryID("product_img", $this->request->id, Config::COUNT_ARTICLES_ON_PAGE, ($this->request->page - 1) * Config::COUNT_ARTICLES_ON_PAGE, $this->request->sort, $this->request->up);
+        }
+        else{
+            $item = ProductDB::getAllonCategoryID("product_img", $this->request->id, Config::COUNT_ARTICLES_ON_PAGE, false, $this->request->sort, $this->request->up);
+        }
         $hornavs = $this->getHornav();
         $pagination = $this->getPagination(count(ProductDB::getAllonCategoryID("product_img", $this->request->id)), Config::COUNT_ARTICLES_ON_PAGE, URL::current());
         $sort = $this->getSort();

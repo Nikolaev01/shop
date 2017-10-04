@@ -3,7 +3,7 @@ abstract class Config {
 
     const SITENAME = "nd-shop.ru";
     const SECRET = "SACSDV";
-    const ADDRESS = "http://nd-shop.ru";
+    const ADDRESS = "http://nd-shop.local";
     const ADM_NAME = "Николаев Николай";
     const ADM_EMAIL = "nikolaevnv50@yandex.ru";
 

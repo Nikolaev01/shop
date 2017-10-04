@@ -8,6 +8,8 @@ class Sort extends Module{
         $this->add("link_down");
         $this->add("link_up");
         $this->add("category_name");
+        $this->add("request");
+        $this->add("request_up");
     }
 
     public function getTmplFile()

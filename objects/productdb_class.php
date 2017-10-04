@@ -2,7 +2,6 @@
 
 class ProductDB extends ObjectDB{
     protected static $table = "product";
-
     public function __construct()
     {
         parent::__construct(self::$table);
@@ -20,9 +19,7 @@ class ProductDB extends ObjectDB{
         $this->add("description", "ValidateName");
         $this->add("composition", "ValidateName");
     }
-
     protected function postInit() {
-
         $this->link = URL::get("product", "", array("id" => $this->id));
         return true;
     }
@@ -53,6 +50,7 @@ class ProductDB extends ObjectDB{
         for($i=0; $i < count($result); $i++){
             $result[$i]['image'] = Config::DIR_IMG_PRODUCT.$result[$i]['image'];
             $result[$i]['link'] = URL::get("product", "", array("id" => $result[$i]['id']));
+            $result[$i]['link_add_cart'] = URLPage::getLinkAddCart($result[$i]['id']);
         }
         return $result;
     }
@@ -87,17 +85,7 @@ class ProductDB extends ObjectDB{
         $select->from(self::$table, "*");
         return $select;
     }
-    /*public static function getAllonCategoryID($category_id = false, $count = false, $offset = false, $post_handling = false){
-        $select = self::getBaseSelect();
-        if ($category_id) $select->where("`category_id` = ".self::$db->getSQ(), array($category_id));
-        if ($count) $select->limit($count, $offset);
-        echo $select;
-        $data = self::$db->select($select);
-        $products = ObjectDB::buildMultiple(__CLASS__, $data);
-        if ($post_handling) foreach ($products as $product) $product->postHandling();
-        return $products;
-    }*/
-    public static function getAllonCategoryID($product_img_table, $category_id = false, $count = false, $offset = false, $order = false, $post_handling = false){
+    public static function getAllonCategoryID($product_img_table, $category_id = false, $count = false, $offset = false, $order = false, $desc = false){
         $query = "SELECT `".Config::DB_PREFIX.self::$table."`.`id`,
 		`".Config::DB_PREFIX.self::$table."`.`category_id`,
 		`".Config::DB_PREFIX.self::$table."`.`title`,
@@ -119,6 +107,7 @@ class ProductDB extends ObjectDB{
 		$query .= " GROUP BY `".Config::DB_PREFIX.self::$table."`.`id`";
         if ($order) $query .= " ORDER BY `".Config::DB_PREFIX.self::$table."`.`".$order."`";
 		else $query .= " ORDER BY `".Config::DB_PREFIX.self::$table."`.`id`";
+		if($desc == "down") $query .= " DESC";
         if($count) $query .= " LIMIT $count";
         if($offset) $query .= " OFFSET $offset";
         //print_r($query);
@@ -126,10 +115,10 @@ class ProductDB extends ObjectDB{
         for($i=0; $i < count($result); $i++){
             $result[$i]['image'] = Config::DIR_IMG_PRODUCT.$result[$i]['image'];
             $result[$i]['link'] = URL::get("product", "", array("id" => $result[$i]['id']));
+            $result[$i]['link_add_cart'] = URLPage::getLinkAddCart($result[$i]['id']);
         }
         return $result;
     }
-
     public static function getRandom($count){
         $select = new Select(self::$db);
         $select->from(self::$table, "*")->limit($count)->rand();
@@ -137,8 +126,37 @@ class ProductDB extends ObjectDB{
         $item = ObjectDB::buildMultiple(__CLASS__, $data);
         return $item;
     }
+    public static function getPriceOnIDs($ids){
+        $products = self::getAllOnIDs($ids);
+        $result = array();
+        if($ids[0] == 0) $summa = 0;
+        else {
+            for ($i = 0; $i < count($products); $i++) {
+                $result[$products[$i]["id"]] = $products[$i]["price"];
+            }
+            $summa = 0;
+            for ($i = 0; $i < count($ids); $i++) {
+                $summa += $result[$ids[$i]];
+            }
+        }
+        return $summa;
+    }
+    public static function getTableName(){
+        return self::$table;
+    }
 
+    public static function getAllOnIDs($ids){
+        if (!$ids)return false;
+        $query_ids = "";
+        $params = array();
+        for ($i = 0; $i < count($ids); $i++) {
+            $query_ids .= Config::DB_SYM_QUERY.",";
+            $params[] = $ids[$i];
+        }
+        $query_ids = substr($query_ids, 0 ,-1);
+        $query = "SELECT * FROM `".Config::DB_PREFIX.self::$table."` WHERE `id` IN ($query_ids)";
+        $query = self::$db->getQuery($query, $params);
+        return self::$db->select($query);
+    }
 }
-
-
 ?>

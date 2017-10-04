@@ -44,11 +44,29 @@ abstract class Controller extends AbstractController
         $params = array();
         //перечисление всех параметров
         $params["header"] = $this->getHeader();//блок head
+        $params["cart"] = $this->setInfoCart();
         $params["top"] = $this->getTop();//Верхнее меню
         $params["bottom"] = $this->getBottom();//Нижнее меню
         $params["center"] = $str;
 
         $this->view->render(Config::LAYOUT, $params);
+    }
+    private function setInfoCart(){
+        $cart = new Cart();
+        if (!isset($_SESSION["card"])){
+            $_SESSION["card"] = "";
+            $cart->cart_count = "0";
+            $cart->cart_summa = "0";
+        }
+        else {
+            $ids = explode(",", $_SESSION["card"]);
+            $summa = ProductDB::getPriceOnIDs($ids);
+            $summa = number_format($summa, 0, ',', ' ');
+            if ($ids[0] == 0) $cart->cart_count = 0;
+            else $cart->cart_count = count($ids);
+            $cart->cart_summa = $summa;
+        }
+        return $cart;
     }
 
     protected function getHeader()
@@ -62,6 +80,7 @@ abstract class Controller extends AbstractController
         $header->favicon = "/favicon.ico";
         $header->css = array("/css/main.css", "/css/media.css");
         $header->js = array("/js/jquery.min.js", "/js/script.js", "/js/slider.js");
+
         return $header;
     }
 
@@ -85,6 +104,9 @@ abstract class Controller extends AbstractController
         $bottommenu->items = $items;
         return $bottommenu;
     }
+
+
+
 
     protected function getHornav()
     {
@@ -120,18 +142,52 @@ abstract class Controller extends AbstractController
         $pagination->active = $active;
         return $pagination;
     }
-    final protected function getSort($up = false)
+    final protected function getSort()
     {
         $sort = new Sort();
         $url = URL::current();
-        if ($this->request->sort)$url = URL::deleteGET($url, "sort");
-        $sort->link_sale = URL::addGET($url,"sort","discount");
-        $sort->link_price = URL::addGET($url,"sort", "price");
-        if ($this->request->up)$url = URL::deleteGET($url, "up");
-        $sort->link_up = URL::addGET($url,"up", "up");
-        $sort->link_down = URL::addGET($url,"up", "down");
+        $url2 = $url;
+        if($this->request->sort && $this->request->up){
+            $url = URL::deleteGET($url, "up");
+            $url = URL::deleteGET($url, "sort");
+            $sort->link_sale = URL::addGET($url,"sort","discount");
+            $sort->link_sale = URL::addGET($sort->link_sale,"up",$this->request->up);
+            $sort->link_price = URL::addGET($url,"sort", "price");
+            $sort->link_price = URL::addGET( $sort->link_price,"up", $this->request->up);
+            $sort->link_up = URL::addGET($url,"sort", $this->request->sort);
+            $sort->link_up = URL::addGET($sort->link_up,"up", "up");
+            $sort->link_down = URL::addGET($url,"sort", $this->request->sort);
+            $sort->link_down = URL::addGET($sort->link_down,"up", "down");
+        }
+        elseif ($this->request->sort){
+            $url = URL::deleteGET($url, "sort");
+            $sort->link_sale = URL::addGET($url,"sort","discount");
+            $sort->link_price = URL::addGET($url,"sort", "price");
+            $sort->link_up = URL::addGET($url2,"up", "up");
+            $sort->link_down = URL::addGET($url2,"up", "down");
+        }
+        elseif($this->request->up){
+            $url = URL::deleteGET($url, "up");
+            $sort->link_sale = URL::addGET($url,"sort","discount");
+            $sort->link_sale = URL::addGET($sort->link_sale,"up",$this->request->up);
+            $sort->link_price = URL::addGET($url,"sort", "price");
+            $sort->link_price = URL::addGET( $sort->link_price,"up", $this->request->up);
+            $sort->link_up = URL::addGET($url,"up", "up");
+            $sort->link_down = URL::addGET($url,"up", "down");
+        }
+        else{
+            $sort->link_sale = URL::addGET($url,"sort","discount");
+            $sort->link_price = URL::addGET($url,"sort", "price");
+            $sort->link_up = URL::addGET($url,"up", "up");
+            $sort->link_down = URL::addGET($url,"up", "down");
+        }
+        $sort->request = $this->request->sort;
+        $sort->request_up = $this->request->up;
         return $sort;
     }
+
+
+
 
 
 }

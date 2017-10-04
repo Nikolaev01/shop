@@ -31,16 +31,7 @@
                     <h2>8 (495)-111-11-11</h2>
                     <a href="#">Заказать звонок</a>
                 </div>
-                <div class="right">
-                    <div class="left">
-                        <img src="images/cart.png" alt="Корзина покупак">
-                        <span>2</span>
-                    </div>
-                    <div class="right">
-                        <a href="#">Корзина</a><br>
-                        <p>2 000 <img src="images/coast_silver.png" alt="Корзина"></p>
-                    </div>
-                </div>
+                <?=$cart?>
                 <div class="clear"></div>
             </div>
         </div>

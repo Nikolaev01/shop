@@ -5,7 +5,6 @@ abstract class ObjectDB extends AbstractObjectDB{
     {
         parent::__construct($table_name,Config::FORMAT_DATE);
     }
-
     public static function buildmuArray($class = array(), $data){
       $ret = array();
       if(is_array($class)){
@@ -33,6 +32,13 @@ abstract class ObjectDB extends AbstractObjectDB{
           }
             return $ret;
       }
+    }
+    public static function existsID($id){
+       return self::isExistsFV("id", $id);
+    }
+    protected static function isExistsFV($field, $value){
+        $result = self::getAllOnField(ProductDB::getTableName(), "ProductDB", $field, $value);
+        return count($result) != 0;
     }
 
 }
