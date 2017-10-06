@@ -121,6 +121,23 @@ public function actionProduct(){
         $this->render($this->renderData(array("slider" => $slider, "hits" => $hits, "sale" => $sale), "index"));
     }
 
+    public function actionCart(){
+        $this->title = "Страница корзины";
+        $this->meta_desc = "Интернет магазин сантехники";
+        $this->mata_key = "Интернет магазин, сантехники";
+        $this->pagename = "Корзина";
+        $cart_item = new CartItem();
+        $hornavs = $this->getHornav();
+        $hornavs->addData($this->pagename);
+        if(isset($_SESSION["card"]))$ids = explode(",", $_SESSION["card"]);
+        else $ids = array();
+        if($ids == array()) $items = array();
+        else $items = ProductDB::getAllOnProductIDsWithIMG("product_img", $ids);
+        $cart_item->cart_items = $items;
+        $cart_item->page_name = $this->pagename;
+        $this->render($this->renderData(array("hornav" => $hornavs, "cart_item" => $cart_item), "cartpage"));
+    }
+
 
 
 }

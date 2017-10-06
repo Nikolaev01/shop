@@ -110,7 +110,7 @@ class ProductDB extends ObjectDB{
 		if($desc == "down") $query .= " DESC";
         if($count) $query .= " LIMIT $count";
         if($offset) $query .= " OFFSET $offset";
-        //print_r($query);
+        print_r($query);
         $result = self::$db->select($query);
         for($i=0; $i < count($result); $i++){
             $result[$i]['image'] = Config::DIR_IMG_PRODUCT.$result[$i]['image'];
@@ -144,6 +144,39 @@ class ProductDB extends ObjectDB{
     public static function getTableName(){
         return self::$table;
     }
+    public static function getAllOnProductIDsWithIMG($product_img_table, $ids){
+        $query = "SELECT `".Config::DB_PREFIX.self::$table."`.`id`,
+		`".Config::DB_PREFIX.self::$table."`.`title`,
+		`".Config::DB_PREFIX.self::$table."`.`price`,
+		`".Config::DB_PREFIX.self::$table."`.`code`,
+		`".Config::DB_PREFIX.self::$table."`.`serial`,
+		`".Config::DB_PREFIX."$product_img_table`.`img` as `image`
+		FROM `".Config::DB_PREFIX.self::$table."`
+		LEFT JOIN `".Config::DB_PREFIX."$product_img_table` ON `".Config::DB_PREFIX."$product_img_table`.`product_id` = `".Config::DB_PREFIX.self::$table."`.`id`";
+        if($ids) {
+            $query .= " WHERE `xcv_product`.`id` IN (";
+            for ($i = 0; $i < count($ids); $i++) {
+                $query .= "'". $ids[$i] ."',";
+            }
+            $query = substr($query, 0, -1);
+            $query .= ")";
+        }
+        $query .= " GROUP BY `".Config::DB_PREFIX.self::$table."`.`id`";
+        $result = self::$db->select($query);
+        for($i=0; $i < count($result); $i++){
+            $result[$i]['image'] = Config::DIR_IMG_PRODUCT.$result[$i]['image'];
+            $result[$i]['link'] = URL::get("product", "", array("id" => $result[$i]['id']));
+        }
+        return $result;
+    }
+
+    /*SELECT `xcv_product`.`id`, `xcv_product`.`category_id`, `xcv_product`.`title`, `xcv_product`.`title`, `xcv_product`.`meta_desc`,
+    `xcv_product`.`meta_key`, `xcv_product`.`price`, `xcv_product`.`inst_price`, `xcv_product`.`code`, `xcv_product`.`customer`,
+    `xcv_product`.`serial`, `xcv_product`.`model`, `xcv_product`.`contry`, `xcv_product`.`description`, `xcv_product`.`composition`,
+    `xcv_product_img`.`img` as `image`
+    FROM `xcv_product` LEFT JOIN `xcv_product_img` ON `xcv_product_img`.`product_id` = `xcv_product`.`id`
+    WHERE `xcv_product`.`id` IN ('1','4')
+    GROUP BY `xcv_product`.`id`*/
 
     public static function getAllOnIDs($ids){
         if (!$ids)return false;
@@ -156,6 +189,7 @@ class ProductDB extends ObjectDB{
         $query_ids = substr($query_ids, 0 ,-1);
         $query = "SELECT * FROM `".Config::DB_PREFIX.self::$table."` WHERE `id` IN ($query_ids)";
         $query = self::$db->getQuery($query, $params);
+        //print_r($query);
         return self::$db->select($query);
     }
 }

@@ -53,6 +53,7 @@ abstract class Controller extends AbstractController
     }
     private function setInfoCart(){
         $cart = new Cart();
+        $cart->link_cart = URL::get("cart", "");
         if (!isset($_SESSION["card"])){
             $_SESSION["card"] = "";
             $cart->cart_count = "0";
