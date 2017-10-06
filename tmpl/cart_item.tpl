@@ -10,46 +10,49 @@
     </div>
 
     <?php }?>
-
+    <?php if (!count($cart_items) == 0) { ?>
     <div class="cart">
     <div class="cart_field name">
-    <div class="left">
+        <div class="left">
+        </div>
+        <div class="right">
+        <div class="cart_item"><span>Стоимость</span></div>
+        <div class="cart_item"><span>Количество</span></div>
+        <div class="cart_item"><span>Монтаж</span></div>
+        <div class="cart_item"><span>Удалить</span></div>
+        </div>
     </div>
-    <div class="right">
-    <div class="cart_item"><span>Стоимость</span></div>
-    <div class="cart_item"><span>Количество</span></div>
-    <div class="cart_item"><span>Монтаж</span></div>
-    <div class="cart_item"><span>Удалить</span></div>
+        <?php foreach ($cart_items as $item) { ?>
+        <div class="cart_field item">
+        <div class="left">
+                <a href="<?=$item['link']?>"> <img src="<?=$item['image']?>" class="cart_img" alt="<?=$item['title']?>"></a>
+                <a href="<?=$item['link']?>" class="product_name">
+                    <p><?=$item['title']?></p>
+                </a>
+                <span>Артикул: <?=$item['code']?></span>
+            </div>
+        <div class="right">
+            <div class="cart_item">
+                <span><?=$item['price']?> <img src="/images/coast.png" alt="Стоимость"></span>
+            </div>
+        <div class="cart_item">
+           <input type="hidden" name="count_<?=$item['id']?>" value="<?=$item['count']?>" />
+            <span class="add_item minus">-</span>
+           <span class="add_item count"><?=$item['count']?></span>
+            <span class="add_item">+</span>
+        </div>
+        <div class="cart_item">
+            <?php if ($item['inst_price'] !== "0") { ?>
+            <span><?=$item['inst_price']?> <img src="/images/coast.png" alt="Стоимость"></span><br>
+            <input type="checkbox" name="mont">
+            <?php } ?>
+        </div>
+        <div class="cart_item">
+            <a href="<?=$item['delete_cart']?>"><img src="/images/close.png" alt="Монтаж"></a>
+        </div>
+        </div>
+        </div>
+        <?php }?>
     </div>
     </div>
-    <?php foreach ($cart_items as $item) { ?>
-    <div class="cart_field item">
-    <div class="left">
-    <a href="#"> <img src="/images/product.png" class="cart_img" alt="Название товара"></a>
-    <a href="#" class="product_name">
-    <p>Ванна акриловая Aquatec Ума 145x145 см</p>
-    </a>
-    <span>Артикул: 34427</span>
-    </div>
-    <div class="right">
-    <div class="cart_item">
-    <span>1090 <img src="/images/coast.png" alt="Стоимость"></span>
-    </div>
-    <div class="cart_item">
-    <span class="add_item">-</span>
-    <span class="add_item count">1</span>
-    <span class="add_item">+</span>
-    </div>
-    <div class="cart_item">
-    <span>1090 <img src="/images/coast.png" alt="Стоимость"></span><br>
-    <input type="checkbox" name="mont">
-    </div>
-    <div class="cart_item">
-    <a href=""><img src="/images/close.png" alt="Монтаж"></a>
-    </div>
-    </div>
-    </div>
-</div>
     <?php }?>
-
-</div>

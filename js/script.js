@@ -41,18 +41,26 @@ $(document).ready(function () {
     });
 
 	//увеличение и уменьшение количества товара в корзине
-	$('.add_item:first-child').click(function(){
+	$('.add_item.minus').click(function(){
 		var num = $(this).next();
+        var num2 = $(this).prev().attr("value");
+		//var num2 = $("input[name='count_product']").attr("value");
 		if(num.text() <= 1) return false;
 		else {
-			var end_text = Number(num.text())-1;
+		    var end_text = Number(num.text())-1;
+		    var end_text2 = Number(num2)-1;
 			$(this).next().text(end_text);
+            $(this).prev().attr("value", end_text2);
 		}
 	});
 	$('.add_item:last-child').click(function(){
 		var num = $(this).prev();
+        var num2 = $(this).prev().prev().prev().attr("value");
+        //var num2 = $("input[name='count_product']").attr("value");
 		var end_text = Number(num.html())+1;
+        var end_text2 = Number(num2)+1;
 		$(this).prev().text(end_text);
+        $(this).prev().prev().prev().attr("value", end_text2);
 	});
 
     //прокрутка вперед горизонтального скрола Хиты и Распродажа

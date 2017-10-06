@@ -5,6 +5,12 @@
     if ($func == "add_card"){
         $manage->addCart();
     }
+    elseif ($func == "del_card"){
+        $manage->delCart();
+    }
+    elseif ($func == "cart"){
+        $manage->updateCart();
+    }
     else exit;
     if (!isset($_SERVER["HTTP_REFERER"])){
         $link = Config::ADDRESS.URL::get("", "", array());

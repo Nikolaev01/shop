@@ -946,6 +946,9 @@ margin-left: 5px;
     background-color: #eaf4fb;
     border-top: 1px solid #cfe6f6;
 }
+.cart_field.item .cart_item:last-child{
+    float: right;
+}
 .cart_field.item:first-child{
 
     border: none;
@@ -968,7 +971,7 @@ margin-left: 5px;
     background-color: #3498db;
     color: #fff;
 }
-.add_item:first-child{
+.add_item.minus{
     border-radius: 5px 0 0 5px;
     cursor: pointer;
 }
@@ -1022,7 +1025,7 @@ margin-left: 5px;
     border-radius: 5px;
     padding: 10px;
 }
-.prormo a {
+.prormo input[type="submit"] {
     background-color: #3498db;
     padding: 10px 12px;
     font-size: 85%;
@@ -1030,6 +1033,9 @@ margin-left: 5px;
     float: right;
     text-decoration: none;
     color: #fefefe;
+    border: none;
+    top: 1px;
+    position: relative;
 }
 .price{
     width: 76%;

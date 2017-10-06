@@ -1,7 +1,5 @@
 <?php
 class MainController extends Controller{
-
-
     public function actionIndex(){
         $this->title = "Интернет магазин сант";
         $this->meta_desc = "Интернет магазин сантехники";
@@ -23,7 +21,6 @@ class MainController extends Controller{
         $sale->part_images = Config::DIR_IMG;
         $this->render($this->renderData(array("slider" => $slider, "hits" => $hits, "sale" => $sale), "index"));
     }
-
     public function actionCategory(){
         $category_db = new CategoryDB();
         $category_db->load($this->request->id);
@@ -67,39 +64,35 @@ class MainController extends Controller{
         $product->product = $item;
         $this->render($this->renderData(array("category_block" => $category_block, "product" => $product, "hornav" => $hornavs, "sort" => $sort), "category"));
     }
-
-public function actionProduct(){
-        $product_db = new ProductDB();
-        $product_db->load($this->request->id);
-        if (!$product_db->isSaved()) $this->notFound();
-        $category_db = new CategoryDB();
-        $category_db->load($product_db->category_id);
-        $this->title = $product_db->title;
-        $this->meta_desc = $product_db->meta_desc;
-        $this->mata_key = $product_db->meta_key;
-        //горизонтальная навигация
-        $hornavs = $this->getHornav();
-        if ($product_db->category_id) {
-            $hornavs->addData($category_db->title, $category_db->link);
-        }
-        $hornavs->addData($product_db->title);
-        $image = ProductImgDB::getAllonProductID($product_db->id);
-        $product = new ProductPage();
-        $product->products = $product_db;
-        $product->link_addcart = URLPage::getLinkAddCart($product->products->id);
-        $product->link_compare = URLPage::getLinkAddCompare($product->products->id);
-        $product->images = $image;
-        $product->hornav = $hornavs;
-        $bue = new Bye();
-        $bue->name = "С этим товаром также заказывают";
-        $bue->part_images = Config::DIR_IMG;
-        $bues =ProductDB::getAllWithImgRand("product_img", 7);
-        $bue->sal = $bues;
-        $this->render($product.$bue);
-        }
-
-
-
+    public function actionProduct(){
+            $product_db = new ProductDB();
+            $product_db->load($this->request->id);
+            if (!$product_db->isSaved()) $this->notFound();
+            $category_db = new CategoryDB();
+            $category_db->load($product_db->category_id);
+            $this->title = $product_db->title;
+            $this->meta_desc = $product_db->meta_desc;
+            $this->mata_key = $product_db->meta_key;
+            //горизонтальная навигация
+            $hornavs = $this->getHornav();
+            if ($product_db->category_id) {
+                $hornavs->addData($category_db->title, $category_db->link);
+            }
+            $hornavs->addData($product_db->title);
+            $image = ProductImgDB::getAllonProductID($product_db->id);
+            $product = new ProductPage();
+            $product->products = $product_db;
+            $product->link_addcart = URLPage::getLinkAddCart($product->products->id);
+            $product->link_compare = URLPage::getLinkAddCompare($product->products->id);
+            $product->images = $image;
+            $product->hornav = $hornavs;
+            $bue = new Bye();
+            $bue->name = "С этим товаром также заказывают";
+            $bue->part_images = Config::DIR_IMG;
+            $bues =ProductDB::getAllWithImgRand("product_img", 7);
+            $bue->sal = $bues;
+            $this->render($product.$bue);
+    }
     public function actionContact(){
         $this->title = "Интернет магазин сант";
         $this->meta_desc = "Интернет магазин сантехники";
@@ -120,26 +113,69 @@ public function actionProduct(){
         $sale->part_images = Config::DIR_IMG;
         $this->render($this->renderData(array("slider" => $slider, "hits" => $hits, "sale" => $sale), "index"));
     }
-
     public function actionCart(){
         $this->title = "Страница корзины";
         $this->meta_desc = "Интернет магазин сантехники";
         $this->mata_key = "Интернет магазин, сантехники";
         $this->pagename = "Корзина";
+        $discount = new DiscountDB();
+        $cart = array();
+        $summa = 0;
         $cart_item = new CartItem();
         $hornavs = $this->getHornav();
         $hornavs->addData($this->pagename);
-        if(isset($_SESSION["card"]))$ids = explode(",", $_SESSION["card"]);
-        else $ids = array();
-        if($ids == array()) $items = array();
-        else $items = ProductDB::getAllOnProductIDsWithIMG("product_img", $ids);
-        $cart_item->cart_items = $items;
+        if(isset($_SESSION["card"])){
+            $ids = explode(",", $_SESSION["card"]);
+            if($ids == array()) $items = array();
+            else $items = ProductDB::getAllOnProductIDsWithIMG("product_img", $ids);
+            $result = array();
+            for ($i = 0; $i < count($items); $i++){
+                $result[$items[$i]['id']] = $items[$i];
+            }
+            $ids_unique = array_unique($ids);
+            $i = 0;
+            if($ids_unique[0] !== '') {
+                foreach ($ids_unique as $v) {
+                    $cart[$i]["id"] = $result[$v]['id'];
+                    $cart[$i]["title"] = $result[$v]['title'];
+                    $cart[$i]["image"] = $result[$v]['image'];
+                    $cart[$i]["link"] = $result[$v]['link'];
+                    $cart[$i]["price"] = $result[$v]['price'];
+                    $cart[$i]["code"] = $result[$v]['code'];
+                    $cart[$i]["inst_price"] = $result[$v]['inst_price'];
+                    $cart[$i]["delete_cart"] = $result[$v]['delete_cart'];
+                    $cart[$i]["count"] = $this->getCountInArray($v, $ids);
+                    $cart[$i]["summa"] =  $cart[$i]["count"]*$cart[$i]["price"];
+                    $summa += $cart[$i]["summa"];
+                    $cart[$i]["price"] = number_format($result[$v]['price'], 0, ',', ' ');
+                    $cart[$i]["inst_price"] = number_format($result[$v]['inst_price'], 0, ',', ' ');
+                    $i++;
+                }
+                $summa_all = $summa;
+                if(isset($_SESSION["discount"])) {
+                    $value = $discount->getValueOnCode($_SESSION["discount"]);
+                    if ($value) {
+                        $summa *= (1 - $value);
+                    }
+                }
+            }
+        }
+        else $cart = array();
+        $cart_item->cart_items = $cart;
         $cart_item->page_name = $this->pagename;
-        $this->render($this->renderData(array("hornav" => $hornavs, "cart_item" => $cart_item), "cartpage"));
+        if ($cart_item->cart_items == array()) $order = "";
+        else {
+            $order = new Order();
+            $summa = number_format($summa, 0, ',', ' ');
+            $order->summa = $summa;
+            $order->discount = $_SESSION["discount"];
+            $order->price_discount = 0;
+            if ($value) {
+                $order->price_discount = $summa_all * $value;
+            }
+        }
+        $form_action = URLPage::action();
+        $this->render($this->renderData(array("hornav" => $hornavs, "cart_item" => $cart_item, "order" => $order, "action" => $form_action), "cartpage"));
     }
-
-
-
 }
-
 ?>

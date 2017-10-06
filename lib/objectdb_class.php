@@ -40,6 +40,15 @@ abstract class ObjectDB extends AbstractObjectDB{
         $result = self::getAllOnField(ProductDB::getTableName(), "ProductDB", $field, $value);
         return count($result) != 0;
     }
+    protected function getField($field_in, $value_in, $field_out){
+        $query = "SELECT `$field_out` FROM `".Config::DB_PREFIX.$this->table_name."` WHERE `$field_in` = ".Config::DB_SYM_QUERY;
+        $params = array();
+        for ($i = 0; $i < count($value_in); $i++) {
+            $params[] = $value_in;
+        }
+        $query = self::$db->getQuery($query, $params);
+        return self::$db->selectCell($query);
+    }
 
 }
 ?>

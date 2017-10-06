@@ -187,6 +187,13 @@ abstract class Controller extends AbstractController
         return $sort;
     }
 
+    protected function getCountInArray($v, $ids){
+        $count = 0;
+        for ($i = 0; $i < count($ids); $i++){
+            if ($ids[$i] == $v) $count++;
+        }
+        return $count;
+    }
 
 
 

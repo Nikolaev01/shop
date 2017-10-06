@@ -14,9 +14,20 @@ class URLPage extends URL {
 
     public static function getLinkAddCart($product_id){
         return URL::get(Config::FILE_FUNC, "", array("func" => "add_card","id" => $product_id));
-    }public static function getLinkAddCompare($product_id){
+    }
+    public static function getLinkDelCart($product_id){
+        return URL::get(Config::FILE_FUNC, "", array("func" => "del_card","id" => $product_id));
+    }
+
+    public static function getLinkAddCompare($product_id){
         return URL::get(Config::FILE_FUNC, "", array("func" => "add_compare","id" => $product_id));
     }
+     public static function action(){
+        return URL::get(Config::FILE_FUNC, "", array());
+    }
+
+
+
 }
 
 
