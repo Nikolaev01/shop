@@ -7,6 +7,7 @@ class Order extends Module{
         $this->add("discount");
         $this->add("action");
         $this->add("summa");
+        $this->add("link_pageorder");
     }
     public function getTmplFile()
     {

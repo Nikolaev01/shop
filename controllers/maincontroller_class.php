@@ -158,6 +158,10 @@ class MainController extends Controller{
                         $summa *= (1 - $value);
                     }
                 }
+                else {
+                    $_SESSION["discount"] = "";
+                    $value = "";
+                }
             }
         }
         else $cart = array();
@@ -170,12 +174,28 @@ class MainController extends Controller{
             $order->summa = $summa;
             $order->discount = $_SESSION["discount"];
             $order->price_discount = 0;
+            $order->link_pageorder = URLPage::getOrderPage();
             if ($value) {
                 $order->price_discount = $summa_all * $value;
             }
+
         }
         $form_action = URLPage::action();
         $this->render($this->renderData(array("hornav" => $hornavs, "cart_item" => $cart_item, "order" => $order, "action" => $form_action), "cartpage"));
+    }
+    public function actionOrder(){
+        $this->title = "Оформление заказа";
+        $this->meta_desc = "Оформление заказа на покупку сантехнических изделий";
+        $this->mata_key = "заказ, оформление заказа, оформение заказа сантехники";
+        $this->pagename = "Оформление заказа";
+
+        $cart_item = new CartItem();
+        $hornavs = $this->getHornav();
+        $hornavs->addData("Корзина", URL::get('cart', ''));
+        $hornavs->addData($this->pagename);
+
+        $form_action = URLPage::action();
+        $this->render($this->renderData(array("hornav" => $hornavs), "orderpage"));
     }
 }
 ?>

@@ -16,7 +16,7 @@
         <div class="left">
         </div>
         <div class="right">
-        <div class="cart_item"><span>Стоимость</span></div>
+        <div class="cart_item"><span>Цена</span></div>
         <div class="cart_item"><span>Количество</span></div>
         <div class="cart_item"><span>Монтаж</span></div>
         <div class="cart_item"><span>Удалить</span></div>

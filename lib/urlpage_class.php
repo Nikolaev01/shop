@@ -12,6 +12,9 @@ class URLPage extends URL {
         return $url;
     }
 
+    public static function getOrderPage(){
+        return URL::get("order", "", array());
+    }
     public static function getLinkAddCart($product_id){
         return URL::get(Config::FILE_FUNC, "", array("func" => "add_card","id" => $product_id));
     }

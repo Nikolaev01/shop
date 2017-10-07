@@ -326,12 +326,12 @@ nav ul{
 }
 #action{
     background: rgba(255,255,255,0.8);
-    position: absolute;
-    max-height: 57.4%;
+    position: relative;
+    height: 0;
     max-width: 455px;
     padding-left: 10px;
     padding-right: 25px;
-    top: 870px;
+    top: -376px;
 }
 #action_top h1 {
     margin-bottom: 0;
@@ -1004,6 +1004,11 @@ margin-left: 5px;
     border: 2px solid #3498db;
     height: 4em;
     margin-bottom: 22px;
+    width: 47%;
+    display: inline-block;
+}
+.samo_shipping, .ship{
+    display: none;
 }
 .cur_item .left{
     margin: 10px 0 0 11px;
@@ -1070,20 +1075,38 @@ margin-left: 5px;
 /*--Блок оформление заказа*/
 .submit{
     text-align: center;
+    margin-top: 10px;
 }
-.submit input{
+.submit a{
     background-color: #e74c3c;
     border: none;
-    padding: 10px 79px;
+    padding: 10px 65px;
     border-radius: 10px;
     color: #fff;
     font-size: 109%;
     cursor: pointer;
-    margin-top: 5px;
+    position: relative;
+    text-decoration: none;
+}
+.submit a:hover, .prormo input[type="submit"]:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 .small{
-    top: 917px !important;
+    top: -267px !important;
 }
+.inner_action{
+    overflow: hidden;
+    background: rgba(255,255,255,0.8);
+    padding: 0 10px;
+}
+.prormo{
+    margin-bottom: 20px;
+}
+.prormo h4{
+    margin-top: 0px;
+}
+
 /*Страница товара-->*/
 .product_info{
 margin: 10px     auto;
@@ -1248,7 +1271,7 @@ text-align: right;
     font-size: 85%;
     color: #999999;
 }
-.samo_shipping > p, .pay > p, .ship > p{
+.samo_shipping > p, .pay > p, .ship > p, .shipping_cur > p {
     font-size: 123%;
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 20px;
@@ -1271,17 +1294,21 @@ text-align: right;
 .ship .field_input input, .ship .field_input select{
     width: 50%;
 }
-.ship textarea{
+.comment textarea{
     display: none;
+    margin-top: 20px;
+    width: 75%;
+    height: 4em;
 }
-.ship a{
+.comment span{
     color: #3498db;
     text-decoration: none;
     border-bottom: 2px dotted #3498db;
 }
-.ship a:hover{
+.comment span:hover{
     color: #cd594c;;
-    border-bottom: 2px dotted #cd594c;;
+    border-bottom: 2px dotted #cd594c;
+    cursor: pointer;
 }
 .order_fields input[type="submit"]{
     padding: 15px 40px;
@@ -1317,3 +1344,69 @@ text-align: right;
     margin-left: -20px;
 }
 /*<--Страница оформления заказа*/
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+
+.reveal-modal-bg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    background: rgba(0,0,0,.8);
+    z-index: 100;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.reveal-modal {
+    visibility: hidden;
+    top: 100px;
+    left: 50%;
+    margin-left: -300px;
+    width: 520px;
+    background: #eee url(modal-gloss.png) no-repeat -200px -80px;
+    position: absolute;
+    z-index: 101;
+    padding: 30px 40px 34px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+
+.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+
+.reveal-modal .close-reveal-modal {
+    font-size: 22px;
+    line-height: .5;
+    position: absolute;
+    top: 8px;
+    right: 11px;
+    color: #aaa;
+    text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+    font-weight: bold;
+    cursor: pointer;
+}
+/*
+
+NOTES
+
+Close button entity is &#215;
+
+Example markup
+
+<div id="myModal" class="reveal-modal">
+    <h2>Awesome. I have it.</h2>
+    <p class="lead">Your couch.  I it's mine.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices aliquet placerat. Duis pulvinar orci et nisi euismod vitae tempus lorem consectetur. Duis at magna quis turpis mattis venenatis eget id diam. </p>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+
+*/

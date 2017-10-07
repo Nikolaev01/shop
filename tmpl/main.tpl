@@ -89,6 +89,11 @@
 
             </div>
         </div>
+        <div id="modalCart" class="reveal-modal">
+            <h1>Добавление в корзину</h1>
+            <p>Товар успешно добавлен в корзину!</p>
+            <a class="close-reveal-modal">&#215;</a>
+        </div>
     </footer>
 </div>
 </body>

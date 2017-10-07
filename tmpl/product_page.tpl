@@ -70,7 +70,8 @@
                 <div class="product_price_info right">
                     <div>
                         <h1><?=$products->price?> <img src="<?=Config::DIR_IMG ?>coast_red_big.png" alt="Стоимость"> </h1>
-                        <a href="<?=$link_addcart?>" class="price_lable"><img src="<?=Config::DIR_IMG ?>cart_white.png" alt="В корзину">В корзину</a><br>
+                        <span v="<?=$link_addcart?>" class="price_lable"><img src="<?=Config::DIR_IMG ?>cart_white.png"  alt="В корзину">В корзину</span><br>
+                        <!--<a href="<?=$link_addcart?>" class="price_lable"><img src="<?=Config::DIR_IMG ?>cart_white.png" alt="В корзину">В корзину</a><br>-->
                         <a href="<?=$link_compare?>" class="comparison"><img src="<?=Config::DIR_IMG ?>strelk.png" alt="Добавить к сравнению">Добавить к сравнению</a>
                     </div>
                 </div>
