@@ -12,7 +12,7 @@
                 <div>
                     <span><?=$item['price']?> <img src="/images/coast.png" alt="Картинка"> </span>
                     <br>
-                    <a href="<?=$item["link_add_cart"]?>"><img src="/images/cart_small.png" alt="Картинка">В корзину</a>
+                    <span v="<?=$item["link_add_cart"]?>"><img src="/images/cart_small.png" alt="Картинка">В корзину</span>
                 </div>
             </div>
         </div>

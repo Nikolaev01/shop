@@ -3,7 +3,7 @@
         <div class="fifty left">
            <?=$hornav?>
             <div class="order_fields">
-                <form name="order" method="post" action="#">
+                <form name="order" method="post" action="<?=$action?>">
                     <div class="name_prod">
                         <h2></h2>
                         <div class="order_field_input">
@@ -11,21 +11,21 @@
                                 <span>Ваше имя <span class="red">*</span></span>
                             </div>
                             <div class="field_input">
-                                <input type="text" name="name" placeholder="Как к Вам обращаться?">
+                                <input type="text" name="name" placeholder="Как к Вам обращаться?" value="<?=$name?>">
                             </div>
                             <div class="clear"></div>
                             <div class="field_span left">
                                 <span>Телефон <span class="red">*</span></span>
                             </div>
                             <div class="field_input left">
-                                <input type="text" name="phone" placeholder="+7 (___) ___-__-__">
+                                <input type="text" name="phone" placeholder="+7 (___) ___-__-__" value="<?=$phone?>">
                             </div>
                             <div class="clear"></div>
                             <div class="field_span left">
                                 <span>E-mail <span class="red">*</span></span>
                             </div>
                             <div class="field_input left">
-                                <input type="email" name="email" placeholder="Для писем со статусом заказа">
+                                <input type="email" name="email" placeholder="Для писем со статусом заказа" value="<?=$email?>">
                             </div>
                             <div class="clear"></div>
 
@@ -35,7 +35,7 @@
                         <p>Способ получения заказа</p>
                         <div class="cur_item left">
                             <div class="left">
-                                <span><input class="order_brand__input" type="radio"><label>Забрать самому</label></span>
+                                <span><input class="order_brand__input" type="radio" name="delivery" value="sam" <?php if ($delivery == 2) { ?>checked="checked"<?php } ?>><label>Забрать самому</label></span>
                                 <h4>Бесплатно</h4>
                             </div>
                             <div class="right">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="cur_item right">
                             <div class="left">
-                                <span><input class="order_brand__input" type="radio"><label>Курьерская доставка</label></span>
+                                <span><input class="order_brand__input" type="radio" name="delivery" value="cur" <?php if ($delivery == 1) { ?>checked="checked"<?php } ?>><label>Курьерская доставка</label></span>
                             </div>
                             <div class="right">
                                 <img src="/images/curier.png" alt="Курьерская доставка">
@@ -56,7 +56,7 @@
                         <div class="samoviv">
                             <div class="samoviv_item left">
                                 <div class="samov_checkbox__label">
-                                    <input type="radio" class="pay_checkbox__input" name="shipping_pay" value="1">
+                                    <input type="radio" class="pay_checkbox__input" name="shipping_pay" value="prt_mir">
                                     <label>м. Проспект мира</label>
                                 </div>
 
@@ -67,7 +67,7 @@
                             </div>
                             <div class="samoviv_item left">
                                 <div class="samov_checkbox__label">
-                                    <input class="samov_checkbox__input" type="radio">
+                                    <input class="samov_checkbox__input" type="radio" name="shipping_pay" value="prt_mir">
                                     <label>м.Проспект Мира</label>
                                 </div>
 
@@ -107,19 +107,19 @@
                     </div>
                     <div class="comment">
                         <span id="comment">Добавить комментарий</span>
-                        <textarea name="comment"></textarea>
+                        <textarea name="comment" value="<?=$comment?>"></textarea>
                     </div>
                     <div class="pay">
                         <p>Оплата</p>
                         <div class="pay_checkbox">
                             <div class="pay_checkbox__label">
-                                <input type="radio" id="shipping_pay" class="pay_checkbox__input" name="shipping_pay" value="1">
+                                <input type="radio" id="shipping_pay" class="pay_checkbox__input" name="shipping_pay" value="online">
                                 <label>Оплата онлайн</label>
                             </div>
                         </div>
                         <div class="pay_checkbox">
                             <div class="pay_checkbox__label">
-                                <input type="radio" class="pay_checkbox__input" name="shipping_pay" value="1">
+                                <input type="radio" class="pay_checkbox__input" name="shipping_pay" value="nalich">
                                 <label>Оплата при получении</label>
                             </div>
                         </div>
@@ -135,6 +135,7 @@
                         <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по возврастанию"></a>
 
                     </div>-->
+                    <input type="hidden" name="func" value="order" />
                     <input type="submit" name="submit" value="Заказ подтверждаю">
                 </form>
             </div>

@@ -188,14 +188,31 @@ class MainController extends Controller{
         $this->meta_desc = "Оформление заказа на покупку сантехнических изделий";
         $this->mata_key = "заказ, оформление заказа, оформение заказа сантехники";
         $this->pagename = "Оформление заказа";
-
+        $order = new OrderPage();
         $cart_item = new CartItem();
+        if(!isset($_SESSION["delivery"]))$_SESSION["delivery"] = "";
+        if(!isset($_SESSION["comment"]))$_SESSION["comment"] = "";
+        if(!isset($_SESSION["name"]))$_SESSION["name"] = "";
+        if(!isset($_SESSION["phone"]))$_SESSION["phone"] = "";
+        if(!isset($_SESSION["email"]))$_SESSION["email"] = "";
+
+
         $hornavs = $this->getHornav();
         $hornavs->addData("Корзина", URL::get('cart', ''));
         $hornavs->addData($this->pagename);
 
-        $form_action = URLPage::action();
-        $this->render($this->renderData(array("hornav" => $hornavs), "orderpage"));
+        $order->hornav = $hornavs;
+        $order->action = URLPage::action();
+        $order->delivery = $_SESSION["delivery"];
+        $order->comment = $_SESSION["comment"];
+        $order->name = $_SESSION["name"];
+        $order->email = $_SESSION["email"];
+        $order->phone = $_SESSION["phone"];
+
+        print_r($_SESSION);
+
+        $this->render($order);
+        //$this->render($this->renderData(array("hornav" => $hornavs, "action" => $form_action, ), "orderpage"));
     }
 }
 ?>

@@ -274,6 +274,13 @@ $(document).ready(function () {
         ajaxAddPrinCart(query);
             //console.log(query);
     });
+    $(".inner_pro_inf div:last-child span:last-child").click(function () {
+        var query = $(this).attr("v");
+        query = query.substr(14);
+        ajaxAddPrinCart(query);
+            //console.log(query);
+    });
+
 
     $(".cur_item.left .left span").click(function () {
         $(".ship").animate({height: 'hide'}, 200);
@@ -289,6 +296,10 @@ $(document).ready(function () {
         if ($(".comment textarea").css("display") == "none") $(".comment textarea").animate({height: 'show'}, 700);
         else $(".comment textarea").animate({height: 'hide'}, 700);
     });
+
+
+
+
 
 });
 
@@ -368,14 +379,43 @@ function ajaxAddPrinCart(data){
         dataType: "text",
         success: function () {
             $('#modalCart').reveal();
-            setTimeout(function(){location.reload()}, 1500);
+            setTimeout(function(){
+                $("#cart").load(location.href+" #cart>*","");
+                //$("modalCart").css("display", "none");
+            }, 1500);
         }
     });
 
 
+
 }
 
+//геокодирование доступно только с https
+/*navigator.geolocation.getCurrentPosition(succes, error);
+function succes(position){
+    var sh = position.coords.latitude;
+    var dol = position.coords.longitude;
+    var coord = sh+","+dol;
+    alert(coord);
+    ajaxgetplace(coord);
+}
+function error(e){
+    alert("что-то пошло не так");
+}
 
+function ajaxgetplace(data) {
+    $.ajax({
+        url: "/function.php",
+        type: "POST",
+        data: (data),
+        dataType: "text",
+        success: function () {
+            setTimeout(function () {
+                location.reload()
+            }, 1500);
+        }
+    });
+}*/
 
 
 

@@ -632,11 +632,28 @@ nav ul{
     top: 18px;
     position: relative;
 }
-.inner_pro_inf div a:hover{
+.inner_pro_inf div:last-child span:last-child{
+    color: #5f96d8;
+    top: 18px;
+    position: relative;
+    font-size: 95%;
+
+}
+.inner_pro_inf div:last-child span:last-child:hover{
+    cursor: pointer;
     color:#c84d3f;
     text-decoration: underline;
     transition: 0.4s all;
 }
+
+.inner_pro_inf div a:hover{
+    color:#c84d3f;
+    text-decoration: underline;
+    transition: 0.4s all;
+
+}
+
+
 /*<--*/
 /*footer-->*/
 #footer{
