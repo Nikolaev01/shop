@@ -195,6 +195,8 @@ class MainController extends Controller{
         if(!isset($_SESSION["name"]))$_SESSION["name"] = "";
         if(!isset($_SESSION["phone"]))$_SESSION["phone"] = "";
         if(!isset($_SESSION["email"]))$_SESSION["email"] = "";
+        if(!isset($_SESSION["shipping_pay"]))$_SESSION["shipping_pay"] = "";
+        if(!isset($_SESSION["punkt"]))$_SESSION["punkt"] = "";
 
 
         $hornavs = $this->getHornav();
@@ -208,6 +210,9 @@ class MainController extends Controller{
         $order->name = $_SESSION["name"];
         $order->email = $_SESSION["email"];
         $order->phone = $_SESSION["phone"];
+        $order->shipping = $_SESSION["shipping_pay"];
+        $order->punkt = $_SESSION["punkt"];
+        $order->comment = $_SESSION["comment"];
 
         print_r($_SESSION);
 

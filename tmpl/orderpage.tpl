@@ -3,7 +3,7 @@
         <div class="fifty left">
            <?=$hornav?>
             <div class="order_fields">
-                <form name="order" method="post" action="<?=$action?>">
+                <form name="order" id="order" method="post" action="<?=$action?>">
                     <div class="name_prod">
                         <h2></h2>
                         <div class="order_field_input">
@@ -35,7 +35,7 @@
                         <p>Способ получения заказа</p>
                         <div class="cur_item left">
                             <div class="left">
-                                <span><input class="order_brand__input" type="radio" name="delivery" value="sam" <?php if ($delivery == 2) { ?>checked="checked"<?php } ?>><label>Забрать самому</label></span>
+                                <span><input class="order_brand__input" type="radio" name="delivery" value="sam" <?php if ($delivery == "sam") { ?>checked="checked"<?php } ?>><label>Забрать самому</label></span>
                                 <h4>Бесплатно</h4>
                             </div>
                             <div class="right">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="cur_item right">
                             <div class="left">
-                                <span><input class="order_brand__input" type="radio" name="delivery" value="cur" <?php if ($delivery == 1) { ?>checked="checked"<?php } ?>><label>Курьерская доставка</label></span>
+                                <span><input class="order_brand__input" type="radio" name="delivery" value="cur" <?php if ($delivery == "cur") { ?>checked="checked"<?php } ?><?php if ($delivery == "") { ?>checked="checked"<?php } ?>><label>Курьерская доставка</label></span>
                             </div>
                             <div class="right">
                                 <img src="/images/curier.png" alt="Курьерская доставка">
@@ -56,7 +56,7 @@
                         <div class="samoviv">
                             <div class="samoviv_item left">
                                 <div class="samov_checkbox__label">
-                                    <input type="radio" class="pay_checkbox__input" name="shipping_pay" value="prt_mir">
+                                    <input type="radio" class="pay_checkbox__input" name="punkt" value="prt_mir" <?php if ($punkt == "prt_mir") { ?>checked="checked"<?php } ?><?php if ($punkt == "") { ?>checked="checked"<?php } ?>>
                                     <label>м. Проспект мира</label>
                                 </div>
 
@@ -67,7 +67,7 @@
                             </div>
                             <div class="samoviv_item left">
                                 <div class="samov_checkbox__label">
-                                    <input class="samov_checkbox__input" type="radio" name="shipping_pay" value="prt_mir">
+                                    <input class="samov_checkbox__input" type="radio" name="punkt" value="olimp" <?php if ($punkt == "olimp") { ?>checked="checked"<?php } ?>>
                                     <label>м.Проспект Мира</label>
                                 </div>
 
@@ -82,19 +82,19 @@
                     <div class="ship">
                         <p>Доставка</p>
                         <div class="field_input left">
-                            <select>
+                            <select name="country">
                                 <option disabled="">Страна</option>
-                                <option value="punkt2">Пункт 2</option>
-                                <option value="punkt2">Пункт 2</option>
-                                <option value="punkt2">Пункт 2</option>
+                                <option value="Россия">Россия</option>
+                                <option value="Украина">Украина</option>
+                                <option value="Узбекистан">Узбекистан</option>
                             </select>
                         </div>
                         <div class="field_input left">
-                            <select>
+                            <select name="city">
                                 <option disabled="">Город</option>
-                                <option value="punkt2">Пункт 2</option>
-                                <option value="punkt2">Пункт 2</option>
-                                <option value="punkt2">Пункт 2</option>
+                                <option value="Москва">Москва</option>
+                                <option value="Подольск">Подольск</option>
+                                <option value="Щербинка">Щербинка</option>
                             </select>
                         </div>
                         <div class="field_input left">
@@ -107,13 +107,13 @@
                     </div>
                     <div class="comment">
                         <span id="comment">Добавить комментарий</span>
-                        <textarea name="comment" value="<?=$comment?>"></textarea>
+                        <textarea name="comment"><?=$comment?></textarea>
                     </div>
                     <div class="pay">
                         <p>Оплата</p>
                         <div class="pay_checkbox">
                             <div class="pay_checkbox__label">
-                                <input type="radio" id="shipping_pay" class="pay_checkbox__input" name="shipping_pay" value="online">
+                                <input type="radio" id="shipping_pay" class="pay_checkbox__input" name="shipping_pay" value="online" <?php if ($shipping == "online") { ?>checked="checked"<?php } ?><?php if ($shipping == "") { ?>checked="checked"<?php } ?>>
                                 <label>Оплата онлайн</label>
                             </div>
                         </div>

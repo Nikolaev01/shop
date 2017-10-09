@@ -28,6 +28,9 @@ class URLPage extends URL {
      public static function action(){
         return URL::get(Config::FILE_FUNC, "", array());
     }
+    public static function message(){
+        return URL::get("message", "", array());
+    }
 
 
 

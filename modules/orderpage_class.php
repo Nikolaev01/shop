@@ -9,6 +9,9 @@ class OrderPage extends Module{
         $this->add("name");
         $this->add("email");
         $this->add("comment");
+        $this->add("shipping");
+        $this->add("punkt");
+        $this->add("comment");
         $this->add("price_discount");
         $this->add("discount");
         $this->add("action");

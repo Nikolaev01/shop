@@ -85,6 +85,7 @@ abstract class AbstractDataBase {
 		$fields .= ")";
 		$values .= ")";
 		$query = "INSERT INTO `$table_name` $fields $values";
+		//print_r($query);
 		return $this->query($query, $params);
 	}
 	

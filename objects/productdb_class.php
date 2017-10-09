@@ -185,5 +185,9 @@ class ProductDB extends ObjectDB{
         //print_r($query);
         return self::$db->select($query);
     }
+
+    public function addValues($values){
+        return self::$db->insert(Config::DB_PREFIX.self::$table, $values);
+    }
 }
 ?>

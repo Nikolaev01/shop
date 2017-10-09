@@ -1,6 +1,8 @@
 <?php
 class OrderDB extends ObjectDB{
     protected static $table = "orders";
+    protected $validate;
+    protected $message;
     public function __construct()
     {
         parent::__construct(self::$table);
@@ -17,5 +19,19 @@ class OrderDB extends ObjectDB{
         $this->add("date_send", "ValidateDate");
         $this->add("date_pay", "ValidateDate");
         $this->add("product_ids_inst", "ValidateIds");
+        //$this->validate = new JSValidator($this->__construct($this->message));
     }
+
+    protected function checkData($data){
+
+        //if(!$this->validate->email($data["email"])) return "ERROR_EMAIL";
+        return true;
+    }
+
+
+    public function addValues($values){
+        return self::$db->insert(self::$table, $values);
+    }
+
+
 }

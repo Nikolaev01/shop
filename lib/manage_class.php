@@ -2,12 +2,20 @@
 class Manage {
     private $config;
     private $validate;
+    private $discount;
+    private $product;
+    private $orders;
+    private $request;
 
 
     public function __construct()
     {
         session_start();
-        $this->data = $_REQUEST;
+        $this->request = new Request();
+        $this->data = $this->request->xss($_REQUEST);
+        $this->discount = new DiscountDB();
+        $this->product = new ProductDB();
+        $this->orders = new OrderDB();
         $this->saveData();
 
     }
@@ -45,8 +53,39 @@ class Manage {
         }
     }
     public function orderCart(){
-        //print_r($this->data);
+        $temp_data = array();
+        $temp_data["delivery"] = $_SESSION["delivery"];
+        $temp_data["product_ids"] = $_SESSION["card"];
+        $temp_data["price"] = $this->getPrice();
+        $temp_data["name"] = $this->data["name"];
+        $temp_data["phone"] = $this->data["phone"];
+        $temp_data["email"] = $this->data["email"];
+        if($_SESSION["delivery"] == "cur") $temp_data["address"] = $this->getFullAdress();
+        elseif ($_SESSION["delivery"] == "sam") $temp_data["address"] = $this->data["shipping_pay"];
+        if (!isset($this->data["notice"])) $temp_data["notice"] = "";
+        else $temp_data["notice"] = $this->data["notice"];
+        $temp_data["date_order"] = Subsidiary::gt();
+        $temp_data["date_send"] = 0;
+        $temp_data["date_pay"] = 0;
+        if ($this->orders->addValues($temp_data)){
+            return true;
+        }
+        return false;
     }
+
+    private function getPrice(){
+        $ids = explode(",", $_SESSION["card"]);
+        $summa = ProductDB::getPriceOnIDs($ids);
+        if(!isset($_SESSION["discount"])) $value = false;
+        else $value = $this->discount->getValueOnCode($_SESSION["discount"]);
+        if ($value) $summa *= (1 - $value);
+        return $summa;
+    }
+
+    private function getFullAdress(){
+        return $this->data["country"].", ".$this->data["city"].", ".$this->data["addres"].", ".$this->data["index"];
+    }
+
     public function getPlaceOnCoord($coord){
         $params = array(
             'coord' => $coord, // координаты

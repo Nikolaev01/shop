@@ -12,7 +12,7 @@
         $manage->updateCart();
     }
     elseif ($func == "order"){
-        $manage->orderCart();
+        $success = $manage->orderCart();
     }
     elseif ($func == "getplace"){
         $manage->getPlaceOnCoord($param);
@@ -22,6 +22,7 @@
         $link = Config::ADDRESS.URL::get("", "", array());
     }
     else $link = $_SERVER["HTTP_REFERER"];
+
     header("Location: $link");
     exit;
 ?>

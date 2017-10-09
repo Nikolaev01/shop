@@ -17,7 +17,7 @@ class Request {
 		if (isset($this->data[$name])) return $this->data[$name];
 	}
 	
-	private function xss($data) {
+	public function xss($data) {
 		if (is_array($data)) {
 			$escaped = array();
 			foreach ($data as $key => $value) {

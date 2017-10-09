@@ -80,7 +80,7 @@ abstract class Controller extends AbstractController
         $header->meta("viewport", "width=device-width", false);
         $header->favicon = "/favicon.ico";
         $header->css = array("/css/main.css", "/css/media.css");
-        $header->js = array("/js/jquery.min.js", "/js/script.js", "/js/slider.js");
+        $header->js = array("/js/jquery.min.js", "/js/jquery.validate.min.js", "/js/jquery.maskedinput.min.js", "/js/script.js", "/js/slider.js");
 
         return $header;
     }

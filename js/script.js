@@ -281,7 +281,16 @@ $(document).ready(function () {
             //console.log(query);
     });
 
+    if($(".cur_item.left input[type='radio']").attr("checked") == "checked"){
+        $(".samo_shipping").css("display", "block");
+    }
+    if($(".cur_item.right input[type='radio']").attr("checked") == "checked"){
+        $(".ship").css("display", "block");
+    }
+    //alert ($("textarea[name='comment']").text());
+    if($("textarea[name='comment']").text())$("textarea[name='comment']").css("display","block") ;
 
+    //переключение радиокнопки выбора сомовывоза
     $(".cur_item.left .left span").click(function () {
         $(".ship").animate({height: 'hide'}, 200);
         $(".samo_shipping").animate({height: 'show'}, 200);
@@ -297,9 +306,58 @@ $(document).ready(function () {
         else $(".comment textarea").animate({height: 'hide'}, 700);
     });
 
+    $("#order").validate({
+        rules:{
 
+            name:{
+                required: true,
+                minlength: 4,
+                maxlength: 16,
+            },
 
+            phone:{
+                required: true,
+                minlength: 6,
+                maxlength: 25,
+            },
+            email:{
+                required: true,
+                email : true,
+            },
+            addres:{
+                required: true,
+                minlength: 4,
+            },
+        },
 
+        messages:{
+
+            name:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Логин должен быть минимум 4 символа",
+                maxlength: "Максимальное число символо - 16",
+            },
+
+            phone:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Пароль должен быть минимум 6 символа",
+                maxlength: "Пароль должен быть максимум 16 символов",
+            },
+            email:{
+                required: "Это поле обязательно для заполнения",
+                email: "Не правильный E-mail",
+            },
+            addres:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Адрес должен быть минимум 4 символа",
+            },
+
+        }
+
+    });
+
+    //Маска для телефона
+    $(".field_input.left input[name='phone']").mask("+7 (999) 999-9999");
 
 });
 
