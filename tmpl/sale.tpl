@@ -18,7 +18,7 @@
                             <a href="<?=$link_compare?>"><img src="<?=$part_images?>strelk.png" alt="Сравнение">Сравнение</a>
                         </div>
                         <div>
-                            <span><?=$item['price']?><img src="<?=$part_images?>coast.png" alt="Стоимость"></span>
+                            <span><?=$item['price']?> <img src="<?=$part_images?>coast.png" alt="Стоимость"></span>
                             <br>
                             <span v="<?=$item["link_add_cart"]?>"><img src="<?=$part_images?>cart_small.png" alt="В корзину">В корзину</span>
                         </div>

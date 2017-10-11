@@ -11,6 +11,8 @@ class OrderPage extends Module{
         $this->add("comment");
         $this->add("shipping");
         $this->add("punkt");
+        $this->add("index");
+        $this->add("addres");
         $this->add("comment");
         $this->add("price_discount");
         $this->add("discount");

@@ -60,6 +60,8 @@ class Manage {
         $temp_data["name"] = $this->data["name"];
         $temp_data["phone"] = $this->data["phone"];
         $temp_data["email"] = $this->data["email"];
+        $temp_data["index"] = $this->data["index"];
+        $temp_data["addres"] = $this->data["addres"];
         if($_SESSION["delivery"] == "cur") $temp_data["address"] = $this->getFullAdress();
         elseif ($_SESSION["delivery"] == "sam") $temp_data["address"] = $this->data["shipping_pay"];
         if (!isset($this->data["notice"])) $temp_data["notice"] = "";

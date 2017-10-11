@@ -98,10 +98,10 @@
                             </select>
                         </div>
                         <div class="field_input left">
-                            <input type="text" name="index" placeholder="Индекс">
+                            <input type="text" name="index" placeholder="Индекс" value="<?=$index?>">
                         </div>
                         <div class="field_input left">
-                            <input type="text" name="addres" placeholder="Адрес(улица, дом, квартира)">
+                            <input type="text" name="addres" placeholder="Адрес(улица, дом, квартира)" value="<?=$addres?>">
                         </div>
 
                     </div>

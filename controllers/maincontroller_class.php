@@ -11,11 +11,17 @@ class MainController extends Controller{
         //блок с хитами
         $hits = new Hits();
         $hit = ProductDB::getAllWithImgforHits("product_img", 7);
+        for($i = 0; $i < count($hit); $i++){
+            $hit[$i]['price'] = number_format($hit[$i]['price'], 0, ',', ' ');
+        }
         $hits->hit = $hit;
         $hits->part_images = Config::DIR_IMG;
         //Блок с распродажей
         $sale = new Sale();
         $sal = ProductDB::getAllWithImgforHits("product_img", 7);
+        for($i = 0; $i < count($sal); $i++){
+            $sal[$i]['price'] = number_format($sal[$i]['price'], 0, ',', ' ');
+        }
         $sale->sal = $sal;
         $sale->name = "Распродажа";
         $sale->part_images = Config::DIR_IMG;
@@ -60,6 +66,9 @@ class MainController extends Controller{
             $hornavs->addData("Каталог");
             $category_name = "Каталог";
             $product->pagination = $pagination;
+        }
+        for($i = 0; $i < count($item); $i++){
+            $item[$i]['price'] = number_format($item[$i]['price'], 0, ',', ' ');
         }
         $product->product = $item;
         $this->render($this->renderData(array("category_block" => $category_block, "product" => $product, "hornav" => $hornavs, "sort" => $sort), "category"));
@@ -197,6 +206,8 @@ class MainController extends Controller{
         if(!isset($_SESSION["email"]))$_SESSION["email"] = "";
         if(!isset($_SESSION["shipping_pay"]))$_SESSION["shipping_pay"] = "";
         if(!isset($_SESSION["punkt"]))$_SESSION["punkt"] = "";
+        if(!isset($_SESSION["index"]))$_SESSION["index"] = "";
+        if(!isset($_SESSION["addres"]))$_SESSION["addres"] = "";
 
 
         $hornavs = $this->getHornav();
@@ -213,8 +224,10 @@ class MainController extends Controller{
         $order->shipping = $_SESSION["shipping_pay"];
         $order->punkt = $_SESSION["punkt"];
         $order->comment = $_SESSION["comment"];
+        $order->index = $_SESSION["index"];
+        $order->addres = $_SESSION["addres"];
 
-        print_r($_SESSION);
+       // print_r($_SESSION);
 
         $this->render($order);
         //$this->render($this->renderData(array("hornav" => $hornavs, "action" => $form_action, ), "orderpage"));

@@ -166,7 +166,9 @@ class ProductDB extends ObjectDB{
         for($i=0; $i < count($result); $i++){
             $result[$i]['image'] = Config::DIR_IMG_PRODUCT.$result[$i]['image'];
             $result[$i]['link'] = URL::get("product", "", array("id" => $result[$i]['id']));
+            //print_r($result[$i]['price']);
             $result[$i]['delete_cart'] = URLPage::getLinkDelCart($result[$i]['id']);
+
         }
         return $result;
     }
