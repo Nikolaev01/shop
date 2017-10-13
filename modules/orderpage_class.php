@@ -19,6 +19,7 @@ class OrderPage extends Module{
         $this->add("action");
         $this->add("summa");
         $this->add("link_pageorder");
+        $this->add("message");
     }
     public function getTmplFile()
     {

@@ -5,6 +5,7 @@
             <div class="order_fields">
                 <form name="order" id="order" method="post" action="<?=$action?>">
                     <div class="name_prod">
+                        <?php include "message.tpl" ?>
                         <h2></h2>
                         <div class="order_field_input">
                             <div class="field_span left">

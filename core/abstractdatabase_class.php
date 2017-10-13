@@ -70,22 +70,23 @@ abstract class AbstractDataBase {
 	}
 	
 	public function insert($table_name, $row) {
-		if (count($row) == 0) return false;
-		$table_name = $this->getTableName($table_name);
-		$fields = "(";
-		$values = "VALUES (";
-		$params = array();
-		foreach ($row as $key => $value) {
-			$fields .= "`$key`,";
-			$values .= $this->sq.",";
-			$params[] = $value;
-		}
-		$fields = substr($fields, 0, -1);
-		$values = substr($values, 0, -1);
-		$fields .= ")";
-		$values .= ")";
-		$query = "INSERT INTO `$table_name` $fields $values";
-		//print_r($query);
+        if (count($row) == 0) return false;
+        $table_name = $this->getTableName($table_name);
+        $fields = "(";
+        $values = "VALUES (";
+        $params = array();
+        foreach ($row as $key => $value) {
+            $fields .= "`$key`,";
+            $values .= $this->sq.",";
+            $params[] = $value;
+        }
+        $fields = substr($fields, 0, -1);
+        $values = substr($values, 0, -1);
+        $fields .= ")";
+        $values .= ")";
+        $query = "INSERT INTO `$table_name` $fields $values";
+        //print_r($row);
+       //print_r($query);
 		return $this->query($query, $params);
 	}
 	
@@ -118,9 +119,9 @@ abstract class AbstractDataBase {
 	}
 	
 	private function query($query, $params = false) {
-		$success = $this->mysqli->query($this->getQuery($query, $params));
-		if (!$success) return false;
-		if ($this->mysqli->insert_id === 0) return true;
+        $success = $this->mysqli->query($this->getQuery($query, $params));
+        if (!$success) return false;
+        if ($this->mysqli->insert_id === 0) return true;
 		return $this->mysqli->insert_id;
 	}
 	

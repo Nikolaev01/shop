@@ -76,13 +76,13 @@ class MainController extends Controller{
     public function actionProduct(){
             $product_db = new ProductDB();
             $product_db->load($this->request->id);
+            $product_db->price = number_format($product_db->price, 0, ',', ' ');
             if (!$product_db->isSaved()) $this->notFound();
             $category_db = new CategoryDB();
             $category_db->load($product_db->category_id);
             $this->title = $product_db->title;
             $this->meta_desc = $product_db->meta_desc;
             $this->mata_key = $product_db->meta_key;
-            //горизонтальная навигация
             $hornavs = $this->getHornav();
             if ($product_db->category_id) {
                 $hornavs->addData($category_db->title, $category_db->link);
@@ -98,7 +98,10 @@ class MainController extends Controller{
             $bue = new Bye();
             $bue->name = "С этим товаром также заказывают";
             $bue->part_images = Config::DIR_IMG;
-            $bues =ProductDB::getAllWithImgRand("product_img", 7);
+            $bues = ProductDB::getAllWithImgRand("product_img", 7);
+            foreach ($bues as $key => $value){
+                $bues[$key]['price'] = ObjectDB::getPrOnPrice($bues[$key]['price']);
+            }
             $bue->sal = $bues;
             $this->render($product.$bue);
     }
@@ -157,7 +160,7 @@ class MainController extends Controller{
                     $cart[$i]["summa"] =  $cart[$i]["count"]*$cart[$i]["price"];
                     $summa += $cart[$i]["summa"];
                     $cart[$i]["price"] = number_format($result[$v]['price'], 0, ',', ' ');
-                    $cart[$i]["inst_price"] = number_format($result[$v]['inst_price'], 0, ',', ' ');
+                    $cart[$i]["inst_price"] = ObjectDB::getPrOnPrice($result[$v]['inst_price']);
                     $i++;
                 }
                 $summa_all = $summa;
@@ -179,7 +182,7 @@ class MainController extends Controller{
         if ($cart_item->cart_items == array()) $order = "";
         else {
             $order = new Order();
-            $summa = number_format($summa, 0, ',', ' ');
+            $summa = ObjectDB::getPrOnPrice($summa);
             $order->summa = $summa;
             $order->discount = $_SESSION["discount"];
             $order->price_discount = 0;
@@ -226,8 +229,9 @@ class MainController extends Controller{
         $order->comment = $_SESSION["comment"];
         $order->index = $_SESSION["index"];
         $order->addres = $_SESSION["addres"];
-
-       // print_r($_SESSION);
+        $order->message = $this->messageForm();
+        //print_r($order);
+        //print_r($_SESSION);
 
         $this->render($order);
         //$this->render($this->renderData(array("hornav" => $hornavs, "action" => $form_action, ), "orderpage"));

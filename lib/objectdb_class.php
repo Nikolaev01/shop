@@ -49,6 +49,10 @@ abstract class ObjectDB extends AbstractObjectDB{
         $query = self::$db->getQuery($query, $params);
         return self::$db->selectCell($query);
     }
+    public static function getPrOnPrice($price){
+        return number_format($price, 0, ',', ' ');
+    }
+
 
 }
 ?>

@@ -5,7 +5,7 @@ abstract class Config {
     const SECRET = "SACSDV";
     const ADDRESS = "http://nd-shop.local";
     const ADM_NAME = "Николаев Николай";
-    const ADM_EMAIL = "nikolaevnv50@yandex.ru";
+    const ADM_EMAIL = "nikolaevnv50@mail.ru";
 
 
     const DB_HOST = "localhost";//Название хоста
@@ -37,6 +37,9 @@ abstract class Config {
 
     const MIN_SEARCH_LEN = 3;//Минимальная длина слова в поиске
     const LEN_SEARCH_RES = 255;//Максимальная длина слова в поиске
+
+    const MIN_WORD = 3;//Минимальная длина слова в поиске
+    const MAX_WORD = 255;//Максимальная длина слова в поиске
 
     const DEFAULT_AVATAR = "default.png";//файл стандартной аватарки
     const MAX_SIZE_AVATAR = 51200;//максимальный размер аватарки

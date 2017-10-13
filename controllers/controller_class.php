@@ -2,6 +2,7 @@
 abstract class Controller extends AbstractController
 {
     protected $title;
+    protected $message;
     protected $meta_desc;
     protected $meta_key;
     protected $mail = null;
@@ -95,6 +96,17 @@ abstract class Controller extends AbstractController
         $topmenu->uri = $this->url_active;
         $topmenu->items = $items;
         return $topmenu;
+    }
+
+    public function messageForm()
+    {
+        $mes = new Message(Config::FILE_MESSAGES);
+
+        if (!isset($_SESSION["message"])) return "";
+        $text = $mes->get($_SESSION["message"]);
+        //print_r($_SESSION);
+        unset($_SESSION["message"]);
+        return $text;
     }
 
     protected function getBottom()

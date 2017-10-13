@@ -1,12 +1,9 @@
 <?php
 class Manage {
-    private $config;
-    private $validate;
     private $discount;
     private $product;
     private $orders;
     private $request;
-
 
     public function __construct()
     {
@@ -60,15 +57,16 @@ class Manage {
         $temp_data["name"] = $this->data["name"];
         $temp_data["phone"] = $this->data["phone"];
         $temp_data["email"] = $this->data["email"];
-        $temp_data["index"] = $this->data["index"];
-        $temp_data["addres"] = $this->data["addres"];
+        //$temp_data["index"] = $this->data["index"];
+        $temp_data["address"] = $this->data["addres"];
         if($_SESSION["delivery"] == "cur") $temp_data["address"] = $this->getFullAdress();
-        elseif ($_SESSION["delivery"] == "sam") $temp_data["address"] = $this->data["shipping_pay"];
+        elseif ($_SESSION["delivery"] == "sam") $temp_data["address"] = $this->data["punkt"];
         if (!isset($this->data["notice"])) $temp_data["notice"] = "";
         else $temp_data["notice"] = $this->data["notice"];
         $temp_data["date_order"] = Subsidiary::gt();
         $temp_data["date_send"] = 0;
         $temp_data["date_pay"] = 0;
+        //print_r($_SESSION);
         if ($this->orders->addValues($temp_data)){
             return true;
         }
@@ -92,8 +90,7 @@ class Manage {
         $params = array(
             'coord' => $coord, // координаты
             'format'  => 'json',   // формат ответа
-            'results' => 1 // количество выводимых результатов
-            // ваш api key
+            'results' => 1 // количество выводимых результат
         );
         $response = json_decode(file_get_contents('https://geocode-maps.yandex.ru/1.x/?format=json&geocode=37.611,55.758'));
         print_r($response);
