@@ -159,7 +159,7 @@ class MainController extends Controller{
                     $cart[$i]["count"] = $this->getCountInArray($v, $ids);
                     $cart[$i]["summa"] =  $cart[$i]["count"]*$cart[$i]["price"];
                     $summa += $cart[$i]["summa"];
-                    $cart[$i]["price"] = number_format($result[$v]['price'], 0, ',', ' ');
+                    $cart[$i]["price"] = ObjectDB::getPrOnPrice($result[$v]['price']);
                     $cart[$i]["inst_price"] = ObjectDB::getPrOnPrice($result[$v]['inst_price']);
                     $i++;
                 }
@@ -183,14 +183,14 @@ class MainController extends Controller{
         else {
             $order = new Order();
             $summa = ObjectDB::getPrOnPrice($summa);
+            $order->summa_all = ObjectDB::getPrOnPrice($summa_all);
             $order->summa = $summa;
             $order->discount = $_SESSION["discount"];
             $order->price_discount = 0;
             $order->link_pageorder = URLPage::getOrderPage();
             if ($value) {
-                $order->price_discount = $summa_all * $value;
+                $order->price_discount = ObjectDB::getPrOnPrice($summa_all * $value);
             }
-
         }
         $form_action = URLPage::action();
         $this->render($this->renderData(array("hornav" => $hornavs, "cart_item" => $cart_item, "order" => $order, "action" => $form_action), "cartpage"));
@@ -230,8 +230,7 @@ class MainController extends Controller{
         $order->index = $_SESSION["index"];
         $order->addres = $_SESSION["addres"];
         $order->message = $this->messageForm();
-        //print_r($order);
-        //print_r($_SESSION);
+
 
         $this->render($order);
         //$this->render($this->renderData(array("hornav" => $hornavs, "action" => $form_action, ), "orderpage"));

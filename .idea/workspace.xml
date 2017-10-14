@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8d93a12-3584-4304-ac79-3d31cfaaff46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/check_class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/systemmessage_class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tmpl/emails/test.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tmpl/message.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/controller_class.php" afterPath="$PROJECT_DIR$/controllers/controller_class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/maincontroller_class.php" afterPath="$PROJECT_DIR$/controllers/maincontroller_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/abstractdatabase_class.php" afterPath="$PROJECT_DIR$/core/abstractdatabase_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/message_class.php" afterPath="$PROJECT_DIR$/core/message_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config_class.php" afterPath="$PROJECT_DIR$/lib/config_class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/function.php" afterPath="$PROJECT_DIR$/function.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/script.js" afterPath="$PROJECT_DIR$/js/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/manage_class.php" afterPath="$PROJECT_DIR$/lib/manage_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/objectdb_class.php" afterPath="$PROJECT_DIR$/lib/objectdb_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/orderpage_class.php" afterPath="$PROJECT_DIR$/modules/orderpage_class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/order_class.php" afterPath="$PROJECT_DIR$/modules/order_class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/orderdb_class.php" afterPath="$PROJECT_DIR$/objects/orderdb_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/text/messages.ini" afterPath="$PROJECT_DIR$/text/messages.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmpl/cart_item.tpl" afterPath="$PROJECT_DIR$/tmpl/cart_item.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmpl/cartpage.tpl" afterPath="$PROJECT_DIR$/tmpl/cartpage.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmpl/main.tpl" afterPath="$PROJECT_DIR$/tmpl/main.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmpl/order.tpl" afterPath="$PROJECT_DIR$/tmpl/order.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmpl/orderpage.tpl" afterPath="$PROJECT_DIR$/tmpl/orderpage.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,28 +82,28 @@
       <file leaf-file-name="maincontroller_class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/maincontroller_class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="233" column="10" lean-forward="false" selection-start-line="233" selection-start-column="10" selection-end-line="233" selection-end-column="10" />
+            <state relative-caret-position="230">
+              <caret line="193" column="9" lean-forward="false" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="check_class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/check_class.php">
+      <file leaf-file-name="orderpage.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmpl/orderpage.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+            <state relative-caret-position="85">
+              <caret line="5" column="92" lean-forward="false" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="function.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/function.php">
+      <file leaf-file-name="order_class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/order_class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="153">
+              <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -116,68 +112,92 @@
       <file leaf-file-name="orderdb_class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objects/orderdb_class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+            <state relative-caret-position="643">
+              <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config_class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/config_class.php">
+      <file leaf-file-name="order.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmpl/order.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="238">
+              <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tmpl/emails/test.tpl">
+      <file leaf-file-name="function.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subsidiary_class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/subsidiary_class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mail_class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/mail_class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="abstractmail_class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/abstractmail_class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manage_class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="manage_class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/manage_class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="76" column="47" lean-forward="true" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+            <state relative-caret-position="408">
+              <caret line="90" column="12" lean-forward="false" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller_class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/controller_class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="104" column="52" lean-forward="false" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
+              <folding>
+                <marker date="1507928502377" expanded="true" signature="1447:1567" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="896">
+              <caret line="511" column="34" lean-forward="false" selection-start-line="511" selection-start-column="34" selection-end-line="511" selection-end-column="34" />
+              <folding>
+                <element signature="e#13#7407#0" expanded="false" />
+                <element signature="e#116#225#0" expanded="false" />
+                <element signature="e#7541#7730#0" expanded="false" />
+                <element signature="e#7790#7983#0" expanded="false" />
+                <element signature="e#8033#8207#0" expanded="false" />
+                <element signature="e#8256#8428#0" expanded="false" />
+                <element signature="e#8477#8649#0" expanded="false" />
+                <element signature="e#8696#8864#0" expanded="false" />
+                <element signature="e#10063#10829#0" expanded="false" />
+                <element signature="e#10929#11692#0" expanded="false" />
+                <element signature="e#11934#12262#0" expanded="false" />
+                <element signature="e#12325#12471#0" expanded="false" />
+                <element signature="e#12773#12833#0" expanded="false" />
+                <element signature="e#12911#12962#0" expanded="false" />
+                <element signature="e#13217#13336#0" expanded="false" />
+                <element signature="e#13393#13511#0" expanded="false" />
+                <element signature="e#13550#13742#0" expanded="false" />
+                <element signature="e#13771#15069#0" expanded="false" />
+                <element signature="n#!!block;n#getTimeRemaining#0" expanded="false" />
+                <element signature="n#!!block;n#initializeClock#0" expanded="false" />
+                <element signature="n#!!block;n#triades#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmpl/main.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="96" column="28" lean-forward="false" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -195,7 +215,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>center</find>
       <find>bre</find>
       <find>хиты</find>
       <find>страна</find>
@@ -225,6 +244,7 @@
       <find>ajax</find>
       <find>close</find>
       <find>comment</find>
+      <find>ajaxAddPrinCart</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -255,11 +275,6 @@
         <option value="$PROJECT_DIR$/modules/cartitem_class.php" />
         <option value="$PROJECT_DIR$/objects/discountDB_class.php" />
         <option value="$PROJECT_DIR$/tmpl/product_page.tpl" />
-        <option value="$PROJECT_DIR$/tmpl/cartpage.tpl" />
-        <option value="$PROJECT_DIR$/tmpl/cart_item.tpl" />
-        <option value="$PROJECT_DIR$/modules/order_class.php" />
-        <option value="$PROJECT_DIR$/tmpl/main.tpl" />
-        <option value="$PROJECT_DIR$/tmpl/order.tpl" />
         <option value="$PROJECT_DIR$/lib/geolacation_class.php" />
         <option value="$PROJECT_DIR$/tmpl/product.tpl" />
         <option value="$PROJECT_DIR$/tmpl/hits.tpl" />
@@ -267,26 +282,31 @@
         <option value="$PROJECT_DIR$/lib/subsidiary_class.php" />
         <option value="$PROJECT_DIR$/core/request_class.php" />
         <option value="$PROJECT_DIR$/lib/urlpage_class.php" />
-        <option value="$PROJECT_DIR$/function.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/script.js" />
         <option value="$PROJECT_DIR$/objects/productdb_class.php" />
         <option value="$PROJECT_DIR$/tmpl/sale.tpl" />
         <option value="$PROJECT_DIR$/lib/objectdb_class.php" />
         <option value="$PROJECT_DIR$/core/message_class.php" />
-        <option value="$PROJECT_DIR$/tmpl/orderpage.tpl" />
         <option value="$PROJECT_DIR$/modules/orderpage_class.php" />
         <option value="$PROJECT_DIR$/lib/systemmessage_class.php" />
         <option value="$PROJECT_DIR$/text/messages.ini" />
         <option value="$PROJECT_DIR$/controllers/controller_class.php" />
         <option value="$PROJECT_DIR$/tmpl/message.tpl" />
-        <option value="$PROJECT_DIR$/controllers/maincontroller_class.php" />
         <option value="$PROJECT_DIR$/lib/check_class.php" />
         <option value="$PROJECT_DIR$/core/abstractdatabase_class.php" />
-        <option value="$PROJECT_DIR$/lib/manage_class.php" />
         <option value="$PROJECT_DIR$/lib/config_class.php" />
-        <option value="$PROJECT_DIR$/objects/orderdb_class.php" />
         <option value="$PROJECT_DIR$/tmpl/emails/test.tpl" />
+        <option value="$PROJECT_DIR$/modules/order_class.php" />
+        <option value="$PROJECT_DIR$/tmpl/order.tpl" />
+        <option value="$PROJECT_DIR$/tmpl/cartpage.tpl" />
+        <option value="$PROJECT_DIR$/tmpl/cart_item.tpl" />
+        <option value="$PROJECT_DIR$/controllers/maincontroller_class.php" />
+        <option value="$PROJECT_DIR$/tmpl/main.tpl" />
+        <option value="$PROJECT_DIR$/function.php" />
+        <option value="$PROJECT_DIR$/objects/orderdb_class.php" />
+        <option value="$PROJECT_DIR$/tmpl/orderpage.tpl" />
+        <option value="$PROJECT_DIR$/js/script.js" />
+        <option value="$PROJECT_DIR$/lib/manage_class.php" />
       </list>
     </option>
   </component>
@@ -298,10 +318,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="636" />
-    <option name="y" value="209" />
-    <option name="width" value="1258" />
-    <option name="height" value="832" />
+    <option name="x" value="776" />
+    <option name="width" value="1135" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -322,7 +341,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -359,49 +377,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="text" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nd-shop.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nd-shop.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="objects" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nd-shop.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nd-shop.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nd-shop.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nd-shop.local" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -421,6 +397,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -563,11 +540,12 @@
       <workItem from="1507548127985" duration="15210000" />
       <workItem from="1507747442573" duration="5634000" />
       <workItem from="1507907047347" duration="12338000" />
+      <workItem from="1507978123525" duration="17969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352329000" />
+    <option name="totallyTimeSpent" value="370298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -579,10 +557,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="636" y="209" width="1258" height="832" extended-state="0" />
+    <frame x="776" y="0" width="1135" height="1040" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2178631" sideWeight="0.4960091" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24651162" sideWeight="0.4960091" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33155793" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -649,26 +627,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/script.js</url>
-          <line>119</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/objects/categorydb_class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmpl/category.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -683,27 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmpl/main.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="95" column="14" lean-forward="false" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmpl/cartpage.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmpl/order.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="64" lean-forward="false" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmpl/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -715,14 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/order_class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,42 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="89" column="55" lean-forward="false" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
-          <folding>
-            <element signature="e#116#225#0" expanded="false" />
-            <element signature="e#7541#7730#0" expanded="false" />
-            <element signature="e#7790#7983#0" expanded="false" />
-            <element signature="e#8033#8207#0" expanded="false" />
-            <element signature="e#8256#8428#0" expanded="false" />
-            <element signature="e#8477#8649#0" expanded="false" />
-            <element signature="e#8696#8864#0" expanded="false" />
-            <element signature="e#8961#9322#0" expanded="false" />
-            <element signature="e#9368#9707#0" expanded="false" />
-            <element signature="e#9807#10573#0" expanded="false" />
-            <element signature="e#10673#11436#0" expanded="false" />
-            <element signature="e#11678#12006#0" expanded="false" />
-            <element signature="e#12069#12215#0" expanded="false" />
-            <element signature="e#12517#12577#0" expanded="false" />
-            <element signature="e#12655#12706#0" expanded="false" />
-            <element signature="e#12961#13080#0" expanded="false" />
-            <element signature="e#13137#13255#0" expanded="false" />
-            <element signature="e#13294#13486#0" expanded="false" />
-            <element signature="e#13515#14813#0" expanded="false" />
-            <element signature="n#!!block;n#getTimeRemaining#0" expanded="false" />
-            <element signature="n#!!block;n#initializeClock#0" expanded="false" />
-            <element signature="n#!!block;n#triades#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmpl/sale.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,26 +786,6 @@
           <folding>
             <marker date="1507752057784" expanded="true" signature="8808:8885" ph="SELECT * FRO... ${Config::DB_PREFIX}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/objectdb_class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding>
-            <marker date="1507921311856" expanded="true" signature="1542:1567" ph="SELECT `${$f... " />
-            <marker date="1507921311856" expanded="true" signature="1542:1629" ph="SELECT `${$f... " />
-            <marker date="1507921311856" expanded="true" signature="1542:1651" ph="SELECT `${$f... ${Config::DB_PREFIX}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmpl/orderpage.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,7 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,28 +859,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/controller_class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1129">
-          <caret line="104" column="52" lean-forward="false" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
-          <folding>
-            <marker date="1507928502377" expanded="true" signature="1447:1567" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/systemmessage_class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/maincontroller_class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="233" column="10" lean-forward="false" selection-start-line="233" selection-start-column="10" selection-end-line="233" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1018,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/manage_class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="76" column="47" lean-forward="true" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/config_class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1034,18 +887,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/function.php">
+    <entry file="file://$PROJECT_DIR$/lib/check_class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="782">
+          <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/mail_class.php">
+    <entry file="file://$PROJECT_DIR$/tmpl/emails/test.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1053,7 +906,15 @@
     <entry file="file://$PROJECT_DIR$/core/abstractmail_class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/mail_class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -1066,26 +927,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/check_class.php">
+    <entry file="file://$PROJECT_DIR$/tmpl/cartpage.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+        <state relative-caret-position="34">
+          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/objectdb_class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding>
+            <marker date="1507921311856" expanded="true" signature="1542:1567" ph="SELECT `${$f... " />
+            <marker date="1507921311856" expanded="true" signature="1542:1629" ph="SELECT `${$f... " />
+            <marker date="1507921311856" expanded="true" signature="1542:1651" ph="SELECT `${$f... ${Config::DB_PREFIX}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmpl/cart_item.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#1;n#div#1;n#div#1;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/maincontroller_class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="193" column="9" lean-forward="false" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmpl/main.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="96" column="28" lean-forward="false" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/controller_class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="104" column="52" lean-forward="false" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
+          <folding>
+            <marker date="1507928502377" expanded="true" signature="1447:1567" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/objects/orderdb_class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+        <state relative-caret-position="643">
+          <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmpl/emails/test.tpl">
+    <entry file="file://$PROJECT_DIR$/modules/order_class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmpl/order.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmpl/orderpage.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="92" lean-forward="false" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="511" column="34" lean-forward="false" selection-start-line="511" selection-start-column="34" selection-end-line="511" selection-end-column="34" />
+          <folding>
+            <element signature="e#13#7407#0" expanded="false" />
+            <element signature="e#116#225#0" expanded="false" />
+            <element signature="e#7541#7730#0" expanded="false" />
+            <element signature="e#7790#7983#0" expanded="false" />
+            <element signature="e#8033#8207#0" expanded="false" />
+            <element signature="e#8256#8428#0" expanded="false" />
+            <element signature="e#8477#8649#0" expanded="false" />
+            <element signature="e#8696#8864#0" expanded="false" />
+            <element signature="e#10063#10829#0" expanded="false" />
+            <element signature="e#10929#11692#0" expanded="false" />
+            <element signature="e#11934#12262#0" expanded="false" />
+            <element signature="e#12325#12471#0" expanded="false" />
+            <element signature="e#12773#12833#0" expanded="false" />
+            <element signature="e#12911#12962#0" expanded="false" />
+            <element signature="e#13217#13336#0" expanded="false" />
+            <element signature="e#13393#13511#0" expanded="false" />
+            <element signature="e#13550#13742#0" expanded="false" />
+            <element signature="e#13771#15069#0" expanded="false" />
+            <element signature="n#!!block;n#getTimeRemaining#0" expanded="false" />
+            <element signature="n#!!block;n#initializeClock#0" expanded="false" />
+            <element signature="n#!!block;n#triades#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/manage_class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="90" column="12" lean-forward="false" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
           <folding />
         </state>
       </provider>

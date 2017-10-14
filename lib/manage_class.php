@@ -38,6 +38,11 @@ class Manage {
         }
     }
     public function updateCart(){
+        foreach ($_SESSION as $k => $v){
+            if (strpos($k, "mont_") !== false){
+                $_SESSION[$k] = "";
+            }
+        }
         $_SESSION["card"] = "";
         foreach ($this->data as $k => $v){
             if (strpos($k, "count_") !== false){
@@ -46,10 +51,23 @@ class Manage {
                     $this->addCart($id);
                 }
             }
-           $_SESSION["discount"] = $this->data["promo"];
+            if (strpos($k, "mont_") !== false){
+                $this->saveData();
+            }
+            $_SESSION["discount"] = $this->data["promo"];
         }
+        //print_r($_SESSION);
+
     }
     public function orderCart(){
+        //выбираем какие продукты монтировать
+        $product_ids_inst = "";
+        foreach ($_SESSION as $k => $v){
+            if (strpos($k, "mont_") !== false){
+                $product_ids_inst .= substr($k, strlen("mont_")).",";
+            }
+        }
+        $product_ids_inst = substr($product_ids_inst, 0, -1);
         $temp_data = array();
         $temp_data["delivery"] = $_SESSION["delivery"];
         $temp_data["product_ids"] = $_SESSION["card"];
@@ -57,21 +75,30 @@ class Manage {
         $temp_data["name"] = $this->data["name"];
         $temp_data["phone"] = $this->data["phone"];
         $temp_data["email"] = $this->data["email"];
-        //$temp_data["index"] = $this->data["index"];
         $temp_data["address"] = $this->data["addres"];
         if($_SESSION["delivery"] == "cur") $temp_data["address"] = $this->getFullAdress();
-        elseif ($_SESSION["delivery"] == "sam") $temp_data["address"] = $this->data["punkt"];
+    elseif ($_SESSION["delivery"] == "sam") $temp_data["address"] = $this->data["punkt"];
         if (!isset($this->data["notice"])) $temp_data["notice"] = "";
-        else $temp_data["notice"] = $this->data["notice"];
+    else $temp_data["notice"] = $this->data["notice"];
         $temp_data["date_order"] = Subsidiary::gt();
         $temp_data["date_send"] = 0;
         $temp_data["date_pay"] = 0;
-        //print_r($_SESSION);
+        $temp_data["product_ids_inst"] = $product_ids_inst;
+        //добавляем в базу
         if ($this->orders->addValues($temp_data)){
+
+
+            
+            $_SESSION["card"] = "";
             return true;
         }
         return false;
     }
+
+    public function updateOrder(){
+
+    }
+
 
     private function getPrice(){
         $ids = explode(",", $_SESSION["card"]);

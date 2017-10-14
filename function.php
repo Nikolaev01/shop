@@ -18,11 +18,17 @@
         $manage->getPlaceOnCoord($param);
     }
     else exit;
-    if (!isset($_SERVER["HTTP_REFERER"])){
-        $link = Config::ADDRESS.URL::get("", "", array());
-    }
-    else $link = $_SERVER["HTTP_REFERER"];
 
+    if (isset($success)){
+        if(!$success) $link = $_SERVER["HTTP_REFERER"];
+        else $link = Config::ADDRESS.URL::get("", "", array());
+    }
+    else{
+        if (!isset($_SERVER["HTTP_REFERER"])){
+            $link = Config::ADDRESS.URL::get("", "", array());
+        }
+        else $link = $_SERVER["HTTP_REFERER"];
+    }
     header("Location: $link");
     exit;
 ?>

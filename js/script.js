@@ -227,6 +227,8 @@ $(document).ready(function () {
 
 	//увеличение и уменьшение количества товара в корзине
 	$('.add_item.minus').click(function(){
+        //var summa = Number($('#price').text().replace(/\s/g, ''));
+	    //alert (summa);
 		var num = $(this).next();
         var num2 = $(this).prev().attr("value");
 		//var num2 = $("input[name='count_product']").attr("value");
@@ -237,15 +239,19 @@ $(document).ready(function () {
 			$(this).next().text(end_text);
             $(this).prev().attr("value", end_text2);
 		}
+		ajaxUpdateOrder('ship', 'shipping');
+
 	});
 	$('.add_item:last-child').click(function(){
-		var num = $(this).prev();
+       // var summa = Number($('#price').text().replace(/\s/g, ''));
+        var num = $(this).prev();
         var num2 = $(this).prev().prev().prev().attr("value");
         //var num2 = $("input[name='count_product']").attr("value");
 		var end_text = Number(num.html())+1;
         var end_text2 = Number(num2)+1;
-		$(this).prev().text(end_text);
+        $(this).prev().text(end_text);
         $(this).prev().prev().prev().attr("value", end_text2);
+        ajaxUpdateOrder('ship','shipping');
 	});
 
     //прокрутка вперед горизонтального скрола Хиты и Распродажа
@@ -469,6 +475,7 @@ function ajaxAddPrinCart(data){
         data:(data),
         dataType: "text",
         success: function () {
+            //alert(data);
             $('#modalCart').reveal();
             setTimeout(function(){
                 $("#cart").load(location.href+" #cart>*","");
@@ -476,11 +483,36 @@ function ajaxAddPrinCart(data){
             }, 1500);
         }
     });
-
-
+}
+function ajaxUpdateOrder(form, form2){
+    $.ajax({
+        url: "/function.php",
+        type: "POST",
+        data:jQuery("#"+form).serialize(),
+        dataType: "text",
+        success: function () {
+            $("#"+form2).load(location.href+" #"+form2+">*","");
+        }
+    });
 
 }
-
+function call() {
+    var msg   = $('#order').serialize();
+    $.ajax({
+        type: 'POST',
+        url: '/function.php',
+        data: msg,
+        success: function(data) {
+            $('#modalCart_1').reveal();
+            setTimeout(function(){
+                window.location="http://nd-shop.local";
+            }, 1800);
+        },
+        error:  function(xhr, str){
+            alert('Возникла ошибка: ' + xhr.responseCode);
+        }
+    });
+}
 //геокодирование доступно только с https
 /*navigator.geolocation.getCurrentPosition(succes, error);
 function succes(position){

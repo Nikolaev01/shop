@@ -52,8 +52,6 @@ class OrderDB extends ObjectDB{
 
     public function addValues($values){
         if(!$this->check($values)) return false;
-        //print_r($values);
-        $this->mail->send(Config::ADM_EMAIL, $values, "test");
         return self::$db->insert(self::$table, $values);
     }
 

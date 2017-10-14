@@ -1,5 +1,5 @@
 <div class="center_33 right">
-        <div class="shipping">
+        <div class="shipping" id="shipping">
             <div class="prormo">
                 <h4>Сумма заказа</h4>
                 <input type="text" name="promo" placeholder="Введине промо-код" value="<?=$discount?>">
@@ -12,7 +12,7 @@
                             <span>Стоимость:</span>
                         </div>
                         <div class="coast_span right">
-                            <span><?=$summa?></span><img src="/images/coast_black.png" alt="Стоимость">
+                            <span id="price"><?=$summa_all?></span><img src="/images/coast_black.png" alt="Стоимость">
                         </div>
                         <div class="clear"></div>
                     </div>

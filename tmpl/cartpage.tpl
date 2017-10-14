@@ -1,6 +1,6 @@
 <div class="content">
     <div class="inner_content centrum">
-        <form name="ship"  action="<?=$action?>" method="post">
+        <form name="ship" id="ship" action="<?=$action?>" method="post">
             <?=$hornav?>
             <?=$cart_item?>
             <?=$order?>

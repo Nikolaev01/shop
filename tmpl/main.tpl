@@ -94,6 +94,11 @@
             <p>Товар успешно добавлен в корзину!</p>
             <a class="close-reveal-modal">&#215;</a>
         </div>
+        <div id="modalCart_1" class="reveal-modal">
+            <h1>Ваш заказ пригят!</h1>
+            <p>Дождитесь звонка для подтверждения заказа.</p>
+            <a class="close-reveal-modal">&#215;</a>
+        </div>
     </footer>
 </div>
 </body>
