@@ -76,7 +76,8 @@
                     </div>
                 </div>
                 <div class="clear"></div>
-                <div class="product_feature_inner">
+                <?=$option?>
+                <!--<div class="product_feature_inner">
                     <a class="product_info_active" href="#">Характеристики</a>
                     <a href="#">Состав поставки</a>
                 </div>
@@ -172,7 +173,7 @@
                         <div class="clear"></div>
                     </div>
 
-                </div>
+                </div>-->
                 <div class="clear"></div>
             </div>
         </div>

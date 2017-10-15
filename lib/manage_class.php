@@ -88,7 +88,7 @@ class Manage {
         if ($this->orders->addValues($temp_data)){
 
 
-            
+
             $_SESSION["card"] = "";
             return true;
         }

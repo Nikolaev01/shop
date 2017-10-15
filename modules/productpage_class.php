@@ -10,6 +10,7 @@ class ProductPage extends Module{
         $this->add("link_compare");
         $this->add("part_images");
         $this->add("link_addcart");
+        $this->add("option");
     }
 
 

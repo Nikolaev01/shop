@@ -103,6 +103,10 @@ class MainController extends Controller{
                 $bues[$key]['price'] = ObjectDB::getPrOnPrice($bues[$key]['price']);
             }
             $bue->sal = $bues;
+            $option_item = ProductDB::getAllOptionFromProduct($this->request->id, OptionDB::getTableName(), OptionValueDB::getTableName(), ProductOptionValueDB::getTableName());
+            $option = new OptionProduct();
+            $option->item = $option_item;
+            $product->option = $option;
             $this->render($product.$bue);
     }
     public function actionContact(){

@@ -172,7 +172,26 @@ class ProductDB extends ObjectDB{
         }
         return $result;
     }
-    
+    public static function getAllOptionFromProduct($product_id, $option_table, $option_value_table, $product_option_value_table){
+        $query = $query = "SELECT `".Config::DB_PREFIX.$product_option_value_table."`.`product_id`,
+		`".Config::DB_PREFIX.$option_table."`.`option_name`,
+		`".Config::DB_PREFIX.$option_value_table."`.`name`
+		FROM `".Config::DB_PREFIX.$product_option_value_table."`
+		LEFT JOIN `".Config::DB_PREFIX.$option_table."` ON `".Config::DB_PREFIX.$product_option_value_table."`.`option_id` = `".Config::DB_PREFIX.$option_table."`.`option_id`";
+        $query .= " LEFT JOIN `".Config::DB_PREFIX.$option_value_table."` ON `".Config::DB_PREFIX.$product_option_value_table."`.`option_value_id` = `".Config::DB_PREFIX.$option_value_table."`.`option_value_id`";
+        $query .= " WHERE `".Config::DB_PREFIX.$product_option_value_table."`.`product_id`='".$product_id."'";
+        $query .= "  GROUP BY `".Config::DB_PREFIX.$option_table."`.`option_id`";
+        $result = self::$db->select($query);
+        return $result;
+        //print_r($result);
+        /*SELECT xcv_product_option_value.product_id, xcv_option.option_name, xcv_option_value.name
+        FROM xcv_product_option_value
+        LEFT JOIN xcv_option on (xcv_product_option_value.option_id=xcv_option.option_id)
+        LEFT JOIN xcv_option_value on (xcv_product_option_value.option_value_id=xcv_option_value.option_value_id)
+        WHERE xcv_product_option_value.product_id=2
+        GROUP BY xcv_option.option_id*/
+    }
+
     public static function getAllOnIDs($ids){
         if (!$ids)return false;
         $query_ids = "";

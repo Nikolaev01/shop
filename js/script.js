@@ -225,6 +225,13 @@ $(document).ready(function () {
         $(this).prev().attr('checked',true);
     });
 
+    $(".order_fields input[type='submit']").on('submit', function (event) {
+        event.preventDefault();
+        
+    });
+
+
+
 	//увеличение и уменьшение количества товара в корзине
 	$('.add_item.minus').click(function(){
         //var summa = Number($('#price').text().replace(/\s/g, ''));

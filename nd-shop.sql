@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 05 2017 г., 00:40
+-- Время создания: Окт 16 2017 г., 00:12
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.6.29
 
@@ -55,6 +55,25 @@ INSERT INTO `xcv_categories` (`id`, `title`, `img`, `section_id`, `parent_id`, `
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `xcv_discount`
+--
+
+CREATE TABLE `xcv_discount` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `value` varchar(10) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `xcv_discount`
+--
+
+INSERT INTO `xcv_discount` (`id`, `code`, `value`) VALUES
+(1, 'qwertyuiop', '0.1');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `xcv_menu`
 --
 
@@ -87,9 +106,24 @@ INSERT INTO `xcv_menu` (`id`, `type`, `title`, `link`, `parent_id`, `external`) 
 
 CREATE TABLE `xcv_option` (
   `option_id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `option_name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `xcv_option`
+--
+
+INSERT INTO `xcv_option` (`option_id`, `option_name`, `type`) VALUES
+(1, 'Артикул', ''),
+(2, 'Тип', ''),
+(3, 'Управление', ''),
+(4, 'Вид', ''),
+(5, 'Высота поддона, см', ''),
+(6, 'Материал', ''),
+(7, 'Ширина, см', ''),
+(8, 'Глубина, см', ''),
+(9, 'Высота, см', '');
 
 -- --------------------------------------------------------
 
@@ -102,6 +136,59 @@ CREATE TABLE `xcv_option_value` (
   `option_id` int(11) UNSIGNED NOT NULL,
   `name` varchar(128) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- Дамп данных таблицы `xcv_option_value`
+--
+
+INSERT INTO `xcv_option_value` (`option_value_id`, `option_id`, `name`) VALUES
+(1, 2, 'Неразьемный'),
+(2, 2, 'Разьемный'),
+(3, 3, 'Ручное'),
+(4, 3, 'Автоматическое'),
+(5, 4, 'Средний'),
+(6, 4, 'Малый'),
+(7, 4, 'Большой'),
+(8, 4, 'Огромный');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `xcv_orders`
+--
+
+CREATE TABLE `xcv_orders` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `delivery` varchar(255) NOT NULL,
+  `product_ids` varchar(255) NOT NULL,
+  `price` int(11) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `notice` text NOT NULL,
+  `date_order` int(11) UNSIGNED NOT NULL,
+  `date_send` int(11) NOT NULL,
+  `date_pay` int(11) NOT NULL,
+  `product_ids_inst` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'not_confirm'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `xcv_orders`
+--
+
+INSERT INTO `xcv_orders` (`id`, `delivery`, `product_ids`, `price`, `name`, `phone`, `email`, `address`, `notice`, `date_order`, `date_send`, `date_pay`, `product_ids_inst`, `status`) VALUES
+(127, 'sam', '14,14,14,14,14', 9045, 'николай', '+7 (926) 022-2222', 'yungkiller@yandex.ru', 'olimp', '', 1508095877, 0, 0, '', 'not_confirm'),
+(126, 'cur', '2', 2010, 'Николай Николаев', '+7 (496) 754-5850', 'w5yw54y5yw@hdrtjh.ru', 'Россия, Москва, 54y4y54y45yy45y45y4, 54y54y54y45y5', '', 1508014495, 0, 0, '', 'not_confirm'),
+(125, 'cur', '2', 2010, 'Николай Николаев', '+7 (496) 754-5850', 'w5yw54y5yw@hdrtjh.ru', 'Россия, Подольск, 54y4y54y45yy45y45y4, 54y54y54y45y5', '', 1508014453, 0, 0, '', 'not_confirm'),
+(124, 'sam', '2,2,3', 6030, 'Николай Николаев', '+7 (496) 754-5850', '32534t5@ya.et', 'olimp', '', 1508014348, 0, 0, '', 'not_confirm'),
+(123, 'sam', '18,18,18,18,18,18,18,35,35,35,35,38,38,38,38', 27135, 'Николай Николаев', '+7 (496) 754-5850', 'yungkiller@yandex.ru', 'olimp', '', 1508014203, 0, 0, '', 'not_confirm'),
+(122, 'sam', '1,1,1,2,2,2,2,9,9,9,9,9,9', 20130, 'Николай Николаев', '+7 (496) 754-5850', 'yungkiller@yandex.ru', 'prt_mir', '', 1508013998, 0, 0, '1,2', 'not_confirm'),
+(121, 'sam', '2,2,2,2,2,2,2,2,2,6,6,6', 168791, 'Николай Николаев', '+7 (496) 754-5850', 'yungkiller@yandex.ru', 'prt_mir', '', 1508013918, 0, 0, '2', 'not_confirm'),
+(120, 'sam', '1,1,1,1,1,1,1,2,2,2,2,3', 9108, 'Николай Николаев', '+7 (496) 754-5850', 'yungkiller@yandex.ru', 'prt_mir', '', 1508013669, 0, 0, '1,2,3', 'not_confirm'),
+(118, 'sam', '1,2,3', 4030, 't5234t', '+7 (357) 356-7356', '356735673@ahsrthn.ru', 'olimp', '', 1508012963, 0, 0, '', 'not_confirm'),
+(119, 'sam', '1,2,3', 4030, 't5234t', '+7 (357) 356-7356', '356735673@ahsrthn.ru', 'olimp', '', 1508013034, 0, 0, '', 'not_confirm');
 
 -- --------------------------------------------------------
 
@@ -116,6 +203,7 @@ CREATE TABLE `xcv_product` (
   `meta_desc` varchar(255) NOT NULL,
   `meta_key` varchar(255) NOT NULL,
   `price` int(10) UNSIGNED NOT NULL,
+  `inst_price` int(10) UNSIGNED NOT NULL,
   `code` varchar(50) NOT NULL,
   `customer` varchar(255) NOT NULL,
   `serial` varchar(50) NOT NULL,
@@ -131,45 +219,45 @@ CREATE TABLE `xcv_product` (
 -- Дамп данных таблицы `xcv_product`
 --
 
-INSERT INTO `xcv_product` (`id`, `category_id`, `title`, `meta_desc`, `meta_key`, `price`, `code`, `customer`, `serial`, `model`, `contry`, `description`, `composition`, `sold`, `discount`) VALUES
-(1, 1, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 10, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
-(2, 2, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
-(3, 3, 'Душевая кабина E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 555, 0),
-(4, 4, 'Душевая кабина Esbaro Led E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 945, 0),
-(5, 5, 'Душевая ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 387, 0),
-(6, 6, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 56485, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 983, 0),
-(7, 7, 'Душевая кабина Esbaro ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 66, 0),
-(8, 8, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
-(9, 9, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
-(10, 1, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
-(11, 2, 'Душевая кабина E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 555, 0),
-(12, 3, 'Душевая кабина Esbaro Led E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 945, 0),
-(13, 4, 'Душевая ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 387, 0),
-(14, 5, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 983, 0),
-(15, 6, 'Душевая кабина Esbaro ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 66, 0),
-(16, 7, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
-(17, 8, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
-(18, 9, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
-(19, 1, 'Душевая кабина E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 555, 0),
-(20, 2, 'Душевая кабина Esbaro Led E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 945, 0),
-(21, 3, 'Душевая ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 387, 0),
-(22, 4, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 983, 0),
-(23, 5, 'Душевая кабина Esbaro ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 66, 0),
-(24, 6, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
-(25, 7, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
-(26, 8, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 11, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
-(27, 9, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
-(28, 8, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
-(29, 9, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
-(30, 1, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
-(31, 2, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
-(32, 3, 'Душевая кабина E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 555, 0),
-(33, 4, 'Душевая кабина Esbaro Led E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 945, 0),
-(34, 5, 'Душевая ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 387, 0),
-(35, 6, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 983, 0),
-(36, 7, 'Душевая кабина Esbaro ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 66, 0),
-(37, 8, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
-(38, 9, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0);
+INSERT INTO `xcv_product` (`id`, `category_id`, `title`, `meta_desc`, `meta_key`, `price`, `inst_price`, `code`, `customer`, `serial`, `model`, `contry`, `description`, `composition`, `sold`, `discount`) VALUES
+(1, 1, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 10, 1000, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
+(2, 2, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 1000, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
+(3, 3, 'Душевая кабина E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 1000, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 555, 0),
+(4, 4, 'Душевая кабина Esbaro Led E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 1000, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 945, 0),
+(5, 5, 'Душевая ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 1000, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 387, 0),
+(6, 6, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 56485, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 983, 0),
+(7, 7, 'Душевая кабина Esbaro ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 66, 0),
+(8, 8, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
+(9, 9, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
+(10, 1, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
+(11, 2, 'Душевая кабина E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 555, 0),
+(12, 3, 'Душевая кабина Esbaro Led E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 945, 0),
+(13, 4, 'Душевая ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 387, 0),
+(14, 5, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 983, 0),
+(15, 6, 'Душевая кабина Esbaro ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 66, 0),
+(16, 7, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
+(17, 8, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
+(18, 9, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
+(19, 1, 'Душевая кабина E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 555, 0),
+(20, 2, 'Душевая кабина Esbaro Led E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 945, 0),
+(21, 3, 'Душевая ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 387, 0),
+(22, 4, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 983, 0),
+(23, 5, 'Душевая кабина Esbaro ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 66, 0),
+(24, 6, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
+(25, 7, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
+(26, 8, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 11, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
+(27, 9, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
+(28, 8, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
+(29, 9, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
+(30, 1, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0),
+(31, 2, 'Душевая кабина Esbaro Led ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 235, 0),
+(32, 3, 'Душевая кабина E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 555, 0),
+(33, 4, 'Душевая кабина Esbaro Led E', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 945, 0),
+(34, 5, 'Душевая ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 387, 0),
+(35, 6, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 983, 0),
+(36, 7, 'Душевая кабина Esbaro ', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 66, 0),
+(37, 8, 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 10, 0),
+(38, 9, 'Душевая кабина Esbaro Led ES-L100', 'Душевая кабина Esbaro Led ES-L100CR', 'Душевая кабина Esbaro Led ES-L100CR', 2010, 0, '312126', 'Fsbana', 'Led', 'Led FS-I-100CR', 'Испания', '', 'Душевая кабина - 1 шт.\r\nДушевой гарнитур - 1 шт.\r\nПолка - 1 шт.\r\nСифон - 1 шт.\r\nИнструкция - 1 шт.', 786, 0);
 
 -- --------------------------------------------------------
 
@@ -270,29 +358,31 @@ INSERT INTO `xcv_product_img` (`id`, `product_id`, `img`, `alt`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `xcv_product_option`
---
-
-CREATE TABLE `xcv_product_option` (
-  `product_option_id` int(11) UNSIGNED NOT NULL,
-  `product_id` int(11) UNSIGNED NOT NULL,
-  `option_id` int(11) UNSIGNED NOT NULL,
-  `option_value` mediumtext NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `xcv_product_option_value`
 --
 
 CREATE TABLE `xcv_product_option_value` (
   `product_option_value_id` int(11) UNSIGNED NOT NULL,
-  `product_option_id` int(11) UNSIGNED NOT NULL,
   `product_id` int(11) UNSIGNED NOT NULL,
   `option_id` int(11) UNSIGNED NOT NULL,
   `option_value_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- Дамп данных таблицы `xcv_product_option_value`
+--
+
+INSERT INTO `xcv_product_option_value` (`product_option_value_id`, `product_id`, `option_id`, `option_value_id`) VALUES
+(1, 2, 2, 1),
+(2, 2, 2, 1),
+(3, 2, 3, 3),
+(4, 2, 3, 3),
+(5, 1, 3, 3),
+(6, 1, 2, 2),
+(7, 3, 3, 3),
+(8, 3, 2, 2),
+(9, 2, 4, 7),
+(10, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -341,6 +431,12 @@ ALTER TABLE `xcv_categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `xcv_discount`
+--
+ALTER TABLE `xcv_discount`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `xcv_menu`
 --
 ALTER TABLE `xcv_menu`
@@ -359,6 +455,12 @@ ALTER TABLE `xcv_option_value`
   ADD PRIMARY KEY (`option_value_id`);
 
 --
+-- Индексы таблицы `xcv_orders`
+--
+ALTER TABLE `xcv_orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `xcv_product`
 --
 ALTER TABLE `xcv_product`
@@ -371,16 +473,10 @@ ALTER TABLE `xcv_product_img`
   ADD PRIMARY KEY (`id`,`product_id`);
 
 --
--- Индексы таблицы `xcv_product_option`
---
-ALTER TABLE `xcv_product_option`
-  ADD PRIMARY KEY (`product_option_id`);
-
---
 -- Индексы таблицы `xcv_product_option_value`
 --
 ALTER TABLE `xcv_product_option_value`
-  ADD PRIMARY KEY (`product_option_value_id`,`product_option_id`);
+  ADD PRIMARY KEY (`product_option_value_id`);
 
 --
 -- Индексы таблицы `xcv_slider`
@@ -405,6 +501,11 @@ ALTER TABLE `xcv_user`
 ALTER TABLE `xcv_categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
+-- AUTO_INCREMENT для таблицы `xcv_discount`
+--
+ALTER TABLE `xcv_discount`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT для таблицы `xcv_menu`
 --
 ALTER TABLE `xcv_menu`
@@ -413,12 +514,17 @@ ALTER TABLE `xcv_menu`
 -- AUTO_INCREMENT для таблицы `xcv_option`
 --
 ALTER TABLE `xcv_option`
-  MODIFY `option_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `option_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `xcv_option_value`
 --
 ALTER TABLE `xcv_option_value`
-  MODIFY `option_value_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `option_value_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT для таблицы `xcv_orders`
+--
+ALTER TABLE `xcv_orders`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 --
 -- AUTO_INCREMENT для таблицы `xcv_product`
 --
@@ -430,15 +536,10 @@ ALTER TABLE `xcv_product`
 ALTER TABLE `xcv_product_img`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 --
--- AUTO_INCREMENT для таблицы `xcv_product_option`
---
-ALTER TABLE `xcv_product_option`
-  MODIFY `product_option_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT для таблицы `xcv_product_option_value`
 --
 ALTER TABLE `xcv_product_option_value`
-  MODIFY `product_option_value_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `product_option_value_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT для таблицы `xcv_slider`
 --
