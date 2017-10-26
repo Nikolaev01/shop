@@ -3,7 +3,7 @@
         <div class="fifty left">
            <?=$hornav?>
             <div class="order_fields">
-                <form name="order" id="order" method="post" action="javascript:void(null);" >
+                <form name="order" id="order" method="post" action="<?=$action?>" >
                     <div class="name_prod">
                         <?php include "message.tpl" ?>
                         <h2></h2>

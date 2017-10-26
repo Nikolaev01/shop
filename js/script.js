@@ -227,7 +227,7 @@ $(document).ready(function () {
 
     $(".order_fields input[type='submit']").on('submit', function (event) {
         event.preventDefault();
-        
+
     });
 
 
