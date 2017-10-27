@@ -2,114 +2,169 @@
 <html lang="ru">
     <head>
         <title>Интернет магазин сантехники</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="description" content="Интернет магазин сантехники" />
         <meta name="keywords" content="Интернет магазин, сантехника" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/css/main.css" rel="stylesheet" type="text/css" />
         <link href="/css/media.css" rel="stylesheet" type="text/css" />
         <script src="/js/jquery.min.js"></script>
         <script src="/js/script.js"></script>
-        <script src="/js/slider.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div id="container">
             <header>
                 <div id="top">
-                    <div id="inner_top">
-                        <div class="left">
-                            <img src="/images/place.png" alt="Местоположение" />
-                            <p>Ваш город: </p><a href="#">Москва</a>
+                    <div class="container">
+                        <div class="row top10">
+                            <div class="col-md-3 col-xs-4">
+                                    <img src="/images/place.png" alt="Местоположение" />
+                                    <span class="hidden-xs">Ваш город: </span>
+                                    <a href="#">Москва</a>
+                            </div>
+                            <div class="col-md-4 col-md-offset-5 col-xs-8 text-right">
+                                    <div class="pull-right">
+                                        <img src="/images/strelk.png" class="img_top" alt="Сравнение товаров" />
+                                        <a href="#">Сравнение</a>
+                                        <img src="/images/man.png" class="img_top" alt="Личный кабинет" />
+                                        <a href="#" class="hidden-xs">Личный кабинет</a>
+                                        <a href="#" class="visible-xs-inline-block">Кабинет</a>
+                                    </div>
+
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                        <div class="right">
-                            <img src="/images/strelk.png" alt="Сравнение товаров" />
-                            <a href="#">Сравнение</a>
-                            <img src="/images/man.png" alt="Личный кабинет" />
-                            <a href="#">Личный кабинет</a>
-                        </div>
-                        <div class="clear"></div>
+
                     </div>
                 </div>
                 <div id="logo">
-                    <div id="inner_logo">
-                        <div class="left" id="logotip">
-                            <img src="images/logo.png" alt="Интернет магазин сантехники" />
-                            <p>Специализированный магазин сантехники</p>
-                        </div>
-                        <div class="left" id="phone">
-                            <img src="images/clock.png" alt="Время работы" />
-                           <p>пн-вс с 9:00 до 20:00</p>
-                           <h2>8 (495)-111-11-11</h2>
-                           <a href="#">Заказать звонок</a>     
-                        </div>
-                        <div class="right">
-                            <div class="left">
-                                <img src="images/cart.png" alt="Корзина покупак" />
-                                <span>2</span>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div id="logotip">
+                                    <img src="images/logo.png" alt="Интернет магазин сантехники" />
+                                    <p>Специализированный магазин сантехники</p>
+                                </div>
                             </div>
-                            <div class="right">
-                                <a href="#">Корзина</a><br />
-                                <p>2 000 <img src="images/coast_silver.png" alt="Корзина"/></p>
-                            </div>        
+                            <div class="col-md-3 col-sm-4 col-xs-9">
+                                <div id="phone">
+                                    <img src="images/clock.png" alt="Время работы" />
+                                    <p>пн-вс с 9:00 до 20:00</p>
+                                    <h3>8 (495)-111-11-11</h3>
+                                    <a href="#">Заказать звонок</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-4 col-xs-3">
+                                <div class="row text-right">
+                                    <div class="col-md-10 col-sm-8 col-xs-12 noright">
+                                        <div class="row">
+                                            <a href="#">
+                                            <img src="images/cart.png" alt="Корзина покупак" />
+                                            <span class="top_cart_span">2</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-4 hidden-xs">
+                                        <a href="#" class="black">Корзина</a><br />
+                                        <span class="span_cart">2 000 <img src="images/coast_silver.png" alt="Корзина"/></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="clear"></div>
                     </div>
                 </div>
             </header>
             <div id="top_menu">
-                <div id="top_menu_inner" >
-                    <nav class="left">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <span>Главная</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span>Контакты</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span>Оплата</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span>Доставка</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span>Услуги</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span>О компании</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div id="search" class="right">
-                        <form action="#" method="post">
-                            <input type="text" placeholder="Что-то ищете?"/>
-                            <input type="submit" value=""/>
-                        </form>
+
+                    <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Главная</a></li>
+                                <li>
+                                    <a href="#">
+                                        <span>Контакты</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>Оплата</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>Доставка</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>Услуги</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>О компании</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group" id="search">
+                                    <input type="text" placeholder="Что-то ищете?"/>
+                                    <input type="submit" value=""/>
+                                </div>
+
+                            </form>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+
+            </div>
+
+            <div class="container">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="images/slider_img.png" alt="image">
+                        </div>
+                        <div class="item">
+                            <img src="images/slider_img.png" alt="image">
+                        </div>
                     </div>
-                    <div class="clear"></div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div>
             </div>
-            <div id="slider-wrap">
-                <div id="slider">
-                    <div class="slide"><img src="images/slider_img.png" alt="Акция"></div>
-                    <div class="slide"><img src="images/001.jpg" alt="Акция"></div>
-                    <div class="slide"><img src="images/slider_img.png" alt="Акция"></div>
-                    <div class="slide"><img src="images/slider_img.png" alt="Акция"></div>
-                </div> 
-            </div>
-            <div id="banner_action">
+            <!--<div id="banner_action">
                 <div id="inner_banner_action">
                    <img src="images/action_img.png" alt="Акция" />
                     <div id="action" class="left">
@@ -153,8 +208,144 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="hits">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="name_prod">
+                                <span>Хиты продаж</span>
+                                <span class="s_left"></span>
+                                <span class="s_right"></span>
+                            </div>
+                            <div class="row line_prod">
+                                <div class="col-md-3 col-sm-4 col-xs-6 product_cart">
+                                    <div class="views-rows line">
+                                        <div class="col-md-12">
+                                            <span class="sale_item">Sale</span>
+                                            <a href="#" class="img_new"><img src="/images/product.png" alt="Корзина"/></a>
+                                            <a href="#" class="product_name"><p>Ванна акриловая Aquatec Ума 145x145 см</p></a>
+                                            <div class="inner_pro_inf">
+                                                <div>
+                                                    <span>Артикул: 34427</span>
+                                                    <a href="#"><img src="/images/strelk.png" alt="Сравнение"/>Сравнение</a>
+
+                                                </div>
+
+                                                <div>
+                                                    <span>1090 <img src="/images/coast.png" alt="Стоимость"/> </span>
+                                                    <br />
+                                                    <a href="#"><img src="/images/cart_small.png" alt="В корзину"/>В корзину</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-6 product_cart">
+                                    <div class="views-rows line">
+                                        <div class="col-md-12">
+                                            <span class="sale_item">Sale</span>
+                                            <a href="#" class="img_new"><img src="/images/product.png" alt="Корзина"/></a>
+                                            <a href="#" class="product_name"><p>Ванна акриловая Aquatec Ума 145x145 см</p></a>
+                                            <div class="inner_pro_inf">
+                                                <div>
+                                                    <span>Артикул: 34427</span>
+                                                    <a href="#"><img src="/images/strelk.png" alt="Сравнение"/>Сравнение</a>
+
+                                                </div>
+
+                                                <div>
+                                                    <span>1090 <img src="/images/coast.png" alt="Стоимость"/> </span>
+                                                    <br />
+                                                    <a href="#"><img src="/images/cart_small.png" alt="В корзину"/>В корзину</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-6 product_cart">
+                                    <div class="views-rows line">
+                                        <div class="col-md-12">
+                                            <span class="sale_item">Sale</span>
+                                            <a href="#" class="img_new"><img src="/images/product.png" alt="Корзина"/></a>
+                                            <a href="#" class="product_name"><p>Ванна акриловая Aquatec Ума 145x145 см</p></a>
+                                            <div class="inner_pro_inf">
+                                                <div>
+                                                    <span>Артикул: 34427</span>
+                                                    <a href="#"><img src="/images/strelk.png" alt="Сравнение"/>Сравнение</a>
+
+                                                </div>
+
+                                                <div>
+                                                    <span>1090 <img src="/images/coast.png" alt="Стоимость"/> </span>
+                                                    <br />
+                                                    <a href="#"><img src="/images/cart_small.png" alt="В корзину"/>В корзину</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-6 product_cart">
+                                    <div class="views-rows line">
+                                        <div class="col-md-12">
+                                            <span class="sale_item">Sale</span>
+                                            <a href="#" class="img_new"><img src="/images/product.png" alt="Корзина"/></a>
+                                            <a href="#" class="product_name"><p>Ванна акриловая Aquatec Ума 145x145 см</p></a>
+                                            <div class="inner_pro_inf">
+                                                <div>
+                                                    <span>Артикул: 34427</span>
+                                                    <a href="#"><img src="/images/strelk.png" alt="Сравнение"/>Сравнение</a>
+
+                                                </div>
+
+                                                <div>
+                                                    <span>1090 <img src="/images/coast.png" alt="Стоимость"/> </span>
+                                                    <br />
+                                                    <a href="#"><img src="/images/cart_small.png" alt="В корзину"/>В корзину</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-6 product_cart">
+                                    <div class="views-rows line">
+                                        <div class="col-md-12">
+                                            <span class="sale_item">Sale</span>
+                                            <a href="#" class="img_new"><img src="/images/product.png" alt="Корзина"/></a>
+                                            <a href="#" class="product_name"><p>Ванна акриловая Aquatec Ума 145x145 см</p></a>
+                                            <div class="inner_pro_inf">
+                                                <div>
+                                                    <span>Артикул: 34427</span>
+                                                    <a href="#"><img src="/images/strelk.png" alt="Сравнение"/>Сравнение</a>
+
+                                                </div>
+
+                                                <div>
+                                                    <span>1090 <img src="/images/coast.png" alt="Стоимость"/> </span>
+                                                    <br />
+                                                    <a href="#"><img src="/images/cart_small.png" alt="В корзину"/>В корзину</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="inner_hits">
                 	<div class="name_prod">
                 	<span>Хиты продаж</span>
@@ -162,6 +353,25 @@
                 	<span class="s_right"></span>
                 	</div>
                 	<div class="line_prod">
+                        <div class="product_cart">
+                            <span class="sale_item">Sale</span>
+                            <a href="#" class="img_new"><img src="/images/product.png" alt="Корзина"/></a>
+                            <a href="#" class="product_name"><p>Ванна акриловая Aquatec Ума 145x145 см</p></a>
+                            <div class="inner_pro_inf">
+                                <div>
+                                    <span>Артикул: 34427</span>
+                                    <a href="#"><img src="/images/strelk.png" alt="Сравнение"/>Сравнение</a>
+
+                                </div>
+
+                                <div>
+                                    <span>1090 <img src="/images/coast.png" alt="Стоимость"/> </span>
+                                    <br />
+                                    <a href="#"><img src="/images/cart_small.png" alt="В корзину"/>В корзину</a>
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="product_cart">
                             <span class="sale_item">Sale</span>
                             <a href="#" class="img_new"><img src="/images/product.png" alt="Корзина"/></a>
@@ -514,9 +724,8 @@
                     </div>
                 </div>
             </footer>
-            
-            
-            </div>
+        </div>
+
     </body>
     
 </html>

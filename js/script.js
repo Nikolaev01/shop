@@ -8,7 +8,7 @@
      Listener for data-reveal-id attributes
      ----------------------------*/
 
-    $('a[data-reveal-id]').live('click', function(e) {
+    $('a[data-reveal-id]').on('click', function(e) {
         e.preventDefault();
         var modalLocation = $(this).attr('data-reveal-id');
         $('#'+modalLocation).reveal($(this).data());
@@ -352,7 +352,7 @@ $(document).ready(function () {
         else $(".comment textarea").animate({height: 'hide'}, 700);
     });
 
-    $("#order").validate({
+  /*  $("#order").validate({
         rules:{
 
             name:{
@@ -400,10 +400,10 @@ $(document).ready(function () {
 
         }
 
-    });
+    });*/
 
     //Маска для телефона
-    $(".field_input.left input[name='phone']").mask("+7 (999) 999-9999");
+   // $(".field_input.left input[name='phone']").mask("+7 (999) 999-9999");
 
 });
 

@@ -1,4 +1,4 @@
-@media screen and (max-width: 1024px) {
+/*@media screen and (max-width: 1024px) {
 	#search input[type="text"] {
 		width: 200px;
 	}
@@ -149,8 +149,9 @@
 }
 @media screen and (max-width: 412px) {
 
-}
+}*/
 /*телефон*/
+/*
 @media screen and (max-width: 360px) {
 	#inner_top .left p {
 		margin-left: 0px;
@@ -188,4 +189,77 @@
 }
 @media screen and (max-width: 320px) {
 
+}*/
+
+@media screen and (max-width: 768px) {
+	#logotip{
+		margin-bottom: 25px !important;
+		text-align: center;
+	}
+	#logotip p{
+		font-size: 130%;
+	}
+	#logotip img{
+		width: 60%;
+	}
+	.navbar-form {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	.navbar-nav {
+		margin: 0;
+	}
+	#search input[type="text"] {
+		width: 250px !important;
+		height: 40px;
+	}
+	#search input[type="submit"] {
+
+		padding: 10px 38px 10px 1px;
+	}
 }
+
+
+
+@media screen and (max-width: 568px) {
+		#logotip p{
+			font-size: 100%;
+		}
+		#logotip img{
+			width: 80%;
+		}
+
+		.col-md-3.col-sm-4.col-xs-6.product_cart{
+			width: 85%;
+		}
+}
+@media screen and (max-width: 360px) {
+	#logotip p{
+		font-size: 80%;
+	}
+	.navbar-nav>li>a {
+		font-size: 120% !important;
+	}
+	#logotip img{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.navbar-nav>li>a {
+		font-size: 110%;
+		padding: 12px 13px 12px 13px;
+	}
+}
+@media screen and (max-width: 992px) {
+	.navbar-nav>li>a {
+		font-size: 85%;
+		padding: 8px 10px 8px 10px;
+	}
+	#search input[type="text"] {
+		width: 178px;
+	}
+	.navbar-form {
+		margin-top: -1px;
+	}
+}
+
