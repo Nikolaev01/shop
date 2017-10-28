@@ -191,6 +191,51 @@
 
 }*/
 
+@media screen and (max-width: 2000px) {
+	.inner_pro_inf div:last-child span:last-child {
+		font-size: 110%;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.navbar-nav>li>a {
+		font-size: 110%;
+		padding: 12px 13px 12px 13px;
+	}
+	.black {
+		font-size: 90%;
+		margin-left: -10px;
+	}
+
+	.sale_item, .hits_item{
+		left: -60px;
+	}
+
+	.product_cart a, .product_cart p{
+		font-size: 100% !important;
+	}
+
+	.inner_pro_inf a, .inner_pro_inf span{
+
+	}
+	.inner_pro_inf div:first-child span:first-child{
+		font-size: 82%;
+	}
+	.inner_pro_inf div a{
+		font-size: 87% !important;
+	}
+}
+@media screen and (max-width: 992px) {
+	.navbar-nav>li>a {
+		font-size: 85%;
+		padding: 8px 10px 8px 10px;
+	}
+	#search input[type="text"] {
+		width: 178px;
+	}
+	.navbar-form {
+		margin-top: -1px;
+	}
+}
 @media screen and (max-width: 768px) {
 	#logotip{
 		margin-bottom: 25px !important;
@@ -217,22 +262,61 @@
 
 		padding: 10px 38px 10px 1px;
 	}
-}
+	.inner_pro_inf div a, .inner_pro_inf span{
+		font-size: 130% !important;
+	}
+	.product_cart p {
+		font-size: 130% !important;
+	}
+	.carus{
+		padding: 0;
+	}
 
+}
+@media screen and (max-width: 713px) {
+
+	.inner_pro_inf div a, .inner_pro_inf span{
+		font-size: 120% !important;
+	}
+	.product_cart p {
+		font-size: 120% !important;
+	}
+
+}
+@media screen and (max-width: 713px) {
+
+	.inner_pro_inf div a, .inner_pro_inf span{
+		font-size: 100% !important;
+	}
+	.product_cart p {
+		font-size: 120% !important;
+	}
+
+}
 
 
 @media screen and (max-width: 568px) {
-		#logotip p{
-			font-size: 100%;
-		}
-		#logotip img{
-			width: 80%;
-		}
+	#logotip p{
+		font-size: 100%;
+	}
+	#logotip img{
+		width: 80%;
+	}
 
-		.col-md-3.col-sm-4.col-xs-6.product_cart{
-			width: 85%;
-		}
+	.col-md-3.col-sm-4.col-xs-6.product_cart{
+		width: 85%;
+	}
+	#logo_footer img:first-child{
+		max-width: 100%;
+	}
+	#logo_footer{
+		margin-top: 0;
+	}
+	#logo_footer a img{
+		margin-right: 20px;
+	}
 }
+
 @media screen and (max-width: 360px) {
 	#logotip p{
 		font-size: 80%;
@@ -244,22 +328,12 @@
 		width: 100%;
 	}
 }
-@media screen and (max-width: 1200px) {
-	.navbar-nav>li>a {
-		font-size: 110%;
-		padding: 12px 13px 12px 13px;
+@media screen and (max-width: 320px) {
+	.inner_pro_inf div a img {
+		width: 20%;
 	}
 }
-@media screen and (max-width: 992px) {
-	.navbar-nav>li>a {
-		font-size: 85%;
-		padding: 8px 10px 8px 10px;
-	}
-	#search input[type="text"] {
-		width: 178px;
-	}
-	.navbar-form {
-		margin-top: -1px;
-	}
-}
+
+
+
 

@@ -29,7 +29,7 @@ label.error{
     margin-top: 10px;
 }
 #container{
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 header{
 }
@@ -190,6 +190,13 @@ header{
     color: #dbe6f5;
     font-weight: bold;
 }
+.navbar {
+    margin-bottom: 0px;
+}
+#carousel-example-generic{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
 #search input[type="submit"]{
     background: url(/images/search.png) no-repeat center center;
     margin: 0;
@@ -251,6 +258,10 @@ nav ul{
 #top_menu_inner{
     max-width: 1140px;
     margin: 0 auto;
+}
+
+.inner_pro_inf span img, .inner_pro_inf a img{
+    margin-bottom: 3px;
 }
 /*Слайдер изображений-->*/
 
@@ -608,7 +619,7 @@ nav ul{
     background: url(/images/green_s.png) center center no-repeat;
     height: 25px;
     top: 15px;
-    left: -80px;
+    left: -84px;
     position: relative;
     color: white;
     font-size: 120%;
@@ -619,7 +630,7 @@ nav ul{
     background: url(/images/red_s.png) center center no-repeat;
     height: 25px;
     top: 15px;
-    left: -80px;
+    left: -84px;
     position: relative;
     color: white;
     font-size: 120%;
@@ -667,6 +678,7 @@ nav ul{
     width: 45%;
     float: left;
     height: 75px;
+    text-align: left;
 }
 .inner_pro_inf div:first-child a{
     top: 20px;
@@ -726,45 +738,39 @@ nav ul{
     background-color: #efefef;
     overflow: hidden;
     margin-top: 50px;
+    padding-top: 20px;
 }
 #inner_footer{
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
 }
-#inner_footer ul{
+#ul_mag ul, #ul_inf ul{
     padding: 0;
 }
 #logo_footer>a>img{
     margin-right: 5px;
 }
-#inner_footer ul li{
+#ul_mag ul li, #ul_inf ul li{
     list-style: none;
-    margin-top: 10px;
+    margin-top: 8px;
 }
-#inner_footer ul li a{
+#ul_mag ul li a, #ul_inf ul li a{
     text-decoration: none;
     color: #666666;
-    font-size: 90%;
+    font-size: 100%;
 }
-#inner_footer ul li a:hover{
+#ul_mag ul li a:hover, #ul_inf ul li a:hover{
     text-decoration: underline;
     color: #5f97d8;
 }
-#inner_footer h4{
-color: #464646;
-text-transform: uppercase;
-    margin-bottom: -6px;
+#ul_mag h4, #ul_inf h4{
+    color: #464646;
+    text-transform: uppercase;
+    font-weight: bold;
 }
-#ul_mag{
-        margin-left: 175px;
-}
-#ul_inf{
-        margin-right: 165px;
-}
-
 #logo_footer{
-    margin-top: 30px;
+    margin-top: 15px;
 }
 #logo_footer p{
     margin: 0px;
@@ -774,7 +780,6 @@ text-transform: uppercase;
 #logo_footer p:last-child{
     margin-bottom: 7px;
 }
-
 #logo_footer p, #logo_footer a{
     font-size: 90%;
 }
@@ -786,16 +791,13 @@ text-transform: uppercase;
     color: #5f97d8;
 }
 /*<--footer*/
-
 /* Блок катерогий -->*/
-
 .block__categories{
-    text-align: center;
+   text-align: center;
 }
 .category{
     display: inline-block;
     width: 22%;
-
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -966,7 +968,7 @@ margin-left: 5px;
 /*Блок сортировки-->*/
 
 .name_prod{
-    margin: 15px 0 15px 0;
+    margin: 45px 0 15px 0;
     font-size: 85%;
 }
 .sort_link{
@@ -1426,6 +1428,14 @@ text-align: right;
     margin-left: -20px;
 }
 /*<--Страница оформления заказа*/
+.img_modal{
+    margin-top: 10px;
+    width: 60%;
+    max-width: 100%;
+}
+.modal-content{
+    text-align: center;
+}
 /*	--------------------------------------------------
 	Reveal Modals
 	-------------------------------------------------- */
@@ -1448,8 +1458,9 @@ text-align: right;
     left: 50%;
     margin-left: -300px;
     width: 520px;
-    background: #eee url(modal-gloss.png) no-repeat -200px -80px;
-    position: absolute;
+    max-width: 100%;
+    background: #eee url(modal-gloss.png) no-repeat -100px -80px;
+    position: fixed;
     z-index: 101;
     padding: 30px 40px 34px;
     -moz-border-radius: 5px;

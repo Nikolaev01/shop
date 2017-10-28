@@ -75,13 +75,14 @@ abstract class Controller extends AbstractController
     {
         $header = new Header();
         $header->title = $this->title;
-        $header->meta("Content-Type", "text/html; charset=utf-8", true);
+        $header->meta("X-UA-Compatible", "IE=edge", true);
         $header->meta("description", $this->meta_desc, false);
         $header->meta("keywords", $this->meta_key, false);
-        $header->meta("viewport", "width=device-width", false);
+        $header->meta("charset", "utf-8", false);
+        $header->meta("viewport", "width=device-width, initial-scale=1", false);
         $header->favicon = "/favicon.ico";
-        $header->css = array("/css/main.css", "/css/media.css");
-        $header->js = array("/js/jquery.min.js", "/js/jquery.validate.min.js", "/js/jquery.maskedinput.min.js", "/js/script.js", "/js/slider.js");
+        $header->css = array("/css/bootstrap.css", "/css/main.css", "/css/media.css");
+        $header->js = array("/js/jquery.min.js", "/js/jquery.validate.min.js", "/js/jquery.maskedinput.min.js", "/js/script.js", "/js/bootstrap.js" );
 
         return $header;
     }

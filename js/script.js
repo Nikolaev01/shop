@@ -314,12 +314,7 @@ $(document).ready(function () {
     });
 
 
-    $(".product_price_info.right span").click(function () {
-        var query = $(this).attr("v");
-        query = query.substr(14);
-        ajaxAddPrinCart(query);
-            //console.log(query);
-    });
+
     $(".inner_pro_inf div:last-child span:last-child").click(function () {
         var query = $(this).attr("v");
         query = query.substr(14);
@@ -482,11 +477,10 @@ function ajaxAddPrinCart(data){
         data:(data),
         dataType: "text",
         success: function () {
-            //alert(data);
-            $('#modalCart').reveal();
+            $('#myModal').modal();
             setTimeout(function(){
+                $('#myModal').modal('hide');
                 $("#cart").load(location.href+" #cart>*","");
-                //$("modalCart").css("display", "none");
             }, 1500);
         }
     });
@@ -512,6 +506,7 @@ function call() {
         success: function(data) {
             $('#modalCart_1').reveal();
             setTimeout(function(){
+
                 window.location="http://nd-shop.local";
             }, 1800);
         },
