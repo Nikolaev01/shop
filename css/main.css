@@ -796,10 +796,7 @@ nav ul{
    text-align: center;
 }
 .category{
-    display: inline-block;
-    width: 22%;
-    margin-left: 15px;
-    margin-right: 15px;
+    text-align: center;
 }
 .img_category{
     border: 1px solid #dfdfdf;
@@ -842,7 +839,7 @@ nav ul{
     margin-top: 35px;
 }
 .bread_link a,.bread_link span{
-    font-size: 80%;
+    font-size: 110%;
 }
 .bread_link a{
     text-decoration: none;
@@ -868,10 +865,9 @@ nav ul{
     width: 60px;
 }
 .order{
-    width: 25%;
 }
 .order label {
-font-size: 90%;
+    font-size: 90%;
     margin-left: 10px;
     margin-top: 15px;
 }
@@ -879,10 +875,10 @@ font-size: 90%;
 	line-height: 30px;
 	font-size: 85%;
     margin-left: 10px;
-    margin-top: 15px;
+    margin-top: 0px;
 }
 .order_price {
-margin-left: 5px;
+    margin-left: 5px;
     color: #979797;
 }
 .order h4{
@@ -891,19 +887,23 @@ margin-left: 5px;
     float: left;
 }
 .arr_up, .arr_down{
-    padding: 5px;
-    background: url("/images/arr_up.gif") center center no-repeat;
+    padding: 7px;
+    background: url("/images/arr_up.png") center center no-repeat;
     top: 20px;
     position: relative;
     cursor: pointer;
     left: 40px;
+}
+
+.filter input[type="radio"]+label{
+    font-weight: normal;
 }
 .order_button{
     display: inline-block;
     text-align: center;
     position: relative;
     width: 100%;
-    margin-top: 35px;
+    margin-top: 15px;
 }
 .order_button_reset, .order_button_submit{
     display: inline-block;
@@ -934,17 +934,22 @@ margin-left: 5px;
     font-size: 95%;
 }
 .center{
-     width: 75%;
  }
 .triple{
     width: 26.9%;
     margin: 20px 15px 20px 15px !important;
+}
+.margin-top{
+    margin-top: 40px;
 }
 /*<-- Блок фильтрации*/
 /* Блок пагинации -->*/
 .inner_pagination{
     text-align: center;
     margin-top: 30px;
+}
+.small-show{
+    display: none;
 }
 .inner_pagination__links a{
     text-decoration: none;
@@ -972,8 +977,8 @@ margin-left: 5px;
     font-size: 85%;
 }
 .sort_link{
-    margin-top: 30px;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 .sort_link span{
     font-size: 109%;
