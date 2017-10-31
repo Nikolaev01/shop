@@ -182,7 +182,7 @@ header{
     margin-bottom: 0px;
 }
 .navbar.navbar-default{
-    background-color: #5f97d8 !important;
+    background-color: #3498db !important;
 }
 .navbar-default .navbar-nav>li>a{
     text-transform: uppercase;
@@ -507,7 +507,7 @@ nav ul{
     text-align: right;
 }
 .img_new img{
-    max-height: 150px;
+    max-height: 134px;
     max-width: 100%;
 }
 .navbar-toggle {
@@ -572,7 +572,12 @@ nav ul{
 }
 
 .product_info_img{
-    max-width: 45%;
+}
+.product_info_features.col-sm-6 h2{
+    margin-top: 0;
+}
+.product_info_img.col-sm-6 h2, .product_info_features.col-sm-6 h2{
+    font-size: 175%;
 }
 .line:hover{
     border-color: #5f97d8;
@@ -686,15 +691,21 @@ nav ul{
     text-decoration: none;
     color: #666666;
     font-size: 11pt;
+    float: left;
 }
-.inner_pro_inf div:last-child a{
+.inner_pro_inf div:last-child span:nth-child(3){
     top: 12px;
     position: relative;
     text-decoration: none;
     color: #5f96d8;
     font-size: 11pt;
+    cursor: pointer;
 }
-.inner_pro_inf div a img{
+.inner_pro_inf div:last-child span:nth-child(3):hover{
+    text-decoration: underline;
+}
+
+.inner_pro_inf div a img, .inner_pro_inf div span img{
     margin-right: 5px;
 }
 .inner_pro_inf div:last-child{
@@ -709,6 +720,11 @@ nav ul{
     top: 18px;
     position: relative;
 }
+.inner_pro_inf div:last-child span:nth-child(3){
+    top: 18px;
+    position: relative;
+}
+
 .inner_pro_inf div:last-child span:last-child{
     color: #5f96d8;
     top: 18px;
@@ -1134,6 +1150,10 @@ nav ul{
 .price{
     width: 76%;
 }
+.coast_span{
+    width: 50%;
+}
+
 .coast{
     margin-bottom: 15px;
 }
@@ -1141,6 +1161,7 @@ nav ul{
     margin: 0;
     color: #000;
     font-size: 110%;
+
 }
 .coast_span.left{
     color:#999999;
@@ -1152,6 +1173,7 @@ nav ul{
    margin-left: 3px;
 }
 .inner_price {
+    margin-top: 10px;
     font-size: 92%;
 }
 .coast_span.right span:last-child{
@@ -1202,11 +1224,9 @@ margin: 10px     auto;
     max-width: 1140px;
 }
 .small_images_item{
-    float: left;
-    width: 24.3%;
     text-align: center;
     border: 3px solid #d9ebf8;
-    margin: 0 6px;
+    margin: 0 0px;
 }
 .small_images_item.focus, .small_images_item:hover{
     border: 3px solid #3498db;
@@ -1220,45 +1240,57 @@ margin: 10px     auto;
 .small_images_item:last-child{
     margin-right: 0;
 }
-.product_price_info.left {
-    width: 60%;
-}
-.product_price_info.right{
-    width: 40%;
-}
+
+
 .product_price_info.right{
 text-align: right;
 }
-.product_info_features.right .coast_span{
-    width: 50%;
-}
-.product_price_info.left .coast_span.right span, .product_info_features.right .inner_price .coast_span.right span{
+
+.col-md-6.col-md-pull-6.product_price_info .coast_span.right span, .product_info_features.right .inner_price .coast_span.right span{
     color: #444444 !important;
 }
-.product_price_info.left .coast_span.right span{
+.col-md-6.col-md-pull-6.product_price_info .coast_span.right span{
     margin-left: 10px;
+}
+.small_images{
+    margin-top: 25px;
+}
+.small_images .row{
+    margin-left: -8px;
+    margin-right: -8px;
 }
 .big_img img{
     border: 1px solid #cfe6f6;
+    max-width: 100%;
 }
-.product_info_features.right h2{
+.col-md-6.col-md-push-6.product_price_info h2{
     color: #444444;
 }
-.product_info_features.right {
-    width: 45%;
+.col-md-6.col-md-push-6.product_price_info {
+
     font-size: 108%;
 }
-.product_info_features.right .coast{
+.col-md-6.col-md-push-6.product_price_info .coast{
     margin: 0px !important;
     padding: 9px 0;
 }
-.product_price_info.right h1{
-    color:#e74c3c;
-    font-size: 210%;
+
+.col-md-6.col-md-push-6.product_price_info h1 {
+    color: #e74c3c;
+    font-size: 250%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+}
+.col-md-6.col-md-push-6.product_price_info h1 img{
+    margin-top: -5px;
+
 }
 .price_lable{
+    top: 15px;
+    position: relative;
     background: url("/images/price_lable.png") center center no-repeat;
-    padding: 14px 39px;
+    padding: 14px 43px;
     color: #ffffff;
     text-decoration: none;
 }
@@ -1268,13 +1300,19 @@ text-align: right;
 .price_lable img{
     left: -8px;
     position: relative;
-    top: 5px;
 }
+.col-md-6.col-md-push-6.product_price_info h1 img{
+    margin-top: -5px;
+}
+.col-md-6.col-md-push-6.product_price_info{
+    text-align: right;
+}
+
 .comparison{
     font-size: 80%;
     left: -2px;
     position: relative;
-    top: 20px;
+    top: 25px;
     text-decoration: none;
     color: #999999;
 }

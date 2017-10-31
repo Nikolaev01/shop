@@ -12,23 +12,23 @@
         if ($start < 1) $start = 1;
         }
         ?>
-        <div class="pagination">
-        <div class="inner_pagination centrum">
-            <div class="inner_pagination__links">
-                <?php if ($active != 1) { ?>
-                <a href="<?php if ($active == 2) { ?>$url<?php } else { ?><?=$url_page.($active - 1)?><?php } ?> title="Предыдущая"><span>Назад</span></a>
-                <?php } else { ?>
-                <?php } ?>
-                <?php for ($i = $start; $i <= $end; $i++) { ?>
-                <?php if ($i == $active) { ?><span class="pag_span"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?><?php } else { ?><?=$url_page.$i?><?php } ?>"><span><?=$i?></span></a><?php } ?>
-                <?php } ?>
-                <?php if ($active != $count_pages) { ?>
-                <a href="<?=$url_page.($active + 1)?>" title="Следующая">Вперед</a>
-                <?php } else { ?>
-                <span>Вперед</span>
-                <?php } ?>
+        <div class="pagination col-xs-12">
+            <div class="inner_pagination centrum">
+                <div class="inner_pagination__links">
+                    <?php if ($active != 1) { ?>
+                    <a href="<?php if ($active == 2) { ?>$url<?php } else { ?><?=$url_page.($active - 1)?><?php } ?> title="Предыдущая"><span>Назад</span></a>
+                    <?php } else { ?>
+                    <?php } ?>
+                    <?php for ($i = $start; $i <= $end; $i++) { ?>
+                    <?php if ($i == $active) { ?><span class="pag_span"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?><?php } else { ?><?=$url_page.$i?><?php } ?>"><span><?=$i?></span></a><?php } ?>
+                    <?php } ?>
+                    <?php if ($active != $count_pages) { ?>
+                    <a href="<?=$url_page.($active + 1)?>" title="Следующая">Вперед</a>
+                    <?php } else { ?>
+                    <span>Вперед</span>
+                    <?php } ?>
+                </div>
             </div>
         </div>
-    </div>
     <?php } ?>
 
