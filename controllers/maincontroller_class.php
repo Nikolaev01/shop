@@ -40,12 +40,14 @@ class MainController extends Controller{
         if ($this->request->page){
             $item = ProductDB::getAllonCategoryID("product_img", $this->request->id, Config::COUNT_ARTICLES_ON_PAGE, ($this->request->page - 1) * Config::COUNT_ARTICLES_ON_PAGE, $this->request->sort, $this->request->up);
         }
+
         else{
             $item = ProductDB::getAllonCategoryID("product_img", $this->request->id, Config::COUNT_ARTICLES_ON_PAGE, false, $this->request->sort, $this->request->up);
         }
         $hornavs = $this->getHornav();
         $pagination = $this->getPagination(count(ProductDB::getAllonCategoryID("product_img", $this->request->id)), Config::COUNT_ARTICLES_ON_PAGE, URL::current());
         $sort = $this->getSort();
+
         if($this->request->id){
             if (!$category_db->isSaved()) {
                 $this->notFound();
@@ -57,6 +59,8 @@ class MainController extends Controller{
             $this->meta_desc = "Интернет магазин сантехники ".$category_db->title;
             $this->mata_key = "Интернет магазин, сантехники ".$category_db->title;
             $sort->category_name = $category_db->title;
+
+            //if($sort->categoru_name == "");
             $product->pagination = $pagination;
         }
         else {
@@ -67,6 +71,7 @@ class MainController extends Controller{
             $category_name = "Каталог";
             $product->pagination = $pagination;
         }
+        //if($sort->category_name == null) $sort->categoru_name = false;
         for($i = 0; $i < count($item); $i++){
             $item[$i]['price'] = number_format($item[$i]['price'], 0, ',', ' ');
         }

@@ -8,7 +8,7 @@
      Listener for data-reveal-id attributes
      ----------------------------*/
 
-    $('a[data-reveal-id]').on('click', function(e) {
+    $('a[data-reveal-id]').click(function(e) {
         e.preventDefault();
         var modalLocation = $(this).attr('data-reveal-id');
         $('#'+modalLocation).reveal($(this).data());
@@ -321,6 +321,22 @@ $(document).ready(function () {
         ajaxAddPrinCart(query);
             //console.log(query);
     });
+    $(".price_lable").click(function () {
+        var query = $(this).attr("v");
+        query = query.substr(14);
+        ajaxAddPrinCart(query);
+            //console.log(query);
+    });
+    $(".inner_pro_inf div:last-child span").click(function () {
+        var query = $(this).attr("v");
+        query = query.substr(14);
+        ajaxAddPrinCart(query);
+            //console.log(query);
+    });
+
+
+
+
 
     if($(".cur_item.left input[type='radio']").attr("checked") == "checked"){
         $(".samo_shipping").css("display", "block");

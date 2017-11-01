@@ -1,8 +1,3 @@
-<div class="product_feature_inner">
-    <a class="product_info_active" href="#">Характеристики</a>
-    <a href="#">Состав поставки</a>
-</div>
-<div class="inner_price">
     <?php foreach ($item as $one) { ?>
         <div class="coast">
         <div class="coast_span left">
@@ -14,4 +9,3 @@
         <div class="clear"></div>
     </div>
     <?php } ?>
-</div>

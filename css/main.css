@@ -844,6 +844,7 @@ nav ul{
 /* Блок хлебных крошек -->*/
 .bread{
     margin-top: -12px;
+    margin-bottom: 20px;
     position: relative;
 }
 .bread_pagination{
@@ -1135,6 +1136,7 @@ nav ul{
     border-radius: 5px;
     padding: 10px;
 }
+
 .prormo input[type="submit"] {
     background-color: #3498db;
     padding: 10px 12px;
@@ -1155,7 +1157,12 @@ nav ul{
 }
 
 .coast{
-    margin-bottom: 15px;
+    padding: 5px 0px 5px 5px;
+}
+
+
+.tab-content .coast:nth-child(even){
+    background-color: #eaf4fb;
 }
 .coast_span h4{
     margin: 0;
@@ -1176,9 +1183,7 @@ nav ul{
     margin-top: 10px;
     font-size: 92%;
 }
-.coast_span.right span:last-child{
-    color: red !important;
-}
+
 .red{
     color: #e74c3c;
     font-size: 110%;
@@ -1302,7 +1307,7 @@ text-align: right;
     position: relative;
 }
 .col-md-6.col-md-push-6.product_price_info h1 img{
-    margin-top: -5px;
+    margin-top: -7px;
 }
 .col-md-6.col-md-push-6.product_price_info{
     text-align: right;
@@ -1319,18 +1324,27 @@ text-align: right;
 .comparison img{
     margin-right: 5px;
 }
-.product_feature_inner{
-    margin-top: 25px;
+.nav.nav-tabs{
+    margin-top: 10px;
     margin-bottom: 15px;
 }
-.product_feature_inner a{
+.nav.nav-tabs li a{
+    border-bottom: 2px solid #ffffff;
     color: #a8a8a8;
     text-decoration: none;
-    margin-right: 23px;
+    margin-right: 13px;
+    padding: 5px 0px;
 }
-.product_info_active, .product_feature_inner a:hover{
+.nav.nav-tabs li.active a{
+    border: none;
+}
+.nav.nav-tabs li.active a, .nav.nav-tabs li a:hover{
     color: #444444 !important;
     border-bottom: 2px solid #3498db;
+}
+
+.nav-tabs{
+    border: none;
 }
 .product_price > .inner_price .coast:nth-child(2n+1){
     background-color: #eaf4fb;

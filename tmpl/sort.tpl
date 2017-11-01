@@ -1,6 +1,6 @@
 <div class="sort">
     <div class="row">
-        <?php if($category_name !== false) { ?>
+        <?php if($category_name !== null) { ?>
             <div class="name_prod">
                 <span><?=$category_name?></span>
             </div>
