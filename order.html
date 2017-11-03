@@ -1,312 +1,351 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <title>Интернет магазин сантехники</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Интернет магазин сантехники" />
-    <meta name="keywords" content="Интернет магазин, сантехника" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <link href="css/media.css" rel="stylesheet" type="text/css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/slider.js"></script>
+<html lang="ru"><head>
+    <title>Оформление заказа</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Оформление заказа на покупку сантехнических изделий">
+    <meta name="keywords" content="">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/css/media.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.maskedinput.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/bootstrap.js"></script>
 </head>
-<body>
-<div id="container">
-    <header>
-        <div id="top">
-            <div id="inner_top">
-                <div class="left">
-                    <img src="images/place.png" alt="Местоположение" />
-                    <p>Ваш город: </p><a href="#">Москва</a>
-                </div>
-                <div class="right">
-                    <img src="images/strelk.png" alt="Сравнение товаров" />
-                    <a href="#">Сравнение</a>
-                    <img src="images/man.png" alt="Личный кабинет" />
-                    <a href="#">Личный кабинет</a>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <div id="logo">
-            <div id="inner_logo">
-                <div class="left" id="logotip">
-                    <img src="images/logo.png" alt="Интернет магазин сантехники" />
-                    <p>Специализированный магазин сантехники</p>
-                </div>
-                <div class="left" id="phone">
-                    <img src="images/clock.png" alt="Время работы" />
-                    <p>пн-вс с 9:00 до 20:00</p>
-                    <h2>8 (495)-111-11-11</h2>
-                    <a href="#">Заказать звонок</a>
-                </div>
-                <div class="right">
-                    <div class="left">
-                        <img src="images/cart.png" alt="Корзина покупак" />
-                        <span>2</span>
-                    </div>
-                    <div class="right">
-                        <a href="#">Корзина</a><br />
-                        <p>2 000 <img src="images/coast_silver.png" alt="Стоимость"/></p>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </header>
-    <div id="top_menu">
-        <div id="top_menu_inner" >
-            <nav class="left">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <span>Главная</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Контакты</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Оплата</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Доставка</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Услуги</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>О компании</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div id="search" class="right">
-                <form action="#" method="post">
-                    <input type="text" placeholder="Что-то ищете?"/>
-                    <input type="submit" value=""/>
-                </form>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="inner_content centrum">
-            <div class="fifty left">
-            <div class="bread">
-                <div class="bread_pagination">
-                    <div class="bread_link">
-                        <a href="#">Главная</a>
-                        <a href="#">Каталог</a>
-                        <span>Унитазы</span>
-                    </div>
-                </div>
-            </div>
-            <div class="order_fields">
-                <form name="order" method="post" action="#">
-                    <div class="name_prod">
-                    <h2>Оформление заказа</h2>
-                    <div class="order_field_input">
-                        <div class="field_span left">
-                            <span>Ваше имя <span class="red">*</span></span>
-                        </div>
-                        <div class="field_input">
-                           <input type="text" name="name" />
-                        </div>
-                        <div class="clear"></div>
-                        <div class="field_span left">
-                            <span>Телефон <span class="red">*</span></span>
-                        </div>
-                        <div class="field_input left">
-                           <input type="text" name="name" />
-                        </div>
-                        <div class="clear"></div>
-                        <div class="field_span left">
-                            <span>E-mail <span class="red">*</span></span>
-                        </div>
-                        <div class="field_input left">
-                           <input type="email" name="name" />
-                        </div>
-                        <div class="clear"></div>
-
-                    </div>
-                    </div>
-                    <div class="samo_shipping">
-                    <p>Выбирите удобный пункт самовывоза</p>
-                    <div class="samoviv">
-                        <div class="samoviv_item left">
-                            <div class="samov_checkbox__label">
-                                <input type="radio" class="pay_checkbox__input"  name="shipping_pay" value="1"/>
-                                <label>м. Проспект мира</label>
+    <body>
+        <div id="container">
+            <header>
+                <div id="top">
+                    <div class="container">
+                        <div class="row top10">
+                            <div class="col-md-3 col-xs-4">
+                                <img src="/images/place.png" alt="Местоположение">
+                                <span class="hidden-xs">Ваш город: </span>
+                                <a href="#">Москва</a>
                             </div>
+                            <div class="col-md-4 col-md-offset-5 col-xs-8 text-right">
+                                <div class="pull-right">
+                                    <img src="/images/strelk.png" class="img_top" alt="Сравнение товаров">
+                                    <a href="#">Сравнение</a>
+                                    <img src="/images/man.png" class="img_top" alt="Личный кабинет">
+                                    <a href="#" class="hidden-xs">Личный кабинет</a>
+                                    <a href="#" class="visible-xs-inline-block">Кабинет</a>
+                                </div>
 
-                            <p class="blue">Олимпийский проспект, д.16, стр.2, подъезд №5, этаж 3, офис 4032</p>
-                            <h4>Время работы</h4>
-                            <p>Пн-Пт: с 10:00 до 19:00</p>
-                            <p>Сб-Вс: с 10:00 до 18:00</p>
-                        </div>
-                        <div class="samoviv_item left">
-                            <div class="samov_checkbox__label">
-                                <input class="samov_checkbox__input" type="radio" />
-                                <label>м.Проспект Мира</label>
                             </div>
-
-                            <p class="blue">Олимпийский проспект, д.16, стр.2, подъезд №5, этаж 3, офис 4032</p>
-                            <h4>Время работы</h4>
-                            <p>Пн-Пт: с 10:00 до 19:00</p>
-                            <p>Сб-Вс: с 10:00 до 18:00</p>
+                            <div class="clear"></div>
                         </div>
-                        <div class="clear"></div>
                     </div>
+                </div>
+                <div id="logo">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div id="logotip">
+                                    <img src="images/logo.png" alt="Интернет магазин сантехники">
+                                    <p>Специализированный магазин сантехники</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-9">
+                                <div id="phone">
+                                    <img src="images/clock.png" alt="Время работы">
+                                    <p>пн-вс с 9:00 до 20:00</p>
+                                    <h3>8 (495)-111-11-11</h3>
+                                    <a href="#">Заказать звонок</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-4 col-xs-3" id="cart">
+                                <div class="row text-right">
+                                    <div class="col-md-10 col-sm-8 col-xs-12 noright">
+                                        <div class="row">
+                                            <a href="/cart">
+                                                <img src="images/cart.png" alt="Корзина покупак">
+                                                <span class="top_cart_span">1</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-4 hidden-xs">
+                                        <a href="/cart" class="black">Корзина</a><br>
+                                        <span class="span_cart">2 010 <img src="images/coast_silver.png" alt="Корзина"></span>
+                                    </div>
+                                </div>
+                            </div>                </div>
                     </div>
-                    <div class="pay">
-                        <p>Оплата</p>
-                        <div class="pay_checkbox">
-                            <div class="pay_checkbox__label">
-                                <input type="radio" id="shipping_pay" class="pay_checkbox__input"  name="shipping_pay" value="1"/>
-                                <label>Оплата онлайн</label>
+                </div>
+            </header>
+            <div id="top_menu">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="/"><span>Главная</span></a>
+                                </li>
+                                <li>
+                                    <a href="/contact"><span>Контакты</span></a>
+                                </li>
+                                <li>
+                                    <a href="/pay"><span>Оплата</span></a>
+                                </li>
+                                <li>
+                                    <a href="/delivery"><span>Доставка</span></a>
+                                </li>
+                                <li>
+                                    <a href="/services"><span>Услуги</span></a>
+                                </li>
+                                <li>
+                                    <a href="/category"><span>Каталог</span></a>
+                                </li>
+                            </ul>
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group" id="search">
+                                    <input type="text" placeholder="Что-то ищете?">
+                                    <input type="submit" value="">
+                                </div>
+                            </form>
+                        </div>            </div><!-- /.container-fluid -->
+                </nav>
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="bread col-xs-12">
+                            <div class="row">
+                                <div class="bread_pagination col-xs-12">
+                                    <div class="bread_link">
+                                        <a href="/">Главная</a>                                                <a href="/cart">Корзина</a>                                                <span>Оформление заказа</span>                            </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="pay_checkbox">
-                            <div class="pay_checkbox__label">
-                                <input type="radio" class="pay_checkbox__input"  name="shipping_pay" value="1"/>
-                                <label>Оплата при получении</label>
+                    <div class="order_fields col-md-7 col-xs-12">
+                        <form name="order" id="order" method="post" action="/function.php">
+                            <div class="name_prod">
+                                <h2>Оформление заказа</h2>
+                                <div class="order_field_input">
+                                    <div class="field_span left">
+                                        <span>Ваше имя <span class="red">*</span></span>
+                                    </div>
+                                    <div class="field_input">
+                                        <input type="text" name="name" placeholder="Как к Вам обращаться?" value="">
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="field_span left">
+                                        <span>Телефон <span class="red">*</span></span>
+                                    </div>
+                                    <div class="field_input left">
+                                        <input type="text" name="phone" placeholder="+7 (___) ___-__-__" value="">
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="field_span left">
+                                        <span>E-mail <span class="red">*</span></span>
+                                    </div>
+                                    <div class="field_input left">
+                                        <input type="email" name="email" placeholder="Для писем со статусом заказа" value="">
+                                    </div>
+                                    <div class="clear"></div>
+
+                                </div>
+                            </div>
+                            <div class="shipping_cur">
+                                <p>Способ получения заказа</p>
+                                <div class="cur_item left">
+                                    <div class="left">
+                                        <span><input class="order_brand__input" type="radio" name="delivery" value="sam"><label>Забрать самому</label></span>
+                                        <h4>Бесплатно</h4>
+                                    </div>
+                                    <div class="right">
+                                        <img src="/images/samo.png" class="samov" alt="Самовывоз">
+                                    </div>
+                                </div>
+                                <div class="cur_item right">
+                                    <div class="left">
+                                        <span><input class="order_brand__input" type="radio" name="delivery" value="cur" checked="checked"><label>Курьерская доставка</label></span>
+                                    </div>
+                                    <div class="right">
+                                        <img src="/images/curier.png" alt="Курьерская доставка">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="samo_shipping">
+                                <p>Выбирите удобный пункт самовывоза</p>
+                                <div class="samoviv">
+                                    <div class="samoviv_item left">
+                                        <div class="samov_checkbox__label">
+                                            <input type="radio" class="pay_checkbox__input" name="punkt" value="prt_mir" checked="checked">
+                                            <label>м. Проспект мира</label>
+                                        </div>
+
+                                        <p class="blue">Олимпийский проспект, д.16, стр.2, подъезд №5, этаж 3, офис 4032</p>
+                                        <label>Время работы</label>
+                                        <p>Пн-Пт: с 10:00 до 19:00</p>
+                                        <p>Сб-Вс: с 10:00 до 18:00</p>
+                                    </div>
+                                    <div class="samoviv_item left">
+                                        <div class="samov_checkbox__label">
+                                            <input class="samov_checkbox__input" type="radio" name="punkt" value="olimp">
+                                            <label>м.Проспект Мира</label>
+                                        </div>
+
+                                        <p class="blue">Олимпийский проспект, д.16, стр.2, подъезд №5, этаж 3, офис 4032</p>
+                                        <label>Время работы</label>
+                                        <p>Пн-Пт: с 10:00 до 19:00</p>
+                                        <p>Сб-Вс: с 10:00 до 18:00</p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="ship" style="display: block;">
+                                <p>Доставка</p>
+                                <div class="field_input left">
+                                    <select name="country">
+                                        <option disabled="">Страна</option>
+                                        <option value="Россия">Россия</option>
+                                        <option value="Украина">Украина</option>
+                                        <option value="Узбекистан">Узбекистан</option>
+                                    </select>
+                                </div>
+                                <div class="field_input left">
+                                    <select name="city">
+                                        <option disabled="">Город</option>
+                                        <option value="Москва">Москва</option>
+                                        <option value="Подольск">Подольск</option>
+                                        <option value="Щербинка">Щербинка</option>
+                                    </select>
+                                </div>
+                                <div class="field_input left">
+                                    <input type="text" name="index" placeholder="Индекс" value="">
+                                </div>
+                                <div class="field_input left">
+                                    <input type="text" name="addres" placeholder="Адрес(улица, дом, квартира)" value="">
+                                </div>
+
+                            </div>
+                            <div class="comment">
+                                <span id="comment">Добавить комментарий</span>
+                                <textarea name="comment"></textarea>
+                            </div>
+                            <div class="pay">
+                                <p>Оплата</p>
+                                <div class="pay_checkbox">
+                                    <div class="pay_checkbox__label">
+                                        <input type="radio" id="shipping_pay" class="pay_checkbox__input" name="shipping_pay" value="online" checked="checked">
+                                        <label>Оплата онлайн</label>
+                                    </div>
+                                </div>
+                                <div class="pay_checkbox">
+                                    <div class="pay_checkbox__label">
+                                        <input type="radio" class="pay_checkbox__input" name="shipping_pay" value="nalich">
+                                        <label>Оплата при получении</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--<div class="sort_link">
+                                <span>Сортировка:</span>
+                                <a href="#" class="active">Скидка</a>
+                                <a href="#">Рейтинг</a>
+                                <a href="#">Цена</a>
+                                <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по убыванию"></a>
+                                <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по возврастанию"></a>
+
+                            </div>-->
+                            <input type="hidden" name="func" value="order">
+                            <input type="submit" name="submit" value="Заказ подтверждаю">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-6">
+                                <div id="logo_footer" class="left">
+                                    <img src="images/logo_buttom.gif" alt="Логотип">
+                                    <p>©nd-shop.ru, 2017г.</p>
+                                    <a href="#"><p>email@email.ru</p></a>
+                                    <a href="#"><img src="images/vk.png" alt="Вконтакте"></a><a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                                    <a href="#"><img src="images/twiter.png" alt="Twiter"></a>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-4 hidden-xs">
+                                <div id="ul_mag" class="left">
+                                    <h4>Интернет-магазин</h4>
+                                    <ul>
+                                        <li>
+                                            <a href="/">Главная</a>
+                                        </li>
+                                        <li>
+                                            <a href="/contact">Контакты</a>
+                                        </li>
+                                        <li>
+                                            <a href="/pay">Оплата</a>
+                                        </li>
+                                        <li>
+                                            <a href="/delivery">Доставка</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services">Услуги</a>
+                                        </li>
+                                        <li>
+                                            <a href="/category">Каталог</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-6">
+                                <div id="ul_inf">
+                                    <h4>Информация</h4>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Условия доставки
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Оплата товара
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Получение и возврат товара
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="ship">
-                        <p>Доставка</p>
-                        <div class="field_input left">
-                            <select>
-                                <option disabled>Страна</option>
-                                <option value="punkt2">Пункт 2</option>
-                                <option value="punkt2">Пункт 2</option>
-                                <option value="punkt2">Пункт 2</option>
-                            </select>
-                        </div>
-                        <div class="field_input left">
-                            <select>
-                                <option disabled>Город</option>
-                                <option value="punkt2">Пункт 2</option>
-                                <option value="punkt2">Пункт 2</option>
-                                <option value="punkt2">Пункт 2</option>
-                            </select>
-                        </div>
-                        <div class="field_input left">
-                            <input type="text" name="index" placeholder="Индекс" />
-                        </div>
-                        <div class="field_input left">
-                            <input type="text" name="addres" placeholder="Адрес(улица, дом, квартира)" />
-                        </div>
-                        <a href="#" id="comment">Добавить комментарий</a>
-                        <textarea name="comment">
-                        </textarea>
+                </div>
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal">
+                    <div class="modal-dialog modal-sm">
 
+                        <div class="modal-content">
 
-
+                            <img class="img_modal" src="/images/success.png" alt="Успрешно">
+                            <h4 class="modal-title" id="myLargeModalLabel">Товар успешно добавлен в корзину!</h4>
+                        </div>
                     </div>
-
-                    <!--<div class="sort_link">
-                        <span>Сортировка:</span>
-                        <a href="#" class="active">Скидка</a>
-                        <a href="#">Рейтинг</a>
-                        <a href="#">Цена</a>
-                        <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по убыванию"></a>
-                        <a href="#"><img src="/images/arr_up.gif" alt="Сортировка по возврастанию"></a>
-
-                    </div>-->
-                    <input type="submit" name="submit" value="Заказ подтверждаю">
-                </form>
-            </div>
-        </div>
-        </div>
-
-    </div>
-    <footer>
-        <div id="footer">
-            <div id="inner_footer">
-                <div id="logo_footer" class="left">
-                    <img src="images/logo_buttom.gif" alt="Логотип" />
-                    <p>&copy;nd-shop.ru, 2017г.</p>
-                    <a href="#"><p>email@email.ru</p></a>
-                    <a href="#"><img src="images/vk.png" alt="Вконтакте" /></a><a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
-                    <a href="#"><img src="images/twiter.png" alt="Twiter" /></a>
-
                 </div>
-                <div id="ul_mag" class="left">
-                    <h4>Интернет-магазин</h4>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Главная
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Контакты
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Оплата
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Доставка
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Услуги
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                О компании
-                            </a>
-
-                        </li>
-                    </ul>
-                </div>
-                <div id="ul_inf" class="right">
-                    <h4>Информация</h4>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Условия доставки
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Оплата товара
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Получение и возврат товара
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-
-            </div>
+            </footer>
         </div>
-    </footer>
-</div>
-
-</body>
-
+    </body>
 </html>

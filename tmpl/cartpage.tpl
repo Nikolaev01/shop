@@ -1,9 +1,12 @@
 <div class="content">
-    <div class="inner_content centrum">
+    <div class="container">
         <form name="ship" id="ship" action="<?=$action?>" method="post">
-            <?=$hornav?>
-            <?=$cart_item?>
-            <?=$order?>
+
+            <div class="row">
+                <?=$hornav?>
+                <?=$cart_item?>
+                <?=$order?>
+            </div>
         </form>
     </div>
 </div>

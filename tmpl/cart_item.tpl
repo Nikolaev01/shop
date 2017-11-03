@@ -3,15 +3,13 @@
         <span><?=$page_name?></span>
     </div>
 </div>
-<div class="center_66 left">
     <?php if (count($cart_items) == 0) { ?>
-        <div class="cart">
+        <div class="cart col-md-8">
             <p>Корзина пуста</p>
         </div>
     <?php }?>
-
     <?php if (!count($cart_items) == 0) { ?>
-        <div class="cart">
+        <div class="cart col-md-8">
         <div class="cart_field name">
             <div class="left">
             </div>
@@ -32,6 +30,14 @@
                         <span>Артикул: <?=$item['code']?></span>
                     </div>
                 <div class="right">
+                    <div class="name">
+                        <div class="right">
+                            <div class="cart_item"><span>Стоимость</span></div>
+                            <div class="cart_item"><span>Количество</span></div>
+                            <div class="cart_item"><span>Монтаж</span></div>
+                            <div class="cart_item"><span>Удалить</span></div>
+                        </div>
+                    </div>
                     <div class="cart_item">
                         <span><?=$item['price']?> <img src="/images/coast.png" alt="Стоимость"></span>
                     </div>
@@ -56,6 +62,6 @@
                 </div>
             </div>
         <?php }?>
-        </div>
+
         </div>
     <?php }?>

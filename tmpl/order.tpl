@@ -1,4 +1,4 @@
-<div class="center_33 right">
+<div class="center_33 col-md-4 col-sm-6 col-xs-8 col-xs-push-4 col-sm-push-6 col-md-push-0">
         <div class="shipping" id="shipping">
             <div class="prormo">
                 <h4>Сумма заказа</h4>

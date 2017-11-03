@@ -198,7 +198,7 @@ header{
 }
 
 #search input[type="submit"]{
-    background: url(/images/search.png) no-repeat center center;
+    background: url(../images/search.png) no-repeat center center;
     margin: 0;
     border: none;
     padding: 4px 38px 4px 1px;
@@ -442,7 +442,7 @@ nav ul{
     padding: 73px;
     background-color: #5f97d8;
     z-index: -1;
-    left: 10px;
+    left: 1px;
     border-radius: 87px;
     top: -10px;
 }
@@ -870,7 +870,7 @@ nav ul{
     content: " ";
     position: relative;
     padding: 3px;
-    background: url("/images/arr_pag.png") center center no-repeat;
+    background: url("..	/images/arr_pag.png") center center no-repeat;
     margin-left: 10px;
 }
 .bread_link span{
@@ -990,7 +990,7 @@ nav ul{
 /*Блок сортировки-->*/
 
 .name_prod{
-    margin: 45px 0 15px 0;
+    margin: 15px 0 15px 0;
     font-size: 85%;
 }
 .sort_link{
@@ -1038,6 +1038,9 @@ nav ul{
     color: #999999;
     font-size: 90%;
 }
+.cart_field.name .cart_item:first-child{
+    color: #999999 !important;
+}
 .cart_img{
     float: left;
     max-width: 100px;
@@ -1051,6 +1054,8 @@ nav ul{
 .cart_field.item{
     background-color: #eaf4fb;
     border-top: 1px solid #cfe6f6;
+    padding-bottom: 13px;
+
 }
 .cart_field.item .cart_item:last-child{
     float: right;
@@ -1069,8 +1074,8 @@ nav ul{
     font-size: 10pt;
     color: #666666;
 }
-.cart_item:first-child{
-    color: #c85216;
+.cart_item:nth-child(2), .cart_item:nth-child(4){
+    color: #cc6600;
 }
 .add_item{
     padding: 8px 10px;
@@ -1090,13 +1095,16 @@ nav ul{
     background-color: #fff;
     color: #000;
 }
-.cart_field.item .cart_item:nth-child(3){
+.cart_field.item .cart_item:nth-child(4){
     margin-top: -10px;
 }
 /*--Блок товаров в корзине*/
 /*Блок оформление заказа--*/
-.center_33 {
-    width: 29%;
+.center_33, .cart {
+    font-size: 110%;
+}
+.center_33 img, .cart img{
+    margin-bottom: 3px;
 }
 .shipping_cur h4{
     margin-top: 0;
@@ -1108,7 +1116,7 @@ nav ul{
 .cur_item{
     overflow: hidden;
     border: 2px solid #3498db;
-    height: 4em;
+    height: 4.7em;
     margin-bottom: 22px;
     width: 47%;
     display: inline-block;
@@ -1131,22 +1139,25 @@ nav ul{
     position: relative;
 }
 .prormo input[type="text"]{
+    width: 60%;
     color: #999999;
     border: 1px solid #cfe6f6;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px 10px;
+    font-size: 90%;
 }
-
+.coast_span.right img {
+    margin-top: 2px;
+}
 .prormo input[type="submit"] {
     background-color: #3498db;
-    padding: 10px 12px;
+    padding: 6px 12px;
     font-size: 85%;
     border-radius: 5px;
     float: right;
     text-decoration: none;
     color: #fefefe;
     border: none;
-    top: 1px;
     position: relative;
 }
 .price{
@@ -1157,10 +1168,15 @@ nav ul{
 }
 
 .coast{
-    padding: 5px 0px 5px 5px;
+    padding: 5px 0px 7px 0px;
+}
+.price.left h4{
+    
 }
 
-
+.cart_field.name .cart_item {
+    color: #999999;
+}
 .tab-content .coast:nth-child(even){
     background-color: #eaf4fb;
 }
@@ -1175,6 +1191,7 @@ nav ul{
 }
 .coast_span.right{
     color:#444444;
+    text-align: right;
 }
 .coast_span.right img{
    margin-left: 3px;
@@ -1183,15 +1200,18 @@ nav ul{
     margin-top: 10px;
     font-size: 92%;
 }
-
+.cart_field.item .name{
+    display: none;
+}
 .red{
-    color: #e74c3c;
-    font-size: 110%;
+    color: #cc6600;
+    font-size: 100%;
 }
 /*--Блок оформление заказа*/
 .submit{
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 .submit a{
     background-color: #e74c3c;
@@ -1294,7 +1314,7 @@ text-align: right;
 .price_lable{
     top: 15px;
     position: relative;
-    background: url("/images/price_lable.png") center center no-repeat;
+    background: url("..	/images/price_lable.png") center center no-repeat;
     padding: 14px 43px;
     color: #ffffff;
     text-decoration: none;
@@ -1355,7 +1375,7 @@ text-align: right;
 /*<--Страница товара*/
 /*Страница оформления заказа-->*/
 .fifty{
-    width: 58%;
+
 }
 .name_prod h2{
     font-weight: normal;
@@ -1396,23 +1416,28 @@ text-align: right;
     width: 100%;
 }
 .samoviv_item{
-    width: 38%;
-    padding: 25px;
+    width: 47%;
+    padding: 13px 25px;
     border: 2px solid white;
-    margin: 0 10px;
+    margin: 0 0px;
 }
-.samoviv_item h4{
-    margin-bottom: 5px;
-    font-weight: normal;
-    color: #333333;
+
+.samoviv_item label{
+    margin-left: 10px;
+
+}
+.samoviv_item:nth-child(2){
+    margin-left: 38px !important;
 }
 .samoviv_item p{
     line-height: 25px;
     margin: 0;
     font-size: 85%;
     color: #999999;
+    margin-left: 10px;
 }
 .samo_shipping > p, .pay > p, .ship > p, .shipping_cur > p {
+    margin-top: 20px;
     font-size: 123%;
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 20px;
@@ -1437,8 +1462,8 @@ text-align: right;
 }
 .comment textarea{
     display: none;
-    margin-top: 20px;
-    width: 75%;
+    margin-top: 10px;
+    width: 100%;
     height: 4em;
 }
 .comment span{
@@ -1469,12 +1494,12 @@ text-align: right;
     display: none;
 }
 .pay_checkbox__label input[type="radio"]+label, .samoviv input[type="radio"]+label, .order input[type="radio"]+label, .cur_item input[type="radio"]+label{
-   background: url("/images/checkbox_empty.png") no-repeat left center;
+   background: url("../images/checkbox_empty.png") no-repeat left center;
     padding-left: 30px;
     cursor: pointer;
 }
 .pay_checkbox__label input[checked="checked"]+label, .samoviv input[checked="checked"]+label, .order input[checked="checked"]+label, .cur_item input[checked="checked"]+label{
-    background: url(/images/checkbox.png) no-repeat left center !important;
+    background: url(../images/checkbox.png) no-repeat left center !important;
 }
 .cur_item input[type="radio"]+label{
     padding-left: 25px;
