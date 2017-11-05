@@ -101,4 +101,5 @@ class Check {
     private function doubleNumber($number) {
         return is_numeric($number);
     }
+
 }

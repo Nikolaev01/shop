@@ -25,8 +25,14 @@ abstract class Config {
     const DIR_EMAILS = "/tmpl/emails/";//Файлы с e-mail сообщениями
 
     const LAYOUT = "main";//название общего шаблона
+    const ADMIN_LAYOUT = "admin";//название общего шаблона
+    const AUTH_LAYOUT = "auth";//название общего шаблона
+
+    const ADMIN_LOGIN = "administrator";
+    const ADMIN_PASSWORD = "51244a1ca904b714d168f92928b3d607";
 
     const FILE_FUNC = "function.php";//файл с обработкой функций на сайте
+    const FILE_FUNC_ADMIN = "functionadmin.php";//файл с обработкой функций на сайте
 
     const FILE_MESSAGES = "/text/messages.ini";//путь к файлу с системными сообщениями
 

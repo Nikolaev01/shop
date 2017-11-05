@@ -1,13 +1,15 @@
 <?php
 class Manage {
-    private $discount;
-    private $product;
-    private $orders;
-    private $request;
+    protected $discount;
+    protected $product;
+    protected $orders;
+    protected $request;
 
     public function __construct()
     {
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
         $this->request = new Request();
         $this->data = $this->request->xss($_REQUEST);
         $this->discount = new DiscountDB();
@@ -17,7 +19,7 @@ class Manage {
 
     }
 
-    private function saveData(){
+    protected function saveData(){
         foreach ($this->data as $kea => $value) $_SESSION[$kea] = $value;
     }
 
@@ -86,21 +88,15 @@ class Manage {
         $temp_data["product_ids_inst"] = $product_ids_inst;
         //добавляем в базу
         if ($this->orders->addValues($temp_data)){
-
-
-
             $_SESSION["card"] = "";
             return true;
         }
         return false;
     }
-
     public function updateOrder(){
 
     }
-
-
-    private function getPrice(){
+    protected function getPrice(){
         $ids = explode(",", $_SESSION["card"]);
         $summa = ProductDB::getPriceOnIDs($ids);
         if(!isset($_SESSION["discount"])) $value = false;
@@ -109,7 +105,7 @@ class Manage {
         return $summa;
     }
 
-    private function getFullAdress(){
+    protected function getFullAdress(){
         return $this->data["country"].", ".$this->data["city"].", ".$this->data["addres"].", ".$this->data["index"];
     }
 

@@ -1,5 +1,6 @@
 <?php
 class MainController extends Controller{
+
     public function actionIndex(){
         $this->title = "Интернет магазин сант";
         $this->meta_desc = "Интернет магазин сантехники";

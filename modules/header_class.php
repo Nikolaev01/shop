@@ -5,6 +5,7 @@ class Header extends Module {
         parent::__construct();
         $this->add("title");
         $this->add("favicon");
+        $this->add("ie");
         $this->add("meta", null, true);
         $this->add("css", null, true);
         $this->add("js", null, true);

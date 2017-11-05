@@ -3,6 +3,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden !important;
 }
+
+
 input.error{
     border: 1px solid #F02824;
     box-shadow: inset 0px 0px 6px -1px rgba(255, 0, 0, 0), 0 0 6px rgba(222, 43, 43, 0.6);
@@ -10,6 +12,8 @@ input.error{
 label.error{
     color: #F02824;
 }
+
+
 
 .field_input.left label.error{
     margin-left: 10px;
@@ -237,6 +241,7 @@ nav ul{
     padding: 0;
 }
 #search input[type="text"]{
+    position:relative;
     margin: 0;
     padding: 0;
     border: none;
@@ -245,6 +250,7 @@ nav ul{
     border-radius: 15px 0 0 15px;
     width: 250px;
     padding-left: 20px;
+    background-color: #fafafa;
 }
 .navbar-form {
     margin-top: 4px;
@@ -569,6 +575,7 @@ nav ul{
 .line{
     border: 1px solid #dfdfdf;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .product_info_img{
@@ -592,7 +599,8 @@ nav ul{
 	margin-top: 15px;
     display: flex;
     flex-direction: row;
-    overflow-x: auto;
+    -ms-overflow-x:hidden !important;
+    overflow-x: hidden;
     overflow-y: hidden;
 }
 .line_prod::-webkit-scrollbar {
@@ -1070,6 +1078,10 @@ nav ul{
     color: #444444;
     line-height: 15pt;
 }
+.form-signin .message_string{
+    font-size: 100% !important;
+}
+
 .cart_field.item .left span{
     font-size: 10pt;
     color: #666666;
@@ -1171,7 +1183,7 @@ nav ul{
     padding: 5px 0px 7px 0px;
 }
 .price.left h4{
-    
+
 }
 
 .cart_field.name .cart_item {
@@ -1235,6 +1247,7 @@ nav ul{
     overflow: hidden;
     background: rgba(255,255,255,0.8);
     padding: 0 10px;
+    height: 21.05em;
 }
 .prormo{
     margin-bottom: 20px;
@@ -1416,7 +1429,7 @@ text-align: right;
     width: 100%;
 }
 .samoviv_item{
-    width: 47%;
+    width: 46%;
     padding: 13px 25px;
     border: 2px solid white;
     margin: 0 0px;
@@ -1518,6 +1531,13 @@ text-align: right;
 .modal-content{
     text-align: center;
 }
+
+@-moz-document url-prefix(){
+    #search input[type="text"] {
+        top:5px;
+    }
+}
+
 /*	--------------------------------------------------
 	Reveal Modals
 	-------------------------------------------------- */

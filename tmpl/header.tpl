@@ -12,4 +12,12 @@
     <?php foreach ($js as $src) {?>
     <script src="<?=$src?>"></script>
     <?php }?>
+    <?php if ($ie) { ?>
+    <!--[if IE]>
+    <link href="<?=$ie?>" rel="stylesheet" type="text/css">
+    <![endif]-->
+    <!--[if IE 10]>
+    <link href="<?=$ie?>" rel="stylesheet" type="text/css">
+    <![endif]-->
+    <?php } ?>
 </head>

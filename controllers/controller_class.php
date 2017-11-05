@@ -81,6 +81,7 @@ abstract class Controller extends AbstractController
         $header->meta("charset", "utf-8", false);
         $header->meta("viewport", "width=device-width, initial-scale=1", false);
         $header->favicon = "/favicon.ico";
+        $header->ie = "/css/ie.css";
         $header->css = array("/css/bootstrap.css", "/css/main.css", "/css/media.css");
         $header->js = array("/js/jquery.min.js", "/js/jquery.validate.min.js", "/js/jquery.maskedinput.min.js", "/js/script.js", "/js/bootstrap.js" );
 
