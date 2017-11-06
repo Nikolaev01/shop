@@ -136,6 +136,7 @@ class ProductDB extends ObjectDB{
             $summa = 0;
             for ($i = 0; $i < count($ids); $i++) {
                 $summa += $result[$ids[$i]];
+
             }
         }
         return $summa;

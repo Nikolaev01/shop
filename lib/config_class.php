@@ -27,6 +27,7 @@ abstract class Config {
     const LAYOUT = "main";//название общего шаблона
     const ADMIN_LAYOUT = "admin";//название общего шаблона
     const AUTH_LAYOUT = "auth";//название общего шаблона
+    const ADMIN_DIR_TMPL = "admin/";//название общего шаблона
 
     const ADMIN_LOGIN = "administrator";
     const ADMIN_PASSWORD = "51244a1ca904b714d168f92928b3d607";

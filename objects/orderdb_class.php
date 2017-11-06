@@ -20,6 +20,7 @@ class OrderDB extends ObjectDB{
         $this->add("date_send", "ValidateDate");
         $this->add("date_pay", "ValidateDate");
         $this->add("product_ids_inst", "ValidateIds");
+        $this->add("status", "ValidateText");
         $this->check = new Check();
         $this->mail = new Mail();
     }
