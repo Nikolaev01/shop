@@ -12,7 +12,7 @@
             <input name="login" type="text" id="inputLogin" class="form-control" placeholder="Логин" required autofocus>
             <label for="inputPassword" class="sr-only">Пароль</label>
             <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Пароль" required>
-            <?php include "message.tpl"; ?>
+            <?php include "/tmpl/message.tpl"; ?>
             <div class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Запомнить меня

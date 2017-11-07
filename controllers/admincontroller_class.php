@@ -16,7 +16,8 @@ class AdminController extends Controller{
         $params["header"] = $this->getHeader();//блок head
         $params["bottom"] = $this->getBottom();//Нижнее меню
         $params["center"] = $str;
-
+        $params["logout"] = URL::get("", Config::FILE_FUNC_ADMIN, array("func" => "logout"));
+        $params["orders"] = URL::get("", "admin/page");
         $this->view->render(Config::ADMIN_DIR_TMPL.Config::LAYOUT, $params);
     }
 
@@ -24,6 +25,10 @@ class AdminController extends Controller{
         $this->title = "Интернет магазин сант";
         $this->meta_desc = "Интернет магазин сантехники";
         $this->mata_key = "Интернет магазин, сантехники";
+
+
+        //print_r($this->request->view);
+
         $orders = new AdminOrders();
         $order = OrderDB::getAll();
         $i = 1;
@@ -32,29 +37,48 @@ class AdminController extends Controller{
             if ($item->delivery == "cur") $item->delivery = "Курьерская";
             if ($item->delivery == "sam") $item->delivery = "Самовывоз";
             $item->number = $i;
-            $item->view = URL::get("order/view", "admin", array("id" => $item->id));
+            $item->view = URL::get("order", "admin", array("action" => "view","id" => $item->id));
             $item->update = URL::get("order/update", "admin", array("id" => $item->id));
             $item->delete = URL::get("order/delete", "admin", array("id" => $item->id));
             $i++;
         }
-        //print_r($orders);
-        //$a["logout"] = URL::get("?func=logout", Config::FILE_FUNC_ADMIN);
-        $this->Adminrender($this->renderData(array("orders" => $order, "logout" => URL::get("?func=logout", Config::FILE_FUNC_ADMIN), "order" => $order, "action" => $form_action), Config::ADMIN_DIR_TMPL."orders"));
+        $this->Adminrender($this->renderData(array("orders" => $order, "logout" => URL::get("?func=logout", Config::FILE_FUNC_ADMIN), "order" => $order), Config::ADMIN_DIR_TMPL."orders"));
 
-        //$this->view->render(Config::ADMIN_DIR_TMPL.Config::ADMIN_LAYOUT, $a);
+
     }
     public function actionOrder(){
+       // print_r($this->request);
+        if($this->request->action == "view"){
+            $orderus = new OrderDB();
+            $orderus->load($this->request->id);
+            //$order = OrderDB::getAllOnIDs(array($this->request->id));
+            $vieworder = new ViewOrder();
+            $vieworder->name = $orderus->name;
+            $vieworder->id = $orderus->id;
+            $vieworder->delivery = $orderus->delivery;
+            $vieworder->product_ids = $orderus->product_ids;
+            $vieworder->price = $orderus->price;
+            $vieworder->phone = $orderus->phone;
+            $vieworder->email = $orderus->email;
+            $vieworder->address = $orderus->address;
+            $vieworder->notice = $orderus->notice;
+            $vieworder->notice = $orderus->notice;
+            $vieworder->status = $orderus->status;
+            $vieworder->product_ids_inst = $orderus->product_ids_inst;
+            $vieworder->date_pay = Subsidiary::getFullDate($orderus->date_pay);
+            $vieworder->date_send = Subsidiary::getFullDate($orderus->date_send);
+            $vieworder->date_order = Subsidiary::getFullDate($orderus->date_order);
+
+            //print_r($vieworder->order);
+            $this->Adminrender($vieworder);
 
 
-        //$a["orders"] = $orders;
-        //$a["pr_name"] = Config::SITENAME;
-        //$a["link_pr"] = Config::ADDRESS;
-        //a["header"] = $this->getHeader();
-        //$a["logout"] = URL::get("?func=logout", Config::FILE_FUNC_ADMIN);
+        }
 
-        $orders = "";
 
-        $this->Adminrender($orders);
+
+
+        //$this->Adminrender($orders);
 }
 
 
@@ -81,7 +105,7 @@ class AdminController extends Controller{
             $a["header"] = $this->getHeader();
             $a["message"] = $this->messageForm();
             $a["action"] = Config::FILE_FUNC_ADMIN;
-            $this->view->render(Config::AUTH_LAYOUT, $a);
+            $this->view->render(Config::ADMIN_DIR_TMPL.Config::AUTH_LAYOUT, $a);
         }
     }
 

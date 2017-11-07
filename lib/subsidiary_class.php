@@ -9,5 +9,10 @@ class Subsidiary {
         return md5($str.Config::SECRET);
     }
 
+    public static function getFullDate($second){
+        $date = getdate($second);
+        return $date['hours'].":".$date['minutes'].":".$date['seconds'];
+    }
+
 
 }
