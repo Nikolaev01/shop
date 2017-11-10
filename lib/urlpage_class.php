@@ -21,6 +21,9 @@ class URLPage extends URL {
     public static function getLinkDelCart($product_id){
         return URL::get(Config::FILE_FUNC, "", array("func" => "del_card","id" => $product_id));
     }
+    public static function getLinkDelOrder($product_id){
+        return URL::get(Config::FILE_FUNC_ADMIN, "", array("func" => "del_order","id" => $product_id));
+    }
 
     public static function getLinkAddCompare($product_id){
         return URL::get(Config::FILE_FUNC, "", array("func" => "add_compare","id" => $product_id));

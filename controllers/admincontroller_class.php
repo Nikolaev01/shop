@@ -39,7 +39,8 @@ class AdminController extends Controller{
             $item->number = $i;
             $item->view = URL::get("order", "admin", array("action" => "view","id" => $item->id));
             $item->update = URL::get("order/update", "admin", array("id" => $item->id));
-            $item->delete = URL::get("order/delete", "admin", array("id" => $item->id));
+            //$item->delete = URL::get("?func=delete", Config::FILE_FUNC_ADMIN, array("id" => $item->id));
+            $item->delete = URLPage::getLinkDelOrder($item->id);
             $i++;
         }
         $this->Adminrender($this->renderData(array("orders" => $order, "logout" => URL::get("?func=logout", Config::FILE_FUNC_ADMIN), "order" => $order), Config::ADMIN_DIR_TMPL."orders"));

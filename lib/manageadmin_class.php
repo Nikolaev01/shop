@@ -25,7 +25,20 @@ class ManageAdmin extends Manage {
         unset($_SESSION["message"]);
     }
 
-
+    public function delOrder(){
+        $id = $this->data["id"];
+        $order = new OrderDB();
+        $order->deleteRow($id);
+        
+    
+        //$ids = explode(",", $_SESSION["card"]);
+        //$_SESSION["card"] = "";
+        //for ($i = 0; $i < count($ids); $i++){
+          //  if($ids[$i] != $id) {
+             //   $this->addCart($ids[$i]);
+            //}
+        //}
+    }
 
 
 

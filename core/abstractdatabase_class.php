@@ -31,6 +31,7 @@ abstract class AbstractDataBase {
 				$offset = $pos + strlen($arg);
 			}
 		}
+
 		return $query;
 	}
 	
@@ -85,8 +86,6 @@ abstract class AbstractDataBase {
         $fields .= ")";
         $values .= ")";
         $query = "INSERT INTO `$table_name` $fields $values";
-        //print_r($row);
-       //print_r($query);
 		return $this->query($query, $params);
 	}
 	
@@ -112,6 +111,9 @@ abstract class AbstractDataBase {
 		$query = "DELETE FROM `$table_name`";
 		if ($where) $query .= " WHERE $where";
 		return $this->query($query, $params);
+	}
+	public function deleteRow($query) {
+		return $this->query($query);
 	}
 	
 	public function getTableName($table_name) {

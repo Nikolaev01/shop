@@ -56,5 +56,12 @@ class OrderDB extends ObjectDB{
         return self::$db->insert(self::$table, $values);
     }
 
+    public static function deleteRow($id){
+        if (!$id)return false;
+        $query = "DELETE FROM `".Config::DB_PREFIX.self::$table."` 
+	WHERE `id` = ".$id;
+        $result = self::$db->deleteRow($query);
+        return $result;
+    }
 
 }

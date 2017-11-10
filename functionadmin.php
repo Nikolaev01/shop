@@ -12,6 +12,9 @@ elseif (!$auth->checkAdmin($_SESSION["login"], $_SESSION["password"])){
    header("Location: ".URL::get("auth", "admin", array()));
    exit;
 }
+elseif ($func == "del_order"){
+   $manage->delOrder();
+}
 
 else{
     if ($func == "logout"){
